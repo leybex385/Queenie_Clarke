@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -236,6 +236,44 @@ footer{
 }
 
 /* Keep content sharp */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Hide video but keep structure */
+.hero-video {
+  display: none;
+}
+
+/* Blurred image background */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("image/heroclass.jpg"); /* ← FIXED PATH */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(18px);
+  transform: scale(1.15);
+  z-index: 0;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Content stays sharp */
 .hero-content {
   position: relative;
   z-index: 2;
