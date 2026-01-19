@@ -645,6 +645,76 @@ footer{
     padding: 48px;
   }
 }
+/* ===============================
+   Education Section (huangshiyan style)
+   =============================== */
+
+.education {
+  position: relative;
+  padding: 160px 24px;
+  background-image: url("image/education-bg.jpg"); /* same kind of flat-lay bg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay */
+.education::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Title */
+.education-title {
+  position: relative;
+  z-index: 1;
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 500;
+  color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding: 0 32px;
+}
+
+/* Card */
+.education-card {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 56px 64px;
+  border-radius: 22px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+}
+
+/* Text */
+.education-card p {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.85;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .education-title {
+    font-size: 32px;
+  }
+
+  .education-card {
+    padding: 40px 36px;
+  }
+
+  .education-card p {
+    font-size: 16px;
+  }
+}
 
 </style>
 </head>
@@ -787,19 +857,17 @@ footer{
 
 
 <!-- EDUCATION -->
-<section id="education" class="reveal">
-  <div class="container">
-    <div class="panel">
-      <span class="label">Education</span>
-      <p>
-        Educated in Singapore, with academic training that emphasized analytical
-        rigor, global perspective, and disciplined thinking. This foundation
-        continues to inform my approach to strategy, investment, and operating
-        across complex international environments.
-      </p>
-    </div>
+<section class="education reveal">
+  <h2 class="education-title">Education</h2>
+
+  <div class="education-card">
+    <p>
+      Education at the National University of Singapore, with a foundation in
+      marketing and advanced business training at NUS Business School.
+    </p>
   </div>
 </section>
+
 
 
 <!-- PHILOSOPHY -->
