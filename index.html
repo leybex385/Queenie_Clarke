@@ -202,6 +202,44 @@ footer{
   position: relative;
   z-index: 2;
 }
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Hide video visually but keep structure intact */
+.hero-video {
+  display: none;
+}
+
+/* Blurred image background */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("heroclass.jpg");
+  background-size: cover;        /* landscape fit */
+  background-position: center;   /* balanced crop */
+  background-repeat: no-repeat;
+  filter: blur(18px);
+  transform: scale(1.15);        /* prevents blur edges */
+  z-index: 0;
+}
+
+/* Dark overlay for text contrast */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Keep content sharp */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
 
 </style>
 </head>
