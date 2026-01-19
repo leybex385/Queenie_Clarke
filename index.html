@@ -1067,6 +1067,89 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+/* CONTACT SECTION */
+.contact-section {
+  padding: 80px 10%;
+  background: #0f1115;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #8ab4ff;
+}
+
+.contact-item {
+  margin-bottom: 30px;
+}
+
+.contact-item .label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: #8ab4ff;
+  margin-bottom: 8px;
+}
+
+.contact-item p {
+  color: #d1d5db;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* FORM */
+.contact-form {
+  background: #1a1d23;
+  padding: 40px;
+  border-radius: 14px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #aeb4c0;
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  background: #2a2e36;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
 
 </style>
 </head>
@@ -1394,22 +1477,57 @@ footer{
 
 
 <!-- CONTACT -->
-<section id="contact" class="section reveal">
-  <div class="section-inner">
-    <h2 class="section-title">Contact</h2>
+<section id="contact" class="contact-section">
+  <div class="contact-wrapper">
 
-    <div class="content-block contact-block">
-      <p>
-        For professional inquiries, collaborations, or strategic discussions,
-        please reach out directly.
-      </p>
+    <!-- LEFT: CONTACT INFO -->
+    <div class="contact-info">
+      <h2>Contact</h2>
 
-      <p class="contact-email">
-        <a href="mailto:your@email.com">your@email.com</a>
-      </p>
+      <div class="contact-item">
+        <span class="label">INQUIRIES</span>
+        <p>
+          For professional inquiries, advisory discussions, or collaborative
+          opportunities, please use the contact form.
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <span class="label">ENGAGEMENTS</span>
+        <p>
+          Speaking, strategic advisory, and institutional collaborations are
+          considered on a selective basis.
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <span class="label">GLOBAL AVAILABILITY</span>
+        <p>
+          International engagements supported across select regions and
+          institutional contexts.
+        </p>
+      </div>
     </div>
+
+    <!-- RIGHT: CONTACT FORM -->
+    <div class="contact-form">
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Your Name" required />
+
+        <label>Email</label>
+        <input type="email" placeholder="Your Email" required />
+
+        <label>Message</label>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
   </div>
 </section>
+
 
 
 <footer>
