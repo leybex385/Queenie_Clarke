@@ -945,6 +945,72 @@ footer{
   image-rendering: auto;
   transform: scale(1.01);   /* subtle sharpness boost */
 }
+/* ===== INSIGHTS GRID (EXACT LAYOUT) ===== */
+
+.insights-section {
+  padding: 120px 40px;
+  background: #f6f7f8;
+}
+
+.insights-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
+.insight-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 72px 48px 56px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* ICON FLOATING ABOVE */
+.icon-circle {
+  width: 72px;
+  height: 72px;
+  background: #f1f2f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* TYPOGRAPHY */
+.insight-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.insight-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-card {
+    padding: 64px 32px 48px;
+  }
+}
 
 </style>
 </head>
@@ -1224,43 +1290,43 @@ footer{
 
 
 
-<!-- HIGHLIGHTS -->
-<section id="recognition" class="section">
-  <div class="four-grid">
+<section class="insights-section">
+  <div class="insights-grid">
 
-    <div class="grid-card">
-      <div class="icon">🧠</div>
+    <div class="insight-card">
+      <div class="icon-circle">🧠</div>
       <h3>Industry Perspective</h3>
       <p>
-        Focused on long-term healthcare strategy, governance, and organizational
-        design across complex systems.
+        Focused on translating scientific and clinical innovation into scalable
+        healthcare systems through governance design, data integration, and
+        incentive-aligned infrastructure.
       </p>
     </div>
 
-    <div class="grid-card">
-      <div class="icon">🎤</div>
-      <h3>Strategic Advisory</h3>
+    <div class="insight-card">
+      <div class="icon-circle">🎤</div>
+      <h3>Speaking Engagements & Media</h3>
       <p>
-        Engaged in advisory dialogues supporting cross-border operations,
-        platform scalability, and institutional alignment.
+        Invited speaker at international medical and life sciences conferences,
+        healthcare innovation forums, and academic institutions.
       </p>
     </div>
 
-    <div class="grid-card">
-      <div class="icon">🏅</div>
-      <h3>Leadership Recognition</h3>
+    <div class="insight-card">
+      <div class="icon-circle">🏅</div>
+      <h3>Awards & Honors</h3>
       <p>
-        Recognized through participation in senior-level forums and executive
-        advisory engagements.
+        Recipient of academic and professional recognitions for translational
+        research, clinical leadership, and healthcare strategy.
       </p>
     </div>
 
-    <div class="grid-card">
-      <div class="icon">🌍</div>
-      <h3>Global Engagement</h3>
+    <div class="insight-card">
+      <div class="icon-circle">🌍</div>
+      <h3>Professional Affiliations</h3>
       <p>
-        Involved in international collaboration and initiatives supporting
-        sustainable healthcare development.
+        Active member of international medical, scientific, and healthcare
+        leadership organizations across Asia and Europe.
       </p>
     </div>
 
