@@ -1499,6 +1499,82 @@ footer {
   position: relative;
   z-index: 1;
 }
+/* ================================
+   GLOBAL LAYOUT NORMALIZATION
+   (huangshiyan.com behavior)
+================================ */
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+/* Universal section rhythm */
+section {
+  position: relative;
+  width: 100%;
+  padding: 120px 0;
+}
+
+/* One consistent content column */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Prevent layout breakage */
+section,
+.container,
+div {
+  box-sizing: border-box;
+}
+
+/* Disable layout-breaking effects */
+section * {
+  position: relative;
+}
+
+/* Remove accidental flex misuse */
+section {
+  display: block;
+}
+/* ==============================
+   EMERGENCY LAYOUT RESET
+   ============================== */
+
+/* Force normal document flow */
+section {
+  position: relative !important;
+  display: block !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* Kill layout-breaking flex usage */
+section:not(.hero) {
+  display: block !important;
+}
+
+/* Standardize spacing (huangshiyan-style) */
+section {
+  padding: 120px 0 !important;
+}
+
+/* One clean column */
+.container {
+  max-width: 1080px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+}
+
+/* Remove hidden offsets */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
 
 </style>
 </head>
@@ -1622,9 +1698,9 @@ footer {
     </div>
 
     <!-- Professional Experience -->
-   <section id="professional-focus" class="focus-section">
-  <div class="focus-card">
-    <h2>Professional Focus</h2>
+<section id="professional-focus" class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Professional Focus</h2>
     <p>
       My work centers on building precision oncology platforms, scaling genomic
       diagnostics across clinical networks, integrating clinical data with
@@ -1634,6 +1710,7 @@ footer {
     </p>
   </div>
 </section>
+
 
 
 
