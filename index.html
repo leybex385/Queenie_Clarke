@@ -5,45 +5,33 @@
 <title>Queenie Clarke</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Fonts: identical class of typography -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
-/* =======================
-   DESIGN TOKENS
-======================= */
 :root{
   --bg:#f7f6f3;
   --panel:#ffffff;
-  --dark:#111111;
+  --dark:#111;
   --text:#1c1c1c;
   --muted:#6f6f6f;
   --radius:22px;
-  --gap:100px;
   --shadow:0 30px 80px rgba(0,0,0,.08);
+  --gap:100px;
 }
-
-/* =======================
-   RESET
-======================= */
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
 body{
+  margin:0;
   font-family:Inter,system-ui;
   background:var(--bg);
   color:var(--text);
   line-height:1.8;
 }
-
-/* =======================
-   NAV
-======================= */
 header{
   position:fixed;
   top:0;left:0;right:0;
-  z-index:100;
   background:rgba(247,246,243,.85);
   backdrop-filter:blur(10px);
+  z-index:100;
 }
 nav{
   max-width:1200px;
@@ -51,59 +39,40 @@ nav{
   padding:22px 32px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
 }
 .brand{
   font-size:12px;
   letter-spacing:.18em;
   text-transform:uppercase;
 }
-.menu{
-  display:flex;
-  gap:36px;
-}
 .menu a{
+  margin-left:32px;
   text-decoration:none;
   color:var(--muted);
   font-size:14px;
 }
-
-/* =======================
-   HERO
-======================= */
+section{padding:var(--gap) 0}
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 32px;
+}
 .hero{
   min-height:100vh;
   display:flex;
   align-items:center;
   padding-top:140px;
 }
-.hero-inner{
-  max-width:900px;
-  margin:auto;
-  padding:0 32px;
-}
 .hero h1{
   font-family:Playfair Display,serif;
   font-size:56px;
   font-weight:500;
-  margin:0 0 24px;
+  margin-bottom:24px;
 }
 .hero p{
   max-width:640px;
   font-size:18px;
   color:var(--muted);
-}
-
-/* =======================
-   SECTIONS
-======================= */
-section{
-  padding:var(--gap) 0;
-}
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:0 32px;
 }
 .label{
   font-size:12px;
@@ -112,29 +81,17 @@ section{
   color:var(--muted);
   margin-bottom:28px;
 }
-
-/* =======================
-   EDITORIAL PANEL
-======================= */
 .panel{
   background:var(--panel);
   border-radius:var(--radius);
   padding:80px;
   box-shadow:var(--shadow);
 }
-
-/* =======================
-   SPLIT GRID
-======================= */
 .split{
   display:grid;
   grid-template-columns:1.2fr .8fr;
   gap:80px;
 }
-
-/* =======================
-   DARK CINEMATIC
-======================= */
 .dark{
   background:var(--dark);
   color:#e5e5e5;
@@ -143,49 +100,22 @@ section{
   background:#1b1b1b;
   box-shadow:none;
 }
-
-/* =======================
-   LIST RHYTHM
-======================= */
-.rhythm{
+.list{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:48px;
+  gap:24px 60px;
 }
-.rhythm div{
-  padding-bottom:28px;
-  border-bottom:1px solid rgba(255,255,255,.15);
-}
-
-/* =======================
-   FOOTER
-======================= */
+.reveal{opacity:0;transform:translateY(20px);transition:.8s ease}
+.reveal.show{opacity:1;transform:none}
 footer{
   padding:80px 32px 40px;
   text-align:center;
   font-size:13px;
   color:var(--muted);
 }
-
-/* =======================
-   MOTION
-======================= */
-.reveal{
-  opacity:0;
-  transform:translateY(20px);
-  transition:all .8s ease;
-}
-.reveal.show{
-  opacity:1;
-  transform:none;
-}
-
-/* =======================
-   MOBILE
-======================= */
 @media(max-width:900px){
   .hero h1{font-size:40px}
-  .split{grid-template-columns:1fr}
+  .split,.list{grid-template-columns:1fr}
   .panel{padding:48px}
 }
 </style>
@@ -197,8 +127,8 @@ footer{
   <nav>
     <div class="brand">Queenie Clarke</div>
     <div class="menu">
-      <a href="#about">About</a>
-      <a href="#focus">Focus</a>
+      <a href="#profile">Profile</a>
+      <a href="#family">Family</a>
       <a href="#background">Background</a>
       <a href="#philosophy">Philosophy</a>
     </div>
@@ -207,58 +137,100 @@ footer{
 
 <!-- HERO -->
 <section class="hero reveal">
-  <div class="hero-inner">
-    <h1>Independent Business & Investment Practice</h1>
+  <div class="container">
+    <h1>Queenie Clarke</h1>
     <p>
-      A long-form personal record spanning international business,
-      medical technology, capital systems, and disciplined life design.
+      A long-form personal record spanning family, place, education,
+      entrepreneurship, and disciplined investment thinking.
     </p>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="reveal">
+<!-- PROFILE -->
+<section id="profile" class="reveal">
   <div class="container">
     <div class="panel">
-      <span class="label">Profile</span>
-      <p>
-        Born in Singapore and educated globally, my work focuses on
-        building durable systems across entrepreneurship, healthcare,
-        and long-term capital deployment.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- DARK FOCUS -->
-<section id="focus" class="dark reveal">
-  <div class="container">
-    <div class="panel">
-      <span class="label">Professional Focus</span>
-      <div class="rhythm">
-        <div>International Trade & Operations</div>
-        <div>Medical Device Distribution</div>
-        <div>Quantitative Investment Strategy</div>
-        <div>Cross-border Capital Structuring</div>
+      <span class="label">Personal Information</span>
+      <div class="list">
+        <div>Third-party name: Yvette Clark</div>
+        <div>Date of birth: October 12, 1987</div>
+        <div>Blood type: A</div>
+        <div>Zodiac sign: Libra</div>
+        <div>Chinese zodiac: Rabbit</div>
+        <div>Height: 166 cm</div>
+        <div>Weight: 61 kg</div>
+        <div>Citizenship: United States</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BACKGROUND -->
-<section id="background" class="reveal">
+<!-- FAMILY -->
+<section id="family" class="dark reveal">
+  <div class="container">
+    <div class="panel">
+      <span class="label">Family</span>
+      <p>
+        Raised in a close-knit family shaped by resilience, professionalism,
+        and long-term thinking.
+      </p>
+      <ul>
+        <li><strong>Mother:</strong> Jocelyn Lee — entrepreneur, salon owner</li>
+        <li><strong>Stepfather:</strong> Kyrie Robert Clark — former GE HealthCare executive</li>
+        <li><strong>Aunt:</strong> Jess Lee — Sequoia Capital partner</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CAREER -->
+<section class="reveal">
   <div class="container split">
     <div>
-      <span class="label">Background</span>
+      <span class="label">Education</span>
       <p>
-        My life has moved across Singapore, Los Angeles, and New York,
-        shaped by family, education, and early exposure to business.
+        Nanyang Girls’ High School.  
+        National University of Singapore — Bachelor’s in Marketing and MBA.
+      </p>
+      <span class="label">Career Timeline</span>
+      <p>
+        2011–2014: Internship<br>
+        2014–2017: Los Angeles — family business<br>
+        2017–present: New York — independent entrepreneurship
       </p>
     </div>
     <div class="panel">
       <p>
-        Each city contributed a layer — discipline, adaptability,
-        and global perspective — forming the foundation of my work.
+        Exposure to both family-run businesses and global corporations
+        shaped a pragmatic, disciplined approach to business and capital.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN -->
+<section id="background" class="dark reveal">
+  <div class="container">
+    <div class="panel">
+      <span class="label">Origin</span>
+      <p>
+        Sembawang Park Residences, Singapore.  
+        A childhood shaped by parks, history, family walks, and the
+        quiet discipline of a stable society.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LIFE -->
+<section class="reveal">
+  <div class="container">
+    <div class="panel">
+      <span class="label">Life Across Cities</span>
+      <p>
+        Singapore built foundation.  
+        Los Angeles taught adaptation.  
+        New York sharpened ambition and execution.
       </p>
     </div>
   </div>
@@ -270,8 +242,12 @@ footer{
     <div class="panel">
       <span class="label">Philosophy</span>
       <p>
-        Independence, clarity, patience, and long-term thinking.
-        Progress is measured in durability, not speed.
+        Independence. Lifelong learning. Gratitude.  
+        Progress measured in durability, not speed.
+      </p>
+      <p>
+        Investment thinking emphasizes diversification, AI-driven systems,
+        and healthcare infrastructure.
       </p>
     </div>
   </div>
@@ -282,7 +258,6 @@ footer{
 </footer>
 
 <script>
-/* reveal on scroll – identical motion philosophy */
 const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
 },{threshold:.15});
