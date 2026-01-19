@@ -820,6 +820,86 @@ footer{
     font-size: 32px;
   }
 }
+/* ===== Recognition ===== */
+
+.recognition-section {
+  background: #f7f8fa;
+  padding: 160px 7%;
+}
+
+.recognition-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recognition-title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 100px;
+  color: #1a1a1a;
+}
+
+/* Row */
+.recognition-row {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 120px;
+  align-items: center;
+  margin-bottom: 140px;
+}
+
+/* Text */
+.recognition-text h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #111;
+}
+
+.recognition-text p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #5f6673;
+  max-width: 520px;
+}
+
+/* Image placeholder */
+.recognition-image {
+  width: 100%;
+  height: 340px;
+  border-radius: 22px;
+  background: #e5e7eb;
+}
+
+/* Placeholder style (optional visual cue) */
+.recognition-image.placeholder {
+  background: linear-gradient(
+    135deg,
+    #e5e7eb 0%,
+    #f1f3f5 100%
+  );
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .recognition-row {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 100px;
+  }
+
+  .recognition-title {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+
+  .recognition-image {
+    height: 260px;
+  }
+}
 
 </style>
 </head>
@@ -1051,15 +1131,54 @@ footer{
 
 
 <!-- RECOGNITION -->
-<section id="recognition" class="section reveal">
-  <div class="section-inner">
-    <h2 class="section-title">Recognition</h2>
+<!-- RECOGNITION -->
+<section class="recognition-section reveal">
+  <div class="recognition-container">
 
-    <div class="content-block">
-      <!-- Awards, mentions, acknowledgments -->
+    <h2 class="recognition-title">Recognition</h2>
+
+    <!-- Item 1 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>Strategic Healthcare Leadership Engagements</h3>
+        <p>
+          Recognized through participation in closed-door healthcare leadership
+          forums and executive discussions focused on precision medicine,
+          healthcare system design, and cross-border clinical integration.
+        </p>
+      </div>
+      <div class="recognition-image placeholder"></div>
     </div>
+
+    <!-- Item 2 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>International Collaboration & Advisory Dialogues</h3>
+        <p>
+          Recognized through involvement in international advisory dialogues
+          addressing cross-border market coordination, organizational structure,
+          and strategic collaboration across healthcare and business ecosystems.
+        </p>
+      </div>
+      <div class="recognition-image placeholder"></div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>Philanthropy & Social Impact Initiatives</h3>
+        <p>
+          Recognized through engagement in healthcare philanthropy initiatives
+          supporting health education, system capacity building, and long-term
+          community impact across international contexts.
+        </p>
+      </div>
+      <div class="recognition-image placeholder"></div>
+    </div>
+
   </div>
 </section>
+
 
 
 <!-- CONTACT -->
