@@ -1,265 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Queenie Clarke</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Typography -->
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Fonts: identical class of typography -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg: #f7f6f3;
-  --text: #1f1f1f;
-  --muted: #7a7a7a;
-  --accent: #6b7280;
+/* =======================
+   DESIGN TOKENS
+======================= */
+:root{
+  --bg:#f7f6f3;
+  --panel:#ffffff;
+  --dark:#111111;
+  --text:#1c1c1c;
+  --muted:#6f6f6f;
+  --radius:22px;
+  --gap:100px;
+  --shadow:0 30px 80px rgba(0,0,0,.08);
 }
 
-/* Reset */
-* {
-  box-sizing: border-box;
+/* =======================
+   RESET
+======================= */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
 }
 
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.8;
+/* =======================
+   NAV
+======================= */
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  background:rgba(247,246,243,.85);
+  backdrop-filter:blur(10px);
+}
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:22px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.brand{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.menu{
+  display:flex;
+  gap:36px;
+}
+.menu a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:14px;
 }
 
-/* Header */
-.site-header {
-  padding: 2rem 0;
+/* =======================
+   HERO
+======================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:140px;
+}
+.hero-inner{
+  max-width:900px;
+  margin:auto;
+  padding:0 32px;
+}
+.hero h1{
+  font-family:Playfair Display,serif;
+  font-size:56px;
+  font-weight:500;
+  margin:0 0 24px;
+}
+.hero p{
+  max-width:640px;
+  font-size:18px;
+  color:var(--muted);
 }
 
-nav {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* =======================
+   SECTIONS
+======================= */
+section{
+  padding:var(--gap) 0;
+}
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 32px;
+}
+.label{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:28px;
 }
 
-.brand {
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
+/* =======================
+   EDITORIAL PANEL
+======================= */
+.panel{
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:80px;
+  box-shadow:var(--shadow);
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
+/* =======================
+   SPLIT GRID
+======================= */
+.split{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:80px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  font-size: 0.9rem;
-  color: var(--muted);
+/* =======================
+   DARK CINEMATIC
+======================= */
+.dark{
+  background:var(--dark);
+  color:#e5e5e5;
+}
+.dark .panel{
+  background:#1b1b1b;
+  box-shadow:none;
 }
 
-.nav-links a:hover {
-  color: var(--accent);
+/* =======================
+   LIST RHYTHM
+======================= */
+.rhythm{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:48px;
+}
+.rhythm div{
+  padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.15);
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
+/* =======================
+   FOOTER
+======================= */
+footer{
+  padding:80px 32px 40px;
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
 }
 
-/* Layout */
-main {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* =======================
+   MOTION
+======================= */
+.reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .8s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform:none;
 }
 
-/* Intro */
-.intro {
-  margin: 4.5rem 0 6.5rem;
-}
-
-.intro h1 {
-  font-family: "Libre Baskerville", serif;
-  font-size: 2.6rem;
-  margin-bottom: 1rem;
-}
-
-.intro-line {
-  max-width: 560px;
-  color: var(--muted);
-}
-
-/* Sections */
-.content {
-  margin-bottom: 5.5rem;
-}
-
-.content.subtle {
-  background: rgba(0,0,0,0.025);
-  padding: 3rem 2.5rem;
-}
-
-/* Labels */
-.section-label {
-  display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.8rem;
-}
-
-/* Lists */
-.fact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.fact-list li {
-  margin-bottom: 0.8rem;
-}
-
-/* Meta */
-.meta {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-/* Footer */
-footer {
-  max-width: 760px;
-  margin: 4rem auto 2rem;
-  padding: 0 1rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 1.2rem;
-    position: absolute;
-    top: 70px;
-    right: 1rem;
-    background: var(--bg);
-    padding: 1.5rem;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+/* =======================
+   MOBILE
+======================= */
+@media(max-width:900px){
+  .hero h1{font-size:40px}
+  .split{grid-template-columns:1fr}
+  .panel{padding:48px}
 }
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
+<header>
   <nav>
-    <span class="brand">Queenie Clarke</span>
-    <div class="nav-links">
-      <a href="#profile">Profile</a>
+    <div class="brand">Queenie Clarke</div>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
       <a href="#background">Background</a>
-      <a href="#career">Career</a>
       <a href="#philosophy">Philosophy</a>
     </div>
-    <button class="menu-toggle">☰</button>
   </nav>
 </header>
 
-<main>
-  <section class="intro">
-    <h1>Queenie Clarke</h1>
-    <p class="intro-line">
-      An independent professional working across business, investment, and long-term systems.
-    </p>
-  </section>
-
-  <section id="profile" class="content">
-    <span class="section-label">Profile</span>
+<!-- HERO -->
+<section class="hero reveal">
+  <div class="hero-inner">
+    <h1>Independent Business & Investment Practice</h1>
     <p>
-      Born in Singapore and educated internationally, I operate at the intersection
-      of entrepreneurship, strategy, and disciplined capital thinking.
+      A long-form personal record spanning international business,
+      medical technology, capital systems, and disciplined life design.
     </p>
-  </section>
+  </div>
+</section>
 
-  <section id="background" class="content subtle">
-    <span class="section-label">Background</span>
-    <ul class="fact-list">
-      <li><strong>Origin:</strong> Singapore</li>
-      <li><strong>Education:</strong> National University of Singapore</li>
-      <li><strong>Base:</strong> New York City</li>
-    </ul>
-  </section>
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="container">
+    <div class="panel">
+      <span class="label">Profile</span>
+      <p>
+        Born in Singapore and educated globally, my work focuses on
+        building durable systems across entrepreneurship, healthcare,
+        and long-term capital deployment.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <section id="career" class="content">
-    <span class="section-label">Career</span>
-    <p>
-      Experience spans international trade, medical device distribution,
-      and quantitative investment strategy.
-    </p>
-    <p class="meta">
-      Focused on long-term value creation and operational clarity.
-    </p>
-  </section>
+<!-- DARK FOCUS -->
+<section id="focus" class="dark reveal">
+  <div class="container">
+    <div class="panel">
+      <span class="label">Professional Focus</span>
+      <div class="rhythm">
+        <div>International Trade & Operations</div>
+        <div>Medical Device Distribution</div>
+        <div>Quantitative Investment Strategy</div>
+        <div>Cross-border Capital Structuring</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section id="philosophy" class="content subtle">
-    <span class="section-label">Philosophy</span>
-    <p>
-      I believe in independence, disciplined thinking, and continuous learning.
-      The goal is not speed, but durability.
-    </p>
-  </section>
-</main>
+<!-- BACKGROUND -->
+<section id="background" class="reveal">
+  <div class="container split">
+    <div>
+      <span class="label">Background</span>
+      <p>
+        My life has moved across Singapore, Los Angeles, and New York,
+        shaped by family, education, and early exposure to business.
+      </p>
+    </div>
+    <div class="panel">
+      <p>
+        Each city contributed a layer — discipline, adaptability,
+        and global perspective — forming the foundation of my work.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy" class="dark reveal">
+  <div class="container">
+    <div class="panel">
+      <span class="label">Philosophy</span>
+      <p>
+        Independence, clarity, patience, and long-term thinking.
+        Progress is measured in durability, not speed.
+      </p>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <p>© 2026 Queenie Clarke</p>
+  © 2026 Queenie Clarke
 </footer>
 
 <script>
-/* Mobile menu toggle */
-const toggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-
-/* Soft reveal on scroll */
-const sections = document.querySelectorAll(".intro, .content");
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-
-sections.forEach(section => {
-  section.style.opacity = 0;
-  section.style.transform = "translateY(12px)";
-  section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  observer.observe(section);
-});
+/* reveal on scroll – identical motion philosophy */
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 </script>
 
 </body>
