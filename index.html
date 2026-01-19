@@ -1150,6 +1150,119 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+/* ===== CONTACT SECTION ===== */
+#contact {
+  background: #000;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 100px 0;
+}
+
+.contact-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* LEFT SIDE */
+.contact-info h2 {
+  font-size: 2.4rem;
+  color: #7aa2ff;
+  margin-bottom: 40px;
+}
+
+.contact-block {
+  margin-bottom: 28px;
+}
+
+.contact-block .label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #7aa2ff;
+  margin-bottom: 6px;
+}
+
+.contact-block p {
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* MAP */
+.contact-map {
+  margin-top: 40px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+  filter: grayscale(100%) contrast(1.1);
+}
+
+/* RIGHT SIDE FORM */
+.contact-form {
+  background: #111;
+  border-radius: 18px;
+  padding: 48px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #7aa2ff;
+}
+
+/* BUTTON */
+.contact-form button {
+  width: 100%;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
 
 </style>
 </head>
@@ -1477,35 +1590,35 @@ footer{
 
 
 <!-- CONTACT -->
-<section id="contact" class="contact-section">
+<section id="contact">
   <div class="contact-wrapper">
 
     <!-- LEFT: CONTACT INFO -->
     <div class="contact-info">
       <h2>Contact</h2>
 
-      <div class="contact-item">
-        <span class="label">INQUIRIES</span>
-        <p>
-          For professional inquiries, advisory discussions, or collaborative
-          opportunities, please use the contact form.
-        </p>
+      <div class="contact-block">
+        <span class="label">Email</span>
+        <p>contact@queenieclarke.com</p>
       </div>
 
-      <div class="contact-item">
-        <span class="label">ENGAGEMENTS</span>
-        <p>
-          Speaking, strategic advisory, and institutional collaborations are
-          considered on a selective basis.
-        </p>
+      <div class="contact-block">
+        <span class="label">Professional Inquiries</span>
+        <p>Strategic advisory, collaboration, and institutional dialogue</p>
       </div>
 
-      <div class="contact-item">
-        <span class="label">GLOBAL AVAILABILITY</span>
-        <p>
-          International engagements supported across select regions and
-          institutional contexts.
-        </p>
+      <div class="contact-block">
+        <span class="label">Availability</span>
+        <p>International engagements & scheduled consultations</p>
+      </div>
+
+      <!-- MAP -->
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=Irvine,CA&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
 
@@ -1513,20 +1626,20 @@ footer{
     <div class="contact-form">
       <form>
         <label>Name</label>
-        <input type="text" placeholder="Your Name" required />
+        <input type="text" placeholder="Your Name" />
 
         <label>Email</label>
-        <input type="email" placeholder="Your Email" required />
+        <input type="email" placeholder="Your Email" />
 
         <label>Message</label>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <textarea rows="5" placeholder="Your Message"></textarea>
 
         <button type="submit">Send Message</button>
       </form>
     </div>
 
-  </div>
-</section>
+  </
+
 
 
 
