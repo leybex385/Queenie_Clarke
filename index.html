@@ -3,130 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <title>Queenie Clarke</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts closely matching huangshiyan.com -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<!-- Typography -->
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ===== BASE ===== */
 :root {
-  --text: #111;
-  --muted: #666;
-  --line: #e0e0e0;
-  --bg: #ffffff;
+  --bg: #f7f6f3;
+  --text: #1f1f1f;
+  --muted: #7a7a7a;
+  --accent: #6b7280;
 }
 
+/* Reset */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.8;
 }
 
-/* ===== HEADER (matches huangshiyan.com) ===== */
-header {
-  border-bottom: 1px solid var(--line);
+/* Header */
+.site-header {
+  padding: 2rem 0;
 }
 
 nav {
-  max-width: 920px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 14px 20px;
+  padding: 0 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-.site-name {
-  font-weight: 500;
+.brand {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-links a {
-  margin-left: 20px;
-  font-size: 14px;
-  color: var(--text);
   text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 .nav-links a:hover {
-  text-decoration: underline;
+  color: var(--accent);
 }
 
-/* ===== MAIN LAYOUT ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Layout */
 main {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 48px 20px 90px;
+  padding: 0 1rem;
 }
 
-section {
-  margin-bottom: 70px;
+/* Intro */
+.intro {
+  margin: 4.5rem 0 6.5rem;
 }
 
-/* ===== TYPOGRAPHY ===== */
-h1 {
+.intro h1 {
   font-family: "Libre Baskerville", serif;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 6px;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
 }
 
-.subtitle {
+.intro-line {
+  max-width: 560px;
   color: var(--muted);
-  margin-bottom: 32px;
 }
 
-h2 {
-  font-family: "Libre Baskerville", serif;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 8px;
+/* Sections */
+.content {
+  margin-bottom: 5.5rem;
 }
 
-.rule {
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 22px;
+.content.subtle {
+  background: rgba(0,0,0,0.025);
+  padding: 3rem 2.5rem;
 }
 
-h3 {
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 26px;
-  margin-bottom: 6px;
+/* Labels */
+.section-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.8rem;
 }
 
-p {
-  margin: 6px 0 10px;
+/* Lists */
+.fact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-ul {
-  margin: 6px 0 10px 18px;
+.fact-list li {
+  margin-bottom: 0.8rem;
 }
 
-li {
-  margin-bottom: 6px;
+/* Meta */
+.meta {
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
-/* ===== FOOTER ===== */
+/* Footer */
 footer {
-  border-top: 1px solid var(--line);
-  padding: 26px;
-  text-align: center;
-  font-size: 13px;
+  max-width: 760px;
+  margin: 4rem auto 2rem;
+  padding: 0 1rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
-/* ===== MOBILE (same behavior as huangshiyan.com) ===== */
-@media (max-width: 640px) {
+/* Mobile */
+@media (max-width: 768px) {
   .nav-links {
     display: none;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: absolute;
+    top: 70px;
+    right: 1rem;
+    background: var(--bg);
+    padding: 1.5rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
 </style>
@@ -134,121 +168,99 @@ footer {
 
 <body>
 
-<header>
+<header class="site-header">
   <nav>
-    <div class="site-name">Queenie Clarke</div>
+    <span class="brand">Queenie Clarke</span>
     <div class="nav-links">
       <a href="#profile">Profile</a>
-      <a href="#family">Family</a>
-      <a href="#education">Education</a>
-      <a href="#career">Career</a>
       <a href="#background">Background</a>
+      <a href="#career">Career</a>
       <a href="#philosophy">Philosophy</a>
     </div>
+    <button class="menu-toggle">☰</button>
   </nav>
 </header>
 
 <main>
+  <section class="intro">
+    <h1>Queenie Clarke</h1>
+    <p class="intro-line">
+      An independent professional working across business, investment, and long-term systems.
+    </p>
+  </section>
 
-<section id="home">
-  <h1>Queenie Clarke</h1>
-  <div class="subtitle">
-    Entrepreneur · Investor · Medical Device & Global Trade<br>
-    Singapore · Los Angeles · New York
-  </div>
-</section>
+  <section id="profile" class="content">
+    <span class="section-label">Profile</span>
+    <p>
+      Born in Singapore and educated internationally, I operate at the intersection
+      of entrepreneurship, strategy, and disciplined capital thinking.
+    </p>
+  </section>
 
-<section id="profile">
-  <h2>Personal Information</h2>
-  <div class="rule"></div>
+  <section id="background" class="content subtle">
+    <span class="section-label">Background</span>
+    <ul class="fact-list">
+      <li><strong>Origin:</strong> Singapore</li>
+      <li><strong>Education:</strong> National University of Singapore</li>
+      <li><strong>Base:</strong> New York City</li>
+    </ul>
+  </section>
 
-  <p><strong>Third-party name:</strong> Yvette Clark</p>
-  <p><strong>Date of birth:</strong> October 12, 1987</p>
-  <p><strong>Blood type:</strong> A</p>
-  <p><strong>Zodiac:</strong> Libra · Rabbit</p>
-  <p><strong>Height / Weight:</strong> 166 cm · 61 kg</p>
-  <p><strong>Citizenship:</strong> United States (Naturalized, 2020)</p>
-</section>
+  <section id="career" class="content">
+    <span class="section-label">Career</span>
+    <p>
+      Experience spans international trade, medical device distribution,
+      and quantitative investment strategy.
+    </p>
+    <p class="meta">
+      Focused on long-term value creation and operational clarity.
+    </p>
+  </section>
 
-<section id="family">
-  <h2>Family</h2>
-  <div class="rule"></div>
-
-  <h3>Mother</h3>
-  <p>Jocelyn Lee — Kind, virtuous, gentle, approachable</p>
-
-  <h3>Stepfather</h3>
-  <p>Kyrie Robert Clark — Reliable, mature, former GE HealthCare executive</p>
-
-  <h3>Aunt</h3>
-  <p>Jess Lee — Venture capitalist, Sequoia Capital partner</p>
-
-  <h3>Grandparents</h3>
-  <p>Maternal grandparents reside in Hong Kong. Paternal grandparents live in Singapore.</p>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="rule"></div>
-
-  <p><strong>Nanyang Girls’ High School</strong> (2002–2005)</p>
-
-  <p><strong>National University of Singapore</strong></p>
-  <ul>
-    <li>Bachelor’s Degree in Marketing (2005–2009)</li>
-    <li>MBA, NUS Business School (2009–2011)</li>
-  </ul>
-</section>
-
-<section id="career">
-  <h2>Career</h2>
-  <div class="rule"></div>
-
-  <p><strong>2011–2014</strong> — Internship</p>
-  <p><strong>2014–2017</strong> — Beauty salon management, Los Angeles</p>
-  <p><strong>2017–Present</strong> — Independent entrepreneurship, New York</p>
-</section>
-
-<section id="background">
-  <h2>Background</h2>
-  <div class="rule"></div>
-
-  <p>
-    Originally named Yvette Ng, Queenie Clarke experienced early loss when her biological father
-    passed away. After her mother remarried, her surname was changed and “Jade” was added to her name.
-  </p>
-
-  <p>
-    Her upbringing across Singapore, Los Angeles, and New York shaped a global, disciplined outlook.
-  </p>
-</section>
-
-<section id="philosophy">
-  <h2>Business & Investment Philosophy</h2>
-  <div class="rule"></div>
-
-  <ul>
-    <li>Diversified asset allocation</li>
-    <li>AI-driven quantitative trading</li>
-    <li>Short-term crypto contracts</li>
-    <li>Medical device distribution across U.S. hospitals</li>
-  </ul>
-
-  <h3>Core Values</h3>
-  <ul>
-    <li>Independence</li>
-    <li>Lifelong learning</li>
-    <li>Gratitude</li>
-    <li>Shared values</li>
-    <li>Continuous self-improvement</li>
-  </ul>
-</section>
-
+  <section id="philosophy" class="content subtle">
+    <span class="section-label">Philosophy</span>
+    <p>
+      I believe in independence, disciplined thinking, and continuous learning.
+      The goal is not speed, but durability.
+    </p>
+  </section>
 </main>
 
 <footer>
-  © Queenie Clarke
+  <p>© 2026 Queenie Clarke</p>
 </footer>
+
+<script>
+/* Mobile menu toggle */
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+/* Soft reveal on scroll */
+const sections = document.querySelectorAll(".intro, .content");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+sections.forEach(section => {
+  section.style.opacity = 0;
+  section.style.transform = "translateY(12px)";
+  section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+  observer.observe(section);
+});
+</script>
 
 </body>
 </html>
