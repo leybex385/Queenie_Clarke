@@ -1,272 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Queenie Clarke</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Queenie Clarke</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --muted: #555;
-      --line: #e6e6e6;
-      --accent: #2a2a2a;
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #111;
+    --muted: #666;
+    --line: #dcdcdc;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .site-name {
+    font-weight: 500;
+  }
+
+  nav a {
+    margin-left: 18px;
+    font-size: 14px;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* ===== MAIN ===== */
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 20px 90px;
+  }
+
+  section {
+    margin-bottom: 70px;
+  }
+
+  h1 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 34px;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    margin-bottom: 35px;
+  }
+
+  h2 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .section-rule {
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 22px;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 26px;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+
+  p {
+    margin: 6px 0 10px;
+  }
+
+  ul {
+    margin: 6px 0 10px 18px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 25px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    nav .links {
+      display: none;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Inter", sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    /* ===== NAV ===== */
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid var(--line);
-      z-index: 100;
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav .name {
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-      font-size: 14px;
-    }
-
-    nav ul li a:hover {
-      opacity: 0.6;
-    }
-
-    /* ===== LAYOUT ===== */
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    section {
-      margin-bottom: 90px;
-    }
-
-    h1 {
-      font-family: "Source Serif 4", serif;
-      font-size: 40px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-family: "Source Serif 4", serif;
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-
-    h3 {
-      font-size: 15px;
-      font-weight: 500;
-      margin-top: 30px;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
-
-    p {
-      margin-bottom: 14px;
-      color: var(--text);
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .divider {
-      border-top: 1px solid var(--line);
-      margin: 40px 0;
-    }
-
-    ul.clean {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul.clean li {
-      margin-bottom: 8px;
-    }
-
-    /* ===== HERO ===== */
-    #home {
-      margin-bottom: 120px;
-    }
-
-    #home p {
-      font-size: 17px;
-      color: var(--muted);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 30px 24px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    @media (max-width: 640px) {
-      nav ul {
-        display: none;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
 
 <header>
   <nav>
-    <div class="name">Queenie Clarke</div>
-    <ul>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#family">Family</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#career">Career</a></li>
-      <li><a href="#background">Background</a></li>
-      <li><a href="#philosophy">Philosophy</a></li>
-    </ul>
+    <div class="site-name">Queenie Clarke</div>
+    <div class="links">
+      <a href="#profile">Profile</a>
+      <a href="#education">Education</a>
+      <a href="#career">Career</a>
+      <a href="#background">Background</a>
+      <a href="#philosophy">Philosophy</a>
+    </div>
   </nav>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <section id="home">
-    <h1>Queenie Clarke</h1>
-    <p>Entrepreneur · Investor · Medical Device & Global Trade</p>
-    <p class="muted">Singapore · Los Angeles · New York</p>
-  </section>
+<section id="home">
+  <h1>Queenie Clarke</h1>
+  <div class="subtitle">
+    Entrepreneur · Investor · Medical Device & Global Trade<br>
+    Singapore · Los Angeles · New York
+  </div>
+</section>
 
-  <!-- PROFILE -->
-  <section id="profile">
-    <h2>Personal Profile</h2>
+<section id="profile">
+  <h2>Personal Information</h2>
+  <div class="section-rule"></div>
 
-    <p><strong>Third-party name:</strong> Yvette Clark</p>
-    <p><strong>Date of birth:</strong> October 12, 1987</p>
-    <p><strong>Blood type:</strong> A</p>
-    <p><strong>Zodiac sign:</strong> Libra · Rabbit</p>
-    <p><strong>Height / Weight:</strong> 166 cm · 61 kg</p>
+  <p><strong>Third-party name:</strong> Yvette Clark</p>
+  <p><strong>Date of birth:</strong> October 12, 1987</p>
+  <p><strong>Blood type:</strong> A</p>
+  <p><strong>Zodiac:</strong> Libra · Rabbit</p>
+  <p><strong>Height / Weight:</strong> 166 cm · 61 kg</p>
+  <p><strong>Citizenship:</strong> United States (Naturalized, 2020)</p>
+</section>
 
-    <div class="divider"></div>
+<section id="education">
+  <h2>Education</h2>
+  <div class="section-rule"></div>
 
-    <p><strong>Hometown:</strong> Sembawang Park Residences, Singapore</p>
-    <p><strong>Citizenship:</strong> United States (Naturalized, 2020)</p>
-  </section>
+  <p><strong>Nanyang Girls’ High School</strong> (2002–2005)</p>
 
-  <!-- FAMILY -->
-  <section id="family">
-    <h2>Family</h2>
+  <p><strong>National University of Singapore</strong></p>
+  <ul>
+    <li>Bachelor’s Degree in Marketing (2005–2009)</li>
+    <li>MBA, NUS Business School (2009–2011)</li>
+  </ul>
+</section>
 
-    <h3>Mother</h3>
-    <p>Jocelyn Lee — Kind, virtuous, gentle, approachable</p>
+<section id="career">
+  <h2>Career</h2>
+  <div class="section-rule"></div>
 
-    <h3>Stepfather</h3>
-    <p>Kyrie Robert Clark — Reliable, mature, former GE HealthCare executive</p>
+  <p><strong>2011–2014</strong> — Internship</p>
+  <p><strong>2014–2017</strong> — Managed beauty salons in Los Angeles</p>
+  <p><strong>2017–Present</strong> — Independent entrepreneurship, New York</p>
+</section>
 
-    <h3>Aunt</h3>
-    <p>Jess Lee — Venture capitalist, Sequoia Capital partner</p>
+<section id="background">
+  <h2>Background</h2>
+  <div class="section-rule"></div>
 
-    <h3>Grandparents</h3>
-    <p>Maternal grandparents reside in Hong Kong; paternal grandparents live peacefully in Singapore.</p>
-  </section>
+  <p>
+    Originally named Yvette Ng, Queenie Clarke experienced early loss when her biological
+    father passed away in a car accident. After her mother remarried, her surname was changed,
+    and “Jade” was added to her name for prosperity and longevity.
+  </p>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
+  <p>
+    Growing up between Singapore, Los Angeles, and New York shaped a global perspective rooted
+    in resilience, discipline, and opportunity.
+  </p>
+</section>
 
-    <p><strong>Nanyang Girls’ High School</strong> (2002–2005)</p>
+<section id="philosophy">
+  <h2>Business & Investment Philosophy</h2>
+  <div class="section-rule"></div>
 
-    <p><strong>National University of Singapore</strong></p>
-    <ul class="clean">
-      <li>Bachelor’s Degree in Marketing (2005–2009)</li>
-      <li>MBA, NUS Business School (2009–2011)</li>
-    </ul>
-  </section>
+  <ul>
+    <li>Diversified asset allocation</li>
+    <li>AI-driven quantitative trading</li>
+    <li>Short-term crypto contracts</li>
+    <li>Medical device distribution across U.S. hospitals</li>
+  </ul>
 
-  <!-- CAREER -->
-  <section id="career">
-    <h2>Career Timeline</h2>
-
-    <p><strong>2011–2014:</strong> Internship</p>
-    <p><strong>2014–2017:</strong> Managed beauty salons in Los Angeles</p>
-    <p><strong>2017–Present:</strong> Independent entrepreneurship in New York</p>
-  </section>
-
-  <!-- BACKGROUND -->
-  <section id="background">
-    <h2>Background & Origin</h2>
-
-    <p>I was originally named Yvette Ng. My biological father passed away when I was two. After my mother remarried, my surname was changed, and “Jade” was added to my middle name for prosperity and longevity.</p>
-
-    <p>My upbringing between Singapore, Los Angeles, and New York shaped a global perspective grounded in resilience, discipline, and opportunity.</p>
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section id="philosophy">
-    <h2>Business & Investment Philosophy</h2>
-
-    <ul class="clean">
-      <li>Diversified asset allocation</li>
-      <li>AI-driven quantitative trading</li>
-      <li>Short-term crypto contracts</li>
-      <li>Medical device distribution across U.S. hospitals</li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <h2>Core Values</h2>
-
-    <ul class="clean">
-      <li>Independence</li>
-      <li>Lifelong learning</li>
-      <li>Gratitude</li>
-      <li>Shared values in relationships</li>
-      <li>Continuous self-improvement</li>
-    </ul>
-  </section>
+  <h3>Core Values</h3>
+  <ul>
+    <li>Independence</li>
+    <li>Lifelong learning</li>
+    <li>Gratitude</li>
+    <li>Shared values in relationships</li>
+    <li>Continuous self-improvement</li>
+  </ul>
+</section>
 
 </main>
 
@@ -276,4 +230,3 @@
 
 </body>
 </html>
-
