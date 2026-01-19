@@ -715,6 +715,58 @@ footer{
     font-size: 16px;
   }
 }
+/* ===== Clinical Projects & Initiatives ===== */
+
+.clinical-section {
+  background: #9b9b9b;
+  padding: 120px 7%;
+}
+
+.clinical-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 90px;
+  align-items: center;
+}
+
+/* IMAGE */
+.clinical-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXT */
+.clinical-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.4rem;
+  line-height: 1.1;
+  font-weight: 500;
+  margin-bottom: 34px;
+  color: #111;
+}
+
+.clinical-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #2a2a2a;
+  margin-bottom: 24px;
+  max-width: 560px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .clinical-wrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .clinical-text h2 {
+    font-size: 2.6rem;
+  }
+}
 
 </style>
 </head>
@@ -871,18 +923,24 @@ footer{
 
 
 <!-- PHILOSOPHY -->
-<section class="clinical-initiatives">
-  <div class="ci-container">
-    <div class="ci-image">
-      <img src="clinical.jpg" alt="Clinical Projects & Initiatives">
+<section class="clinical-section">
+  <div class="clinical-wrapper">
+
+    <!-- LEFT: IMAGE -->
+    <div class="clinical-image">
+      <img src="images/clinical.jpg" alt="Clinical Projects & Initiatives">
     </div>
 
-    <div class="ci-content">
-      <h2>Clinical Projects &<br>Initiatives</h2>
+    <!-- RIGHT: CONTENT -->
+    <div class="clinical-text">
+      <h2>
+        Clinical Projects &<br>
+        Initiatives
+      </h2>
 
       <p>
-        Design and leadership of strategic initiatives supporting healthcare-adjacent and
-        commercial programs, integrating market insight, brand strategy, and
+        Design and leadership of strategic initiatives supporting healthcare-adjacent
+        and commercial programs, integrating market insight, brand strategy, and
         cross-functional execution into scalable operating models.
       </p>
 
@@ -892,6 +950,7 @@ footer{
         and sustainable growth.
       </p>
     </div>
+
   </div>
 </section>
 
