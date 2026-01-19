@@ -166,6 +166,42 @@ footer{
   line-height: 1.7;
   max-width: 720px;
 }
+.hero {
+  background-image: url("heroclass.jpg");
+  background-size: cover;          /* landscape crop */
+  background-position: center;     /* centered composition */
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blur layer without affecting text */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("heroclass.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(16px);
+  transform: scale(1.12);          /* prevents blur edges */
+  z-index: 0;
+}
+
+/* Optional dark overlay for readability */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* Ensure existing hero content stays on top */
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
 
 </style>
 </head>
