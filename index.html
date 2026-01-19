@@ -1203,6 +1203,30 @@ footer{
     padding: 80px 24px;
   }
 }
+/* ===== FORCE FULL-BLEED BLACK CONTACT ===== */
+
+body {
+  background: #0f1013;
+}
+
+#contact {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #0f1013;
+}
+
+/* Ensure nothing inside leaks light background */
+.contact-section,
+.contact-container {
+  background: #0f1013;
+}
+
+/* Keep map light */
+.map-wrapper,
+.map-wrapper iframe {
+  background: #ffffff;
+}
 
 </style>
 </head>
