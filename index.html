@@ -278,6 +278,18 @@ footer{
   position: relative;
   z-index: 2;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("image/heroclass.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(7px);          /* ← tuned blur */
+  transform: scale(1.08);     /* smaller scale for lighter blur */
+  z-index: 0;
+}
 
 </style>
 </head>
