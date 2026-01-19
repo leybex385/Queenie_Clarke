@@ -980,6 +980,36 @@ footer{
     height: 260px;
   }
 }
+.recognition-row {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin-bottom: 120px;
+}
+
+.recognition-text {
+  flex: 1;
+}
+
+.recognition-image {
+  flex: 1;
+  height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.recognition-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* 🔥 THIS fixes the stretching */
+  object-position: center;  /* keeps subject centered */
+  display: block;
+
+  /* image clarity */
+  image-rendering: auto;
+  transform: scale(1.01);   /* subtle sharpness boost */
+}
 
 </style>
 </head>
@@ -1211,32 +1241,25 @@ footer{
 
 
 <!-- RECOGNITION -->
-<section id="recognition">
+<section class="recognition-section reveal">
+  <div class="recognition-container">
 
-  <!-- Recognition: Strategic Healthcare Leadership Engagements -->
-  <div class="engagement-section">
-    <div class="engagement-content">
-      <h3>Strategic Healthcare Leadership Engagements</h3>
-      <p>
-        Recognized through participation in closed-door healthcare leadership
-        forums and executive discussions focused on precision medicine,
-        healthcare system design, and cross-border clinical integration.
-      </p>
+    <h2 class="recognition-title">Recognition</h2>
+
+    <!-- Item 1 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>Strategic Healthcare Leadership Engagements</h3>
+        <p>
+          Recognized through participation in closed-door healthcare leadership
+          forums and executive discussions focused on precision medicine,
+          healthcare system design, and cross-border clinical integration.
+        </p>
+      </div>
+      <div class="recognition-image">
+        <img src="recog1.jpg" alt="Strategic Healthcare Leadership Engagements">
+      </div>
     </div>
-
-    <div class="engagement-image">
-      <img src="recog1.jpg" alt="Strategic Healthcare Leadership Engagements">
-    </div>
-  </div>
-
-  <!-- Recognition: International Collaboration & Advisory Dialogues -->
-  <!-- (your next recognition block goes here) -->
-
-  <!-- Recognition: Philanthropy & Social Impact Initiatives -->
-  <!-- (your next recognition block goes here) -->
-
-</section>
-
 
     <!-- Item 2 -->
     <div class="recognition-row">
@@ -1248,7 +1271,9 @@ footer{
           and strategic collaboration across healthcare and business ecosystems.
         </p>
       </div>
-      <div class="recognition-image placeholder"></div>
+      <div class="recognition-image">
+        <img src="recog2.jpg" alt="International Collaboration & Advisory Dialogues">
+      </div>
     </div>
 
     <!-- Item 3 -->
@@ -1261,12 +1286,13 @@ footer{
           community impact across international contexts.
         </p>
       </div>
-      <div class="recognition-image placeholder"></div>
+      <div class="recognition-image">
+        <img src="recog3.jpg" alt="Philanthropy & Social Impact Initiatives">
+      </div>
     </div>
 
   </div>
 </section>
-
 
 
 
