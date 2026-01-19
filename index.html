@@ -767,6 +767,59 @@ footer{
     font-size: 2.6rem;
   }
 }
+/* ===== Leadership & Board Roles ===== */
+
+.leadership-section {
+  background: #e6e6e3; /* soft gray like reference */
+  padding: 140px 7%;
+}
+
+.leadership-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/* Image */
+.leadership-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text */
+.leadership-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  color: #1a1a1a;
+}
+
+.leadership-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #5f6673;
+  max-width: 560px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .leadership-wrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .leadership-content h2 {
+    font-size: 32px;
+  }
+}
 
 </style>
 </head>
@@ -968,15 +1021,33 @@ footer{
 
   
 <!-- LEADERSHIP & BOARD ROLES -->
-<section id="leadership" class="section reveal">
-  <div class="section-inner">
-    <h2 class="section-title">Leadership & Board Roles</h2>
+<!-- LEADERSHIP & BOARD ROLES -->
+<section class="leadership-section reveal">
+  <div class="leadership-wrapper">
 
-    <div class="content-block">
-      <!-- Keep content exactly as you want to add later -->
+    <!-- LEFT: IMAGE -->
+    <div class="leadership-image">
+      <img src="image/leader.jpg" alt="Leadership & Board Roles">
     </div>
+
+    <!-- RIGHT: CONTENT -->
+    <div class="leadership-content">
+      <h2>Leadership & Board Roles</h2>
+      <p>
+        Engage in advisory work supporting organizations operating across healthcare,
+        international business, and regulated markets, with a focus on strategic
+        positioning, cross-border execution, and long-term platform viability. My
+        involvement centers on providing perspective on market entry, operational
+        structure, and capital alignment, informed by hands-on experience across
+        multinational environments. This advisory work emphasizes clarity in
+        decision-making, risk awareness, and sustainable growth rather than
+        short-term optimization.
+      </p>
+    </div>
+
   </div>
 </section>
+
 
 
 <!-- PROFESSIONAL HIGHLIGHTS -->
