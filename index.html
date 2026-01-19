@@ -915,6 +915,36 @@ footer{
     height: 260px;
   }
 }
+.recognition-row {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin-bottom: 120px;
+}
+
+.recognition-text {
+  flex: 1;
+}
+
+.recognition-image {
+  flex: 1;
+  height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.recognition-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* 🔥 THIS fixes the stretching */
+  object-position: center;  /* keeps subject centered */
+  display: block;
+
+  /* image clarity */
+  image-rendering: auto;
+  transform: scale(1.01);   /* subtle sharpness boost */
+}
 
 </style>
 </head>
@@ -1141,56 +1171,59 @@ footer{
   </div>
 </section>
 
-  <!-- RECOGNITION -->
+ <!-- RECOGNITION -->
 <section class="recognition-section reveal">
   <div class="recognition-container">
 
     <h2 class="recognition-title">Recognition</h2>
 
-   <!-- Item 1 -->
-<div class="recognition-row">
-  <div class="recognition-text">
-    <h3>Strategic Healthcare Leadership Engagements</h3>
-    <p>
-      Recognized through participation in closed-door healthcare leadership
-      forums and executive discussions focused on precision medicine,
-      healthcare system design, and cross-border clinical integration.
-    </p>
-  </div>
-  <div class="recognition-image">
-    <img src="image/recog1.jpg" alt="Strategic Healthcare Leadership Engagements">
-  </div>
-</div>
+    <!-- Item 1 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>Strategic Healthcare Leadership Engagements</h3>
+        <p>
+          Recognized through participation in closed-door healthcare leadership
+          forums and executive discussions focused on precision medicine,
+          healthcare system design, and cross-border clinical integration.
+        </p>
+      </div>
+      <div class="recognition-image">
+        <img src="recog1.jpg" alt="Strategic Healthcare Leadership Engagements">
+      </div>
+    </div>
 
-<!-- Item 2 -->
-<div class="recognition-row">
-  <div class="recognition-text">
-    <h3>International Collaboration & Advisory Dialogues</h3>
-    <p>
-      Recognized through involvement in international advisory dialogues
-      addressing cross-border market coordination, organizational structure,
-      and strategic collaboration across healthcare and business ecosystems.
-    </p>
-  </div>
-  <div class="recognition-image">
-    <img src="image/recog2.jpg" alt="International Collaboration & Advisory Dialogues">
-  </div>
-</div>
+    <!-- Item 2 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>International Collaboration & Advisory Dialogues</h3>
+        <p>
+          Recognized through involvement in international advisory dialogues
+          addressing cross-border market coordination, organizational structure,
+          and strategic collaboration across healthcare and business ecosystems.
+        </p>
+      </div>
+      <div class="recognition-image">
+        <img src="recog2.jpg" alt="International Collaboration & Advisory Dialogues">
+      </div>
+    </div>
 
-<!-- Item 3 -->
-<div class="recognition-row">
-  <div class="recognition-text">
-    <h3>Philanthropy & Social Impact Initiatives</h3>
-    <p>
-      Recognized through engagement in healthcare philanthropy initiatives
-      supporting health education, system capacity building, and long-term
-      community impact across international contexts.
-    </p>
+    <!-- Item 3 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>Philanthropy & Social Impact Initiatives</h3>
+        <p>
+          Recognized through engagement in healthcare philanthropy initiatives
+          supporting health education, system capacity building, and long-term
+          community impact across international contexts.
+        </p>
+      </div>
+      <div class="recognition-image">
+        <img src="recog3.jpg" alt="Philanthropy & Social Impact Initiatives">
+      </div>
+    </div>
+
   </div>
-  <div class="recognition-image">
-    <img src="image/recog3.jpg" alt="Philanthropy & Social Impact Initiatives">
-  </div>
-</div>
+</section>
 
 
   
