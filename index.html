@@ -1477,6 +1477,28 @@ footer {
   line-height: 1.8;
   color: #444;
 }
+#professional-focus {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: url("image/professional.jpg") center / cover no-repeat !important;
+  position: relative;
+}
+
+#professional-focus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+
+#professional-focus > * {
+  position: relative;
+  z-index: 1;
+}
 
 </style>
 </head>
