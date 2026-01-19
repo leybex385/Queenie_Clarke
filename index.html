@@ -1575,6 +1575,43 @@ section {
   opacity: 1 !important;
   transform: none !important;
 }
+/* ===== PROFESSIONAL FOCUS (LAYOUT + TYPOGRAPHY ONLY) ===== */
+
+.focus-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("image/professional.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 1.5rem;
+}
+
+.focus-card {
+  background: #faf6ee;
+  max-width: 720px;
+  padding: 3.5rem 4rem;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.focus-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin-bottom: 1.5rem;
+}
+
+.focus-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #4a4a4a;
+}
 
 </style>
 </head>
@@ -1698,9 +1735,9 @@ section {
     </div>
 
     <!-- Professional Experience -->
-<section id="professional-focus" class="section reveal">
-  <div class="container">
-    <h2 class="section-title">Professional Focus</h2>
+<section id="professional-focus" class="focus-section">
+  <div class="focus-card">
+    <h2>Professional Focus</h2>
     <p>
       My work centers on building precision oncology platforms, scaling genomic
       diagnostics across clinical networks, integrating clinical data with
@@ -1710,6 +1747,7 @@ section {
     </p>
   </div>
 </section>
+
 
 
 
