@@ -1406,6 +1406,29 @@ footer {
   letter-spacing: 0.08em;
   color: #7a7a7a;
 }
+/* ===== PROFESSIONAL FOCUS BACKGROUND IMAGE ===== */
+.focus-section {
+  position: relative;
+  background-image: url("/image/professional.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay for readability (huangshiyan-style subtle) */
+.focus-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Keep content above the overlay */
+.focus-section > * {
+  position: relative;
+  z-index: 1;
+}
 
 </style>
 </head>
