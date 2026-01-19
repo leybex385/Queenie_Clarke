@@ -584,6 +584,67 @@ footer{
   margin-bottom: 28px;
   color: #1a1a1a;
 }
+/* ===== Background Narrative + Professional Experience ===== */
+
+.background-section {
+  padding: 140px 32px;
+  background: #f5f6f8;
+}
+
+.background-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.background-card {
+  background: #ffffff;
+  padding: 72px 72px;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+}
+
+.background-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  color: #1a1a1a;
+}
+
+.background-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #6b7280;
+}
+
+/* Experience formatting */
+.experience-item strong {
+  font-size: 16px;
+  color: #111;
+}
+
+.experience-period {
+  display: inline-block;
+  margin: 6px 0 14px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .background-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .background-card {
+    padding: 48px;
+  }
+}
 
 </style>
 </head>
@@ -689,18 +750,41 @@ footer{
 
 
 <!-- ORIGIN -->
-<section id="background" class="dark reveal">
-  <div class="container">
-    <div class="panel">
-      <span class="label">Origin</span>
+<section id="background" class="background-section">
+  <div class="background-grid">
+
+    <!-- Background Narrative -->
+    <div class="background-card">
+      <h2>Background Narrative</h2>
       <p>
-        Sembawang Park Residences, Singapore.  
-        A childhood shaped by parks, history, family walks, and the
-        quiet discipline of a stable society.
+        My path has been shaped by working across international business, healthcare,
+        and investment, with a consistent focus on how platforms are built, integrated,
+        and scaled across borders. Experience operating in regulated industries revealed
+        the limits of isolated ventures and underscored the importance of systems,
+        execution, and long-term ownership. Over time, this perspective evolved into a
+        disciplined approach to building sustainable enterprises where strategy,
+        capital, and operations align to create durable value.
       </p>
     </div>
+
+    <!-- Professional Experience -->
+    <div class="background-card">
+      <h2>Professional Experience</h2>
+
+      <div class="experience-item">
+        <strong>International Business, Healthcare & Medical Technology</strong><br>
+        <span class="experience-period">(2018–Present)</span>
+        <p>
+          Building and scaling cross-border platforms across healthcare and regulated
+          industries, integrating capital strategy, operational execution, and
+          long-term ownership across global markets.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- LIFE -->
 <section class="reveal">
