@@ -130,12 +130,11 @@ section{padding:var(--gap) 0}
 }
 .reveal{opacity:0;transform:translateY(20px);transition:.8s ease}
 .reveal.show{opacity:1;transform:none}
-footer {
-  background: #0d0f13;
-  padding: 30px 0;
-  text-align: center;
-  font-size: 13px;
-  color: #7a7f9d;
+footer{
+  padding:80px 32px 0px;
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
 }
 @media(max-width:900px){
   .hero h1{font-size:40px}
@@ -1032,27 +1031,105 @@ footer {
     padding: 64px 32px 48px;
   }
 }
-/* ===== CONTACT SECTION — FINAL ===== */
-
+/* CONTACT SECTION */
 .contact-section {
+  padding: 80px 0%;
   background: #0f1115;
-  padding: 140px 0;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #8ab4ff;
+}
+
+.contact-item {
+  margin-bottom: 30px;
+}
+
+.contact-item .label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: #8ab4ff;
+  margin-bottom: 8px;
+}
+
+.contact-item p {
+  color: #d1d5db;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* FORM */
+.contact-form {
+  background: #1a1d23;
+  padding: 40px;
+  border-radius: 14px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #aeb4c0;
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  background: #2a2e36;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== CONTACT SECTION ===== */
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  background: #111111; /* Change to black background */
+  padding: 120px 0px;
 }
 
 .contact-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-
-  padding: 100px 80px; /* CHANGED */
-
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 80px;
-
-  background: linear-gradient(180deg, #1b1e23, #14161a); /* CHANGED */
-  border-radius: 24px;                                  /* NEW */
-  box-shadow: 0 40px 120px rgba(0,0,0,0.25);             /* NEW */
 }
+
 /* LEFT */
 .contact-info h2 {
   font-family: "Playfair Display", serif;
@@ -1061,27 +1138,80 @@ footer {
   margin-bottom: 40px;
 }
 
+.info-block {
+  margin-bottom: 28px;
+}
+
 .info-block .label {
+  display: block;
   font-size: 13px;
+  font-weight: 600;
   letter-spacing: 0.08em;
   color: #6ea2ff;
+  margin-bottom: 6px;
 }
 
 .info-block p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
   color: #ffffff;
+  line-height: 1.6;
 }
 
-/* RIGHT */
+/* MAP */
+.map-wrapper {
+  margin-top: 32px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 240px;
+  border: 0;
+}
+
+/* RIGHT CARD */
 .contact-form-card {
   background: #2a2b2f;
   border-radius: 20px;
   padding: 48px;
 }
 
-/* MAP */
-.map-wrapper,
-.map-wrapper iframe {
-  background: #ffffff;
+.contact-form-card label {
+  display: block;
+  font-size: 14px;
+  color: #cfcfcf;
+  margin-bottom: 6px;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+  width: 100%;
+  background: #3a3b40;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.contact-form-card input::placeholder,
+.contact-form-card textarea::placeholder {
+  color: #9a9a9a;
+}
+
+.contact-form-card button {
+  width: 100%;
+  background: #2563eb;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* RESPONSIVE */
@@ -1089,18 +1219,34 @@ footer {
   .contact-container {
     grid-template-columns: 1fr;
   }
-}
 
+  .contact-section {
+    padding: 80px 0px;
+  }
+}
 /* ===== FORCE FULL-BLEED BLACK CONTACT ===== */
 
+body {
+  background: #0f1013;
+}
+
+#contact {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #0f1013;
+}
+
+/* Ensure nothing inside leaks light background */
+.contact-section,
+.contact-container {
+  background: #0f1013;
+}
 
 /* Keep map light */
 .map-wrapper,
 .map-wrapper iframe {
-  width: 100%;
-  height: 220px;
-  border: 0;
-  border-radius: 14px;
+  background: #ffffff;
 }
 /* ===== Professional Focus – Light Image Background ===== */
 
@@ -1585,126 +1731,6 @@ small,
   max-width: 880px;
 }
 
-/* FIX CONTACT WHITE BACKGROUND ISSUE */
-html,
-html,
-html,
-html,
-body {
-  background-color: #0f1115;
-  overflow-x: hidden;
-}
-
-.contact-section {
-  background: #0f1115;
-  padding: 140px 0;
-}
-/* ================= CONTACT ================= */
-
-.contact {
-  background: #0f1115;
-  padding: 140px 0;
-}
-
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 100px 80px;
-
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
-
-  background: #0f1115;   /* SOLID BLACK */
-}
-
-/* LEFT SIDE */
-.contact-info h2 {
-  font-size: 42px;
-  margin-bottom: 40px;
-}
-
-.info-block {
-  margin-bottom: 28px;
-}
-
-.info-block span {
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  color: #5f8cff;
-  font-weight: 600;
-}
-
-.info-block p {
-  margin-top: 6px;
-  line-height: 1.6;
-}
-
-.map {
-  margin-top: 30px;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.map iframe {
-  width: 100%;
-  height: 220px;
-  border: 0;
-}
-
-/* RIGHT SIDE FORM */
-.contact-form {
-  background: #2a2d33;
-  border-radius: 18px;
-  padding: 48px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-}
-
-.contact-form label {
-  font-size: 13px;
-  margin-bottom: 6px;
-  display: block;
-  color: #cfd3ff;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  background: #3a3d44;
-  border: none;
-  border-radius: 8px;
-  padding: 14px;
-  color: white;
-  margin-bottom: 22px;
-}
-
-.contact-form textarea {
-  height: 140px;
-  resize: none;
-}
-
-.contact-form button {
-  width: 100%;
-  padding: 14px;
-  background: #2f66ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #2554d9;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-}
-
 </style>
 </head>
 
@@ -2123,25 +2149,25 @@ body {
   </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact" class="contact-section">
   <div class="contact-container">
 
-    <!-- LEFT -->
+    <!-- LEFT SIDE -->
     <div class="contact-info">
       <h2>Contact</h2>
 
       <div class="info-block">
-        <span>EMAIL</span>
+        <span class="label">EMAIL</span>
         <p>huangshiyan22@gmail.com</p>
       </div>
 
       <div class="info-block">
-        <span>PHONE</span>
+        <span class="label">PHONE</span>
         <p>+1 213 773 3971</p>
       </div>
 
       <div class="info-block">
-        <span>OFFICE ADDRESS</span>
+        <span class="label">OFFICE ADDRESS</span>
         <p>
           Corporate Park<br>
           2132 Michelson Dr<br>
@@ -2149,25 +2175,26 @@ body {
         </p>
       </div>
 
-      <div class="map">
+      <div class="map-wrapper">
         <iframe
-          src="https://www.google.com/maps?q=2132%20Michelson%20Dr%20Irvine%20CA&output=embed"
-          loading="lazy">
-        </iframe>
+          src="https://www.google.com/maps?q=2132+Michelson+Dr+Irvine+CA+92612&output=embed"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
 
-    <!-- RIGHT -->
-    <div class="contact-form">
+    <!-- RIGHT SIDE -->
+    <div class="contact-form-card">
       <form>
         <label>Name</label>
-        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Your Name" />
 
         <label>Email</label>
-        <input type="email" placeholder="Your Email">
+        <input type="email" placeholder="Your Email" />
 
         <label>Message</label>
-        <textarea placeholder="Your Message"></textarea>
+        <textarea rows="5" placeholder="Your Message"></textarea>
 
         <button type="submit">Send Message</button>
       </form>
@@ -2175,6 +2202,11 @@ body {
 
   </div>
 </section>
+
+    
+  </div>
+</section>
+
 
   
 <footer>
