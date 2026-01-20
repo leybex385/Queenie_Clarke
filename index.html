@@ -1688,6 +1688,36 @@ small,
 }
 
 /* Buttons / Nav / Links */
+/* ===== RESTORE ORIGINAL FONT SIZES ONLY ===== */
+
+/* Remove overrides on all headings */
+h1, h2, h3, h4, h5, h6,
+p, li, a, span, div {
+  font-size: revert !important;
+  line-height: revert !important;
+}
+
+/* Reset any specific overrides we added */
+section, .focus-card, .publications-section {
+  font-size: revert !important;
+}
+
+/* Reset navigation, buttons, inputs */
+nav a, button, input, textarea {
+  font-size: revert !important;
+}
+
+/* Reset list item bullets */
+ul, ol {
+  font-size: revert !important;
+  line-height: revert !important;
+}
+
+/* Reset footer text */
+footer {
+  font-size: revert !important;
+  line-height: revert !important;
+}
 
 </style>
 </head>
