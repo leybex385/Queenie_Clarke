@@ -366,16 +366,47 @@ footer{
   .hero-profile-content h2 {
     font-size: 34px;
   }
-/* ================================
-   INDUSTRY PERSPECTIVE (HERO)
-================================ */
+}
+.hero-family {
+  background: #f6f7f9;
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+}
 
-.hero-industry {
+.hero-family-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin-bottom: 18px;
+  color: #1a1a1a;
+}
+
+
+
+.hero-family-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  color: #1a1a1a;
+}
+
+.hero-family-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #6b7280;
+  max-width: 880px;
+}
+/* HERO FAMILY – Industry Perspective */
+.hero-family {
   padding: 120px 0;
   background: #f5f6f8;
 }
 
-.hero-industry-card {
+.hero-family-card {
   max-width: 960px;
   margin: 0 auto;
   background: #ffffff;
@@ -384,25 +415,47 @@ footer{
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
 }
 
-/* Title */
-.hero-industry-card h2 {
+/* Title — SAME size & font as About */
+.hero-family-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;          /* matches About */
+  font-weight: 500;
+  color: #1c1f26;
+  margin-bottom: 24px;
+}
+.hero-family-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;      /* ⬅ smaller, refined, section-label size */
+  font-weight: 500;
+  color: #1c1f26;
+  margin-bottom: 18px;
+}
+
+/* Body text */
+.hero-family-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6b7280;
+  max-width: 760px;
+}
+.hero-family-card h2 {
   font-family: "Playfair Display", serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.2;
-  color: #1a1a1a;
   margin-bottom: 16px;
+  color: #1a1a1a;
 }
 
-/* Body text */
-.hero-industry-card p {
+.hero-family-card p {
   font-family: "Inter", sans-serif;
   font-size: 18px;
-  line-height: 1.9;
+  font-weight: 400;
+  line-height: 1.75;
   color: #6b7280;
-  max-width: 880px;
+  margin-top: 4px;
 }
-
 .section.reveal.show {
   display: flex;
   justify-content: center;
@@ -1635,470 +1688,23 @@ small,
 }
 
 /* Buttons / Nav / Links */
-/* ===== HEADER NAV ===== */
-
-.main-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(10px);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-}
-
-.nav-links a {
-  color: #ddd;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: #fff;
-}
-
-/* ===== DROPDOWN ===== */
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 120%;
-  left: 0;
-  background: #111;
-  border-radius: 8px;
-  padding: 10px 0;
-  min-width: 240px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.25s ease;
-}
-
-.dropdown-menu li {
-  padding: 0;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  color: #ccc;
-  font-size: 14px;
-}
-
-.dropdown-menu a:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-}
-
-
-/* Header navigation font size adjustment */
-header nav a {
-  font-size: 0.9rem; /* slightly smaller font size */
-}
-
-/* Make the "Queenie Clarke" visible */
-.brand {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ffffff; /* Ensure it's white and visible */
-  letter-spacing: 0.02em;
-  opacity: 1 !important; /* Remove opacity if it's set */
-}
-
-/* Matching the header background to hero section (dark gradient with blur) */
-header {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0.35)
-  );
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Optional - adds thin border for polish */
-}
-/* ===== HEADER / NAV FONT SIZE ===== */
-header nav a {
-  font-size: 0.85rem;   /* smaller, like the example */
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* Hover state (optional, subtle) */
-header nav a:hover {
-  color: #ffffff;
-}
-
-/* ===== BRAND (Queenie Clarke) ===== */
-.brand {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #ffffff;
-  opacity: 1;           /* ensure visible */
-  letter-spacing: 0.04em;
-}
-
-/* ===== HEADER BACKGROUND (LIGHTER) ===== */
-header {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.25)
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-/* Optional: soften the bottom edge */
-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.08);
-}
-/* ===== HEADER / NAV FONT SIZE ===== */
-header nav a {
-  font-size: 0.8rem;   /* slightly smaller than the previous size */
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* Hover state (optional, subtle) */
-header nav a:hover {
-  color: #ffffff;
-}
-
-/* ===== BRAND (Queenie Clarke) ===== */
-.brand {
-  font-size: 0.85rem;  /* slightly smaller font for brand */
-  font-weight: 500;
-  color: #ffffff;
-  opacity: 1;           /* ensure visible */
-  letter-spacing: 0.04em;
-}
-
-/* ===== HEADER BACKGROUND (LIGHTER) ===== */
-header {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.25)
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-/* Optional: soften the bottom edge */
-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.08);
-}
-/* ===== HEADER TYPOGRAPHY (FINAL) ===== */
-header,
-header nav a,
-header .brand {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-}
-
-/* Brand (Queenie Clarke) */
-header .brand {
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-}
-
-/* Navigation links */
-header nav a {
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* Hover */
-header nav a:hover {
-  color: #ffffff;
-}
-/* ===== HEADER TYPOGRAPHY (FINAL) ===== */
-header,
-header nav a,
-header .brand {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 14px;  /* Adjusted to smaller size */
-}
-
-/* Brand (Queenie Clarke) */
-header .brand {
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-}
-
-/* Navigation links */
-header nav a {
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* Hover */
-header nav a:hover {
-  color: #ffffff;
-}
-/* Dropdown menu */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  border-radius: 5px;
-  min-width: 160px;
-  padding: 10px;
-  z-index: 9999;
-}
-
-/* Show dropdown on toggle */
-.dropdown-menu.show {
-  display: block;
-}
-
-.dropdown-toggle {
-  cursor: pointer;
-}
-/* HEADER BASE */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.35)
-  );
-  backdrop-filter: blur(8px);
-}
-
-/* NAV LAYOUT */
-.nav {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* BRAND */
-.brand {
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  letter-spacing: 0.12em;
-  color: #fff;
-  font-weight: 500;
-}
-
-/* MENU */
-.menu {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-}
-
-.menu a {
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
-}
-
-.menu a:hover {
-  color: #fff;
-}
-
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 160%;
-  left: 0;
-  background: rgba(0,0,0,0.9);
-  padding: 12px 0;
-  border-radius: 8px;
-  min-width: 220px;
-  display: none;
-}
-
-.dropdown-menu li {
-  padding: 8px 20px;
-}
-
-.dropdown-menu a {
-  font-size: 13px;
-  color: rgba(255,255,255,0.85);
-}
-
-.dropdown-menu a:hover {
-  color: #fff;
-}
-
-/* SHOW DROPDOWN */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 160%;
-  left: 0;
-  background: rgba(0,0,0,0.9);
-  padding: 12px 0;
-  border-radius: 8px;
-  min-width: 220px;
-  display: none;
-}
-
-.dropdown-menu li {
-  padding: 8px 20px;
-}
-
-.dropdown-menu a {
-  font-size: 13px;
-  color: rgba(255,255,255,0.85);
-}
-
-.dropdown-menu a:hover {
-  color: #fff;
-}
-
-/* SHOW ON HOVER (if you want hover functionality) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Dropdown Menu Styles */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #333;
-  min-width: 220px;
-  padding: 10px 0;
-  border-radius: 8px;
-  z-index: 10000;
-}
-
-/* When the dropdown is shown */
-.dropdown-menu.show {
-  display: block;
-}
-
-/* General Styling for Links */
-.menu a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-  padding: 8px;
-  margin-left: 32px;
-  transition: background-color 0.3s ease;
-}
-
-.menu a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Ensure nav links are clickable */
-nav, .menu, .dropdown-menu {
-  position: relative;
-  z-index: 1000;
-}
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #333;
-  min-width: 220px;
-  padding: 10px 0;
-  border-radius: 8px;
-  display: none; /* Hidden by default */
-}
-
-.dropdown-menu.show {
-  display: block; /* Show when active */
-}
-
-.dropdown-toggle {
-  cursor: pointer;
-}
 
 </style>
 </head>
 
 <body>
 
-<header class="main-header">
- <nav>
-  <div class="brand">QUEENIE CLARKE</div>
-
-  <ul class="menu">
-    <!-- Dropdown for "About" -->
-    <li class="dropdown">
-  <a href="#" class="dropdown-toggle">About ▾</a>
-  <ul class="dropdown-menu">
-    <li><a href="#clinical">Clinical Projects</a></li>
-    <li><a href="#publications">Publications & Research</a></li>
-    <li><a href="#leadership">Leadership</a></li>
-    <li><a href="#insight">Professional Highlights</a></li>
-  </ul>
-</li>
-
-    <!-- Other navigation links -->
-    <li><a href="#focus">Professional Focus</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#recognition">Recognition</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
+<header>
+  <nav>
+    <div class="brand">Queenie Clarke</div>
+    <div class="menu">
+      <a href="#profile">Profile</a>
+      <a href="#family">Family</a>
+      <a href="#background">Background</a>
+      <a href="#philosophy">Philosophy</a>
+    </div>
+  </nav>
 </header>
-
 
 <!-- HERO -->
 <!-- HERO -->
@@ -2154,26 +1760,21 @@ nav, .menu, .dropdown-menu {
 </section>
 
 
-<!-- INDUSTRY PERSPECTIVE -->
-<section class="hero-industry">
+<!-- FAMILY -->
+<section class="hero-family">
   <div class="container">
-    <div class="hero-industry-card">
+    <div class="hero-family-card">
       <h2>Industry Perspective</h2>
       <p>
-        Cross-border business today requires more than capital deployment; it
-        demands operational discipline, cultural fluency, and the ability to
-        scale platforms across regulated industries. Value is created by
-        integrating strategy, execution, and long-term ownership rather than
-        treating ventures as isolated assets. Sustainable growth emerges where
-        international business, medical technology, and consumer-facing
-        healthcare intersect—guided by practical experience in building,
-        operating, and expanding enterprises across global markets.
+        Cross-border business today requires more than capital deployment; it demands operational discipline,
+        cultural fluency, and the ability to scale platforms across regulated industries. Value is created by
+        integrating strategy, execution, and long-term ownership rather than treating ventures as isolated assets.
+        Sustainable growth emerges where international business, medical technology, and consumer-facing healthcare
+        intersect—guided by practical experience in building, operating, and expanding enterprises across global markets.
       </p>
     </div>
   </div>
 </section>
-
-
 
 
 <!-- EDUCATION & CAREER -->
@@ -2485,40 +2086,13 @@ nav, .menu, .dropdown-menu {
 <footer>
   © 2026 Queenie Clarke
 </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-
-    // Toggle dropdown visibility on click
-    dropdownToggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      dropdownMenu.classList.toggle('show'); // Toggle visibility
-    });
-
-    // Close dropdown when clicking outside
-    window.addEventListener('click', function (e) {
-      if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        dropdownMenu.classList.remove('show'); // Hide the dropdown
-      }
-    });
-  });
-</script>
 
 <script>
-  // Intersection Observer to reveal content as it scrolls into view
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.15 });
-
-  // Apply observer to all elements with the class 'reveal'
-  document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 </script>
-
 
 </body>
 </html>
