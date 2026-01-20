@@ -1688,99 +1688,6 @@ small,
 }
 
 /* Buttons / Nav / Links */
-/* ================================
-   TOP NAVIGATION
-================================ */
-
-.site-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(12px);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo a {
-  font-family: "Inter", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: #ffffff;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-}
-
-.nav-link {
-  font-family: "Inter", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: #d1d5db;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-}
-
-.nav-link:hover {
-  color: #ffffff;
-}
-
-/* ================================
-   DROPDOWN
-================================ */
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 140%;
-  left: 0;
-  background: rgba(15, 15, 15, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 12px 0;
-  border-radius: 8px;
-  min-width: 220px;
-  display: none;
-}
-
-.dropdown-menu li {
-  list-style: none;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 8px 20px;
-  font-size: 12px;
-  color: #d1d5db;
-  text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-section {
-  scroll-margin-top: 100px;
-}
 
 </style>
 </head>
@@ -1788,46 +1695,16 @@ section {
 <body>
 
 <header>
-  <header class="site-header">
-  <nav class="nav-container">
-    <!-- Logo / Name -->
-    <div class="nav-logo">
-      <a href="#top">Queenie Clarke</a>
+  <nav>
+    <div class="brand">Queenie Clarke</div>
+    <div class="menu">
+      <a href="#profile">Profile</a>
+      <a href="#family">Family</a>
+      <a href="#background">Background</a>
+      <a href="#philosophy">Philosophy</a>
     </div>
-
-    <!-- Navigation -->
-    <ul class="nav-menu">
-      <!-- ABOUT DROPDOWN -->
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle">About ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="#clinical">Clinical Projects</a></li>
-          <li><a href="#publications">Publications &amp; Research</a></li>
-          <li><a href="#leadership">Leadership</a></li>
-          <li><a href="#insights">Professional Highlights</a></li>
-        </ul>
-      </li>
-
-      <!-- MAIN LINKS -->
-      <li class="nav-item">
-        <a href="#focus" class="nav-link">Professional Focus</a>
-      </li>
-      <li class="nav-item">
-        <a href="#experience" class="nav-link">Experience</a>
-      </li>
-      <li class="nav-item">
-        <a href="#education" class="nav-link">Education</a>
-      </li>
-      <li class="nav-item">
-        <a href="#recognition" class="nav-link">Recognition</a>
-      </li>
-      <li class="nav-item">
-        <a href="#contact" class="nav-link">Contact</a>
-      </li>
-    </ul>
   </nav>
 </header>
-
 
 <!-- HERO -->
 <!-- HERO -->
@@ -1901,7 +1778,7 @@ section {
 
 
 <!-- EDUCATION & CAREER -->
-<section id="focus" class="section reveal professional">
+<section class="section reveal show professional">
   
   <div class="focus-card">
     <h2>Professional Focus</h2>
@@ -1917,7 +1794,7 @@ section {
 
 
 <!-- ORIGIN -->
-<section id="experience" class="background-section">
+<section id="background" class="background-section">
   <div class="background-grid">
 
     <!-- Background Narrative -->
@@ -1954,8 +1831,7 @@ section {
 
 
 <!-- EDUCATION -->
-<section id="education" class="education">
-
+<section class="education reveal">
   <h2 class="education-title">Education</h2>
 
   <div class="education-card">
@@ -1969,8 +1845,7 @@ section {
 
 
 <!-- PHILOSOPHY -->
-<section id="clinical" class="clinical-section">
-
+<section class="clinical-section">
   <div class="clinical-wrapper">
 
     <!-- LEFT: IMAGE -->
@@ -2002,8 +1877,7 @@ section {
 </section>
 
 <!-- SELECTED PUBLICATIONS & RESEARCH -->
-<section id="publications" class="section reveal publications">
-
+<section class="section reveal show publications">
   <div class="focus-card publications-layout">
 
     <!-- LEFT: TEXT -->
@@ -2027,8 +1901,7 @@ section {
 
 
 <!-- LEADERSHIP & BOARD ROLES -->
-<section id="leadership" class="leadership-section reveal">
-
+<section class="leadership-section reveal">
   <div class="leadership-wrapper">
 
     <!-- LEFT: IMAGE -->
@@ -2055,8 +1928,7 @@ section {
 </section>
 
  <!-- RECOGNITION -->
-<section id="recognition" class="recognition-section reveal">
-
+<section class="recognition-section reveal">
   <div class="recognition-container">
 
     <h2 class="recognition-title">Recognition</h2>
@@ -2108,8 +1980,7 @@ section {
 
 
 
-<section id="insights" class="insights-section">
-
+<section class="insights-section">
   <div class="insights-grid">
 
     <div class="insight-card">
@@ -2153,7 +2024,6 @@ section {
 </section>
 
 <section id="contact" class="contact-section">
-
   <div class="contact-container">
 
     <!-- LEFT SIDE -->
