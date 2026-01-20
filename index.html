@@ -1742,21 +1742,14 @@ html, body {
 }
 .site-footer {
   margin: 0;
-  background: linear-gradient(180deg, #0b0e13, #06080c);
-  color: rgba(255, 255, 255, 0.6);
-  text-align: center;
-  padding: 80px 0;
-}
-.site-main {
-  flex: 1;
-}
-.site-footer {
-  margin: 0;
-  background: linear-gradient(180deg, #0b0e13, #06080c);
   padding: 40px 0;
+  width: 100%;
+  background: #ffffff;
+  color: #555;
   text-align: center;
-  color: rgba(255,255,255,0.6);
+  font-size: 14px;
 }
+
 
 </style>
 </head>
@@ -1835,16 +1828,6 @@ html, body {
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: #0b0e13;
-}
-body {
-  display: flex;
-  flex-direction: column;
 }
 
 </style>
@@ -2247,9 +2230,10 @@ body {
 
 <body>
 
+<body>
+
   <main class="site-main">
-    <!-- ALL your sections here -->
-    <!-- hero, about, contact, etc -->
+    <!-- all page content -->
   </main>
 
   <footer class="site-footer">
@@ -2257,7 +2241,6 @@ body {
   </footer>
 
 </body>
-
 <script>
 const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
