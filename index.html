@@ -1958,6 +1958,90 @@ header nav a:hover {
 .dropdown-toggle {
   cursor: pointer;
 }
+/* HEADER BASE */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.35)
+  );
+  backdrop-filter: blur(8px);
+}
+
+/* NAV LAYOUT */
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* BRAND */
+.brand {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.menu a {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #fff;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 160%;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+  padding: 12px 0;
+  border-radius: 8px;
+  min-width: 220px;
+  display: none;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+}
+
+.dropdown-menu a:hover {
+  color: #fff;
+}
+
+/* SHOW ON HOVER */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
 </style>
 </head>
@@ -1965,30 +2049,27 @@ header nav a:hover {
 <body>
 
 <header class="main-header">
-  <nav class="nav-container">
+ <nav class="nav">
+  <div class="brand">QUEENIE CLARKE</div>
 
-    <div class="brand">Queenie Clarke</div>
+  <ul class="menu">
+    <li class="dropdown">
+      <a href="#">About ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="#clinical">Clinical Projects</a></li>
+        <li><a href="#publications">Publications & Research</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#insight">Professional Highlights</a></li>
+      </ul>
+    </li>
 
-    <ul class="nav-links">
-
-      <li class="nav-item dropdown">
-        <a href="#" class="dropdown-toggle">About</a>
-        <ul class="dropdown-menu">
-          <li><a href="#clinical-projects">Clinical Projects</a></li>
-          <li><a href="#publications">Publications & Research</a></li>
-          <li><a href="#leadership">Leadership</a></li>
-          <li><a href="#insights">Professional Highlights</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#professional-focus">Professional Focus</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#recognition">Recognition</a></li>
-      <li><a href="#contact">Contact</a></li>
-
-    </ul>
-  </nav>
+    <li><a href="#focus">Professional Focus</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#recognition">Recognition</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 </header>
 
 
