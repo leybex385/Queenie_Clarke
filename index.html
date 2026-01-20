@@ -1724,6 +1724,57 @@ small,
   color: #6b7280;
   max-width: 880px;
 }
+/* Basic styling for the hamburger menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #333;
+  padding: 20px;
+  display: none; /* Hide by default */
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.menu a .icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Mobile view (below 900px) */
+@media (max-width: 900px) {
+  .menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    display: block; /* Show when active */
+  }
+
+  .menu-icon {
+    display: block; /* Show hamburger icon */
+  }
+}
 
 </style>
 </head>
@@ -1740,69 +1791,17 @@ small,
     </div>
 
     <div class="menu">
-      <a href="#profile">Profile</a>
-      <a href="#family">Family</a>
-      <a href="#background">Background</a>
-      <a href="#philosophy">Philosophy</a>
+      <a href="#hero-industry">Industry Perspective</a>
+      <a href="#background">Background Narrative</a>
+      <a href="#education">Education</a>
+      <a href="#clinical">Clinical Projects & Initiatives</a>
+      <a href="#leadership">Leadership & Board Roles</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#insights">Professional Highlights</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
-
-<!-- Add CSS for the hamburger menu -->
-<style>
-  /* Default state - hide the menu on small screens */
-  .menu {
-    display: flex;
-  }
-
-  .menu a {
-    margin-left: 32px;
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 14px;
-  }
-
-  .menu-icon {
-    display: none;
-    cursor: pointer;
-  }
-
-  /* Make the menu hidden by default on mobile */
-  @media (max-width: 900px) {
-    .menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background: rgba(247, 246, 243, 0.85);
-    }
-
-    .menu a {
-      margin: 20px;
-      font-size: 18px;
-    }
-
-    .menu-icon {
-      display: block;
-      font-size: 30px;
-    }
-  }
-</style>
-
-<!-- JavaScript to Toggle the Hamburger Menu -->
-<script>
-  // Get the menu icon and menu
-  const menuIcon = document.getElementById("menu-icon");
-  const menu = document.querySelector(".menu");
-
-  // Add a click event listener to the menu icon
-  menuIcon.addEventListener("click", () => {
-    // Toggle the display of the menu
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-  });
-</script>
 
 
 <!-- HERO -->
@@ -1860,7 +1859,9 @@ small,
 
 
 <!-- INDUSTRY PERSPECTIVE -->
-<section class="hero-industry">
+<section class="hero-industry" id="hero-industry">
+  <!-- Content for Industry Perspective -->
+</section>
   <div class="container">
     <div class="hero-industry-card">
       <h2>Industry Perspective</h2>
@@ -1933,8 +1934,9 @@ small,
 
 
 <!-- EDUCATION -->
-<section class="education reveal">
-  <h2 class="education-title">Education</h2>
+<section class="education reveal"><section class="education reveal" id="education">
+  <!-- Content for Education -->
+</section>  <h2 class="education-title">Education</h2>
 
   <div class="education-card">
     <p>
@@ -1947,7 +1949,9 @@ small,
 
 
 <!-- PHILOSOPHY -->
-<section class="clinical-section">
+<section class="clinical-section" id="clinical">
+  <!-- Content for Clinical Projects & Initiatives -->
+</section>
   <div class="clinical-wrapper">
 
     <!-- LEFT: IMAGE -->
@@ -2003,7 +2007,9 @@ small,
 
 
 <!-- LEADERSHIP & BOARD ROLES -->
-<section class="leadership-section reveal">
+<section class="leadership-section reveal" id="leadership">
+  <!-- Content for Leadership & Board Roles -->
+</section>
   <div class="leadership-wrapper">
 
     <!-- LEFT: IMAGE -->
@@ -2030,7 +2036,9 @@ small,
 </section>
 
  <!-- RECOGNITION -->
-<section class="recognition-section reveal">
+<section class="recognition-section reveal" id="recognition">
+  <!-- Content for Recognition -->
+</section>
   <div class="recognition-container">
 
     <h2 class="recognition-title">Recognition</h2>
@@ -2082,7 +2090,9 @@ small,
 
 
 
-<section class="insights-section">
+<section class="insights-section" id="insights">
+  <!-- Content for Professional Highlights -->
+</section>
   <div class="insights-grid">
 
     <div class="insight-card">
@@ -2195,6 +2205,9 @@ const obs=new IntersectionObserver(e=>{
 },{threshold:.15});
 document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 </script>
+document.getElementById("menu-icon").addEventListener("click", function() {
+  document.querySelector(".menu").classList.toggle("active");
+});
 
 </body>
 </html>
