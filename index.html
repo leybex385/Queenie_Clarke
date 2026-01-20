@@ -1031,37 +1031,111 @@ footer{
     padding: 64px 32px 48px;
   }
 }
-/* ===============================
-   CONTACT — HUANGSHIYAN STYLE
-   =============================== */
-
-#contact {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  background: #0f1013;
+/* CONTACT SECTION */
+.contact-section {
+  padding: 80px 0%;
+  background: #0f1115;
 }
 
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #8ab4ff;
+}
+
+.contact-item {
+  margin-bottom: 30px;
+}
+
+.contact-item .label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: #8ab4ff;
+  margin-bottom: 8px;
+}
+
+.contact-item p {
+  color: #d1d5db;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* FORM */
+.contact-form {
+  background: #1a1d23;
+  padding: 40px;
+  border-radius: 14px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #aeb4c0;
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  background: #2a2e36;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== CONTACT SECTION ===== */
+
+/* ===== CONTACT SECTION ===== */
 .contact-section {
-  padding: 140px 0;
+  background: #111111; /* Change to black background */
+  padding: 120px 0px;
 }
 
 .contact-container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 60px;
-
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 100px;
+  gap: 80px;
 }
 
 /* LEFT */
 .contact-info h2 {
   font-family: "Playfair Display", serif;
   font-size: 48px;
-  font-weight: 500;
-  color: #7aa2ff;
-  margin-bottom: 48px;
+  color: #6ea2ff;
+  margin-bottom: 40px;
 }
 
 .info-block {
@@ -1070,9 +1144,10 @@ footer{
 
 .info-block .label {
   display: block;
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  color: #7aa2ff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #6ea2ff;
   margin-bottom: 6px;
 }
 
@@ -1083,26 +1158,24 @@ footer{
   line-height: 1.6;
 }
 
-/* MAP (WHITE) */
+/* MAP */
 .map-wrapper {
-  margin-top: 36px;
+  margin-top: 32px;
   border-radius: 14px;
   overflow: hidden;
-  background: #ffffff;
 }
 
 .map-wrapper iframe {
   width: 100%;
-  height: 260px;
+  height: 240px;
   border: 0;
-  filter: saturate(0) brightness(1.1);
 }
 
 /* RIGHT CARD */
 .contact-form-card {
-  background: #26272b;
-  border-radius: 22px;
-  padding: 56px;
+  background: #2a2b2f;
+  border-radius: 20px;
+  padding: 48px;
 }
 
 .contact-form-card label {
@@ -1115,12 +1188,12 @@ footer{
 .contact-form-card input,
 .contact-form-card textarea {
   width: 100%;
-  background: #33343a;
+  background: #3a3b40;
   border: none;
   border-radius: 10px;
   padding: 14px 16px;
   margin-bottom: 22px;
-  color: #ffffff;
+  color: #fff;
   font-size: 15px;
 }
 
@@ -1137,7 +1210,7 @@ footer{
   padding: 14px;
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -1145,15 +1218,36 @@ footer{
 @media (max-width: 900px) {
   .contact-container {
     grid-template-columns: 1fr;
-    gap: 60px;
-    padding: 0 28px;
   }
 
   .contact-section {
-    padding: 100px 0;
+    padding: 80px 0px;
   }
 }
+/* ===== FORCE FULL-BLEED BLACK CONTACT ===== */
 
+body {
+  background: #0f1013;
+}
+
+#contact {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #0f1013;
+}
+
+/* Ensure nothing inside leaks light background */
+.contact-section,
+.contact-container {
+  background: #0f1013;
+}
+
+/* Keep map light */
+.map-wrapper,
+.map-wrapper iframe {
+  background: #ffffff;
+}
 /* ===== Professional Focus – Light Image Background ===== */
 
 .section.reveal.show {
@@ -1636,147 +1730,6 @@ small,
   color: #6b7280;
   max-width: 880px;
 }
-/* ===============================
-   Footer – huangshiyan.com match
-   =============================== */
-
-.minimal-footer {
-  background: #0f1013;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 90px 32px;
-  text-align: center;
-}
-
-.minimal-footer p {
-  margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 13px;
-  color: #9ca3af;
-  letter-spacing: 0.4px;
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #0f1013;
-}
-#contact {
-  background: #0f1013;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-/* ===== CONTACT SECTION ===== */
-#contact {
-  background: #000;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding: 100px 0;
-}
-
-.contact-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-}
-
-/* LEFT SIDE */
-.contact-info h2 {
-  font-size: 2.4rem;
-  color: #7aa2ff;
-  margin-bottom: 40px;
-}
-
-.contact-block {
-  margin-bottom: 28px;
-}
-
-.contact-block .label {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #7aa2ff;
-  margin-bottom: 6px;
-}
-
-.contact-block p {
-  color: #e5e7eb;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* MAP */
-.contact-map {
-  margin-top: 40px;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 220px;
-  border: none;
-  filter: grayscale(100%) contrast(1.1);
-}
-
-/* RIGHT SIDE FORM */
-.contact-form {
-  background: #111;
-  border-radius: 18px;
-  padding: 48px;
-}
-
-.contact-form label {
-  display: block;
-  font-size: 0.75rem;
-  color: #9ca3af;
-  margin-bottom: 6px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  background: #1a1a1a;
-  border: none;
-  border-radius: 10px;
-  padding: 14px 16px;
-  margin-bottom: 22px;
-  color: #fff;
-  font-size: 0.9rem;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 1px #7aa2ff;
-}
-
-/* BUTTON */
-.contact-form button {
-  width: 100%;
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: #1d4ed8;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-}
 
 </style>
 </head>
@@ -2196,8 +2149,71 @@ html, body {
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact-section"> <div class="contact-container"> <!-- LEFT SIDE --> <div class="contact-info"> <h2>Contact</h2> <div class="info-block"> <span class="label">EMAIL</span> <p>huangshiyan22@gmail.com</p> </div> <div class="info-block"> <span class="label">PHONE</span> <p>+1 213 773 3971</p> </div> <div class="info-block"> <span class="label">OFFICE ADDRESS</span> <p> Corporate Park<br> 2132 Michelson Dr<br> Irvine, CA 92612 </p> </div> <div class="map-wrapper"> <iframe src="https://www.google.com/maps?q=2132+Michelson+Dr+Irvine+CA+92612&output=embed" loading="lazy" allowfullscreen ></iframe> </div> </div> <!-- RIGHT SIDE --> <div class="contact-form-card"> <form> <label>Name</label> <input type="text" placeholder="Your Name" /> <label>Email</label> <input type="email" placeholder="Your Email" /> <label>Message</label> <textarea rows="5" placeholder="Your Message"></textarea> <button type="submit">Send Message</button> </form> </div> </div> </section> </div> </section> <footer> © 2026 Queenie Clarke </footer> <script> const obs=new IntersectionObserver(e=>{ e.forEach(x=>x.isIntersecting&&x.target.classList.add("show")) },{threshold:.15}); document.querySelectorAll(".reveal").forEach(el=>obs.observe(el)); </script>
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+      <h2>Contact</h2>
+
+      <div class="info-block">
+        <span class="label">EMAIL</span>
+        <p>huangshiyan22@gmail.com</p>
+      </div>
+
+      <div class="info-block">
+        <span class="label">PHONE</span>
+        <p>+1 213 773 3971</p>
+      </div>
+
+      <div class="info-block">
+        <span class="label">OFFICE ADDRESS</span>
+        <p>
+          Corporate Park<br>
+          2132 Michelson Dr<br>
+          Irvine, CA 92612
+        </p>
+      </div>
+
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps?q=2132+Michelson+Dr+Irvine+CA+92612&output=embed"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="contact-form-card">
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Your Name" />
+
+        <label>Email</label>
+        <input type="email" placeholder="Your Email" />
+
+        <label>Message</label>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+    
+  </div>
+</section>
+
+
+  
+<footer>
+  © 2026 Queenie Clarke
+</footer>
+
+<script>
 const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
 },{threshold:.15});
