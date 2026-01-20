@@ -1375,6 +1375,31 @@ body {
   position: relative;
   z-index: 1;
 }
+/* ===== Professional Focus background ===== */
+.section.reveal.professional {
+  position: relative;
+  padding: 160px 24px;
+
+  background-image: url("image/profess.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Soft black overlay */
+.section.reveal.professional::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 17, 21, 0.5);
+  z-index: 0;
+}
+
+/* Keep card above overlay */
+.section.reveal.professional > * {
+  position: relative;
+  z-index: 1;
+}
 
 </style>
 </head>
@@ -1465,7 +1490,8 @@ body {
 
 
 <!-- EDUCATION & CAREER -->
-<section class="section reveal show">
+<section class="section reveal show professional">
+  
   <div class="focus-card">
     <h2>Professional Focus</h2>
     <p>
