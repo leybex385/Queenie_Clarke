@@ -2101,6 +2101,24 @@ nav, .menu, .dropdown-menu {
   position: relative;
   z-index: 1000;
 }
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  min-width: 220px;
+  padding: 10px 0;
+  border-radius: 8px;
+  display: none; /* Hidden by default */
+}
+
+.dropdown-menu.show {
+  display: block; /* Show when active */
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
 
 </style>
 </head>
@@ -2114,14 +2132,15 @@ nav, .menu, .dropdown-menu {
   <ul class="menu">
     <!-- Dropdown for "About" -->
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle">About ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="#clinical">Clinical Projects</a></li>
-        <li><a href="#publications">Publications & Research</a></li>
-        <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#insight">Professional Highlights</a></li>
-      </ul>
-    </li>
+  <a href="#" class="dropdown-toggle">About ▾</a>
+  <ul class="dropdown-menu">
+    <li><a href="#clinical">Clinical Projects</a></li>
+    <li><a href="#publications">Publications & Research</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#insight">Professional Highlights</a></li>
+  </ul>
+</li>
+
     <!-- Other navigation links -->
     <li><a href="#focus">Professional Focus</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -2516,51 +2535,38 @@ nav, .menu, .dropdown-menu {
 </footer>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-  const dropdown = document.querySelector('.dropdown');
-  const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
-
-  // Toggle dropdown on click
-  dropdownToggle.addEventListener('click', function (e) {
-    e.preventDefault();
-    const menu = dropdown.querySelector('.dropdown-menu');
-    menu.classList.toggle('show');  // Toggle visibility of the dropdown
-  });
-
-  // Optional: Close dropdown if clicked outside
-  window.addEventListener('click', function (e) {
-    if (!dropdown.contains(e.target)) {
-      dropdown.querySelector('.dropdown-menu').classList.remove('show');
-    }
-  });
-});
-
-</script>
-
-<script>
-const obs=new IntersectionObserver(e=>{
-  e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
-},{threshold:.15});
-document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
-    
-    // Open the dropdown when clicked
+
+    // Toggle dropdown visibility on click
     dropdownToggle.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent default behavior of link
-      dropdownMenu.classList.toggle('show');
+      e.preventDefault();
+      dropdownMenu.classList.toggle('show'); // Toggle visibility
     });
 
-    // Close the dropdown if clicked outside
+    // Close dropdown when clicking outside
     window.addEventListener('click', function (e) {
       if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        dropdownMenu.classList.remove('show');
+        dropdownMenu.classList.remove('show'); // Hide the dropdown
       }
     });
   });
 </script>
+
+<script>
+  // Intersection Observer to reveal content as it scrolls into view
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.15 });
+
+  // Apply observer to all elements with the class 'reveal'
+  document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+</script>
+
 
 </body>
 </html>
