@@ -1792,6 +1792,18 @@ small,
       font-size: 30px;
     }
   }
+  /* ===== FADE IN ON SCROLL ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>
 
 <!-- JavaScript to Toggle the Hamburger Menu -->
@@ -1836,7 +1848,7 @@ small,
 
 
 <!-- PROFILE -->
-<section id="about" class="hero-profile">
+<section id="about" class="hero-profile reveal">
 
   <div class="hero-profile-inner">
 
@@ -1864,7 +1876,7 @@ small,
 
 
 <!-- INDUSTRY PERSPECTIVE -->
-<section class="hero-industry">
+<section class="hero-industry reveal">
   <div class="container">
     <div class="hero-industry-card">
       <h2>Industry Perspective</h2>
@@ -1884,7 +1896,7 @@ small,
 
 
 <!-- EDUCATION & CAREER -->
-<section id="professional" class="section reveal show professional">
+<section id="professional" class="section reveal professional">
   
   <div class="focus-card">
     <h2>Professional Focus</h2>
@@ -1983,7 +1995,7 @@ small,
 </section>
 
 <!-- SELECTED PUBLICATIONS & RESEARCH -->
-<section class="section reveal show publications">
+<section class="section reveal publications">
   <div class="focus-card publications-layout">
 
     <!-- LEFT: TEXT -->
@@ -2198,6 +2210,47 @@ const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
 },{threshold:.15});
 document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target); // animate once
+          }
+        });
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  reveals.forEach(section => {
+    observer.observe(section);
+  });
 </script>
 
 </body>
