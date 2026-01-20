@@ -1232,9 +1232,8 @@ body {
 }
 
 #contact {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  margin: 0;
   background: #0f1013;
 }
 
@@ -1734,8 +1733,8 @@ small,
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
-  background-color: #0b0e13;
+  background: #0f1013;
+  overflow-x: hidden;
 }
 .site-main {
   flex: 1;
@@ -1761,6 +1760,19 @@ body {
 /* If footer exists but is empty */
 .site-footer:empty {
   display: none;
+}
+.site-footer {
+  width: 100%;
+  background: #0f1013;
+  padding: 32px 0;
+}
+
+.footer-inner {
+  max-width: 1200px; /* same visual logic as huangshiyan.com */
+  margin: 0 auto;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
 }
 
 </style>
@@ -2236,23 +2248,12 @@ body {
 </section>
   
 </script>
-<main class="site-main">
-  <!-- all sections: hero, about, contact, etc -->
-</main>
-
-<body>
-
-<body>
-
-  <main class="site-main">
-    <!-- all page content -->
-  </main>
-
-  <footer class="site-footer">
+<footer class="site-footer">
+  <div class="footer-inner">
     © 2026 Queenie Clarke. All rights reserved.
-  </footer>
+  </div>
+</footer>
 
-</body>
 <script>
 const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
