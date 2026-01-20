@@ -1740,16 +1740,28 @@ html, body {
 .site-main {
   flex: 1;
 }
+/* ===== FINAL FIX: REMOVE WHITE BAR AFTER CONTACT ===== */
+
 .site-footer {
-  margin: 0;
-  padding: 40px 0;
-  width: 100%;
-  background: #ffffff;
-  color: #555;
-  text-align: center;
-  font-size: 14px;
+  background: #0f1013 !important;
+  color: #9ca3af;
 }
 
+/* Ensure no white bleed anywhere */
+html, body {
+  background: #0f1013 !important;
+  overflow-x: hidden;
+}
+
+/* Kill any default bottom spacing */
+body {
+  margin-bottom: 0;
+}
+
+/* If footer exists but is empty */
+.site-footer:empty {
+  display: none;
+}
 
 </style>
 </head>
