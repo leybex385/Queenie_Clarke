@@ -1776,6 +1776,31 @@ small,
 html {
   scroll-behavior: smooth;
 }
+/* Header navigation font size adjustment */
+header nav a {
+  font-size: 0.9rem; /* slightly smaller font size */
+}
+
+/* Make the "Queenie Clarke" visible */
+.brand {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff; /* Ensure it's white and visible */
+  letter-spacing: 0.02em;
+  opacity: 1 !important; /* Remove opacity if it's set */
+}
+
+/* Matching the header background to hero section (dark gradient with blur) */
+header {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.35)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Optional - adds thin border for polish */
+}
 
 </style>
 </head>
