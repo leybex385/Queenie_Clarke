@@ -1096,7 +1096,10 @@ footer {
 /* Keep map light */
 .map-wrapper,
 .map-wrapper iframe {
-  background: #ffffff;
+  width: 100%;
+  height: 220px;
+  border: 0;
+  border-radius: 14px;
 }
 /* ===== Professional Focus – Light Image Background ===== */
 
@@ -1580,22 +1583,18 @@ small,
   color: #6b7280;
   max-width: 880px;
 }
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 /* FIX CONTACT WHITE BACKGROUND ISSUE */
+html,
+html,
 body {
-  background: #0f1115;
+  background-color: var(--bg);
+  overflow-x: hidden;
 }
 
 .contact-section {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
   background: #0f1115;
+  padding: 140px 0;
 }
 
 </style>
@@ -2069,11 +2068,6 @@ body {
 
   </div>
 </section>
-
-    
-  </div>
-</section>
-
 
   
 <footer>
