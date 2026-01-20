@@ -1347,6 +1347,34 @@ body {
 .education-title {
   color: #ffffff;
 }
+/* ===== Professional Focus – Background Image (ONLY this section) ===== */
+
+#professional.section.reveal {
+  position: relative;
+  padding: 160px 24px;
+
+  background-image: url("image/profess.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Soft black overlay (editorial, not dark) */
+#professional.section.reveal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(15, 17, 21, 0.5);
+
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+#professional.section.reveal > * {
+  position: relative;
+  z-index: 1;
+}
 
 </style>
 </head>
