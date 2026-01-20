@@ -1033,12 +1033,15 @@ footer {
     padding: 64px 32px 48px;
   }
 }
-/* CONTACT SECTION */
+/* CONTACT SECTION — FULL WIDTH BLACK */
 .contact-section {
+  width: 100vw;
   background: #0f1115;
   padding: 120px 0;
   margin: 0;
+  overflow-x: hidden;
 }
+
 
 .contact-wrapper {
   display: grid;
@@ -1716,6 +1719,19 @@ small,
   line-height: 1.9;
   color: #6b7280;
   max-width: 880px;
+}
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GLOBAL BACKGROUND FIX ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0f1115;
 }
 
 </style>
