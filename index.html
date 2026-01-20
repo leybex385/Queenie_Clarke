@@ -1275,6 +1275,38 @@ body {
   position: relative;
   z-index: 1;
 }
+/* ===== Education – Soft Gray Editorial Look ===== */
+
+.education {
+  position: relative;
+  padding: 160px 24px;
+
+  background-image: url("image/education.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Soft gray veil (NOT white, NOT dark) */
+.education::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(235, 236, 238, 0.65); /* 👈 key part */
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.education > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: soften the card slightly to match reference */
+.education-card {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+}
 
 </style>
 </head>
