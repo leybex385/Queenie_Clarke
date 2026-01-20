@@ -1731,6 +1731,22 @@ small,
   color: #6b7280;
   max-width: 880px;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #0b0e13;
+}
+.site-main {
+  flex: 1;
+}
+.site-footer {
+  margin: 0;
+  background: linear-gradient(180deg, #0b0e13, #06080c);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 40px 0;
+}
 
 </style>
 </head>
@@ -2205,12 +2221,12 @@ small,
 </section>
   
 </script>
-<footer class="footer">
-  <div class="container">
-    <p>
-      © 2026 Queenie Clarke. All rights reserved.
-    </p>
-  </div>
+<main class="site-main">
+  <!-- all sections: hero, about, contact, etc -->
+</main>
+
+<footer class="site-footer">
+  © 2026 Queenie Clarke. All rights reserved.
 </footer>
 <script>
 const obs=new IntersectionObserver(e=>{
