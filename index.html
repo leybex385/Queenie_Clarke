@@ -1232,8 +1232,9 @@ body {
 }
 
 #contact {
-  width: 100%;
-  margin: 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   background: #0f1013;
 }
 
@@ -1733,47 +1734,22 @@ small,
 html, body {
   margin: 0;
   padding: 0;
-  background: #0f1013;
-  overflow-x: hidden;
+  min-height: 100%;
+  background-color: #0b0e13;
 }
 .site-main {
   flex: 1;
 }
-/* ===== FINAL FIX: REMOVE WHITE BAR AFTER CONTACT ===== */
-
 .site-footer {
-  background: #0f1013 !important;
-  color: #9ca3af;
-}
-
-/* Ensure no white bleed anywhere */
-html, body {
-  background: #0f1013 !important;
-  overflow-x: hidden;
-}
-
-/* Kill any default bottom spacing */
-body {
-  margin-bottom: 0;
-}
-
-/* If footer exists but is empty */
-.site-footer:empty {
-  display: none;
-}
-.site-footer {
+  margin: 0;
+  padding: 40px 0;
   width: 100%;
-  background: #0f1013;
-  padding: 32px 0;
+  background: #ffffff;
+  color: #555;
+  text-align: center;
+  font-size: 14px;
 }
 
-.footer-inner {
-  max-width: 1200px; /* same visual logic as huangshiyan.com */
-  margin: 0 auto;
-  text-align: center;
-  font-size: 13px;
-  color: #6b7280;
-}
 
 </style>
 </head>
@@ -2248,12 +2224,23 @@ body {
 </section>
   
 </script>
-<footer class="site-footer">
-  <div class="footer-inner">
-    © 2026 Queenie Clarke. All rights reserved.
-  </div>
-</footer>
+<main class="site-main">
+  <!-- all sections: hero, about, contact, etc -->
+</main>
 
+<body>
+
+<body>
+
+  <main class="site-main">
+    <!-- all page content -->
+  </main>
+
+  <footer class="site-footer">
+    © 2026 Queenie Clarke. All rights reserved.
+  </footer>
+
+</body>
 <script>
 const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
