@@ -1664,6 +1664,119 @@ html, body {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+/* ===== CONTACT SECTION ===== */
+#contact {
+  background: #000;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 100px 0;
+}
+
+.contact-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* LEFT SIDE */
+.contact-info h2 {
+  font-size: 2.4rem;
+  color: #7aa2ff;
+  margin-bottom: 40px;
+}
+
+.contact-block {
+  margin-bottom: 28px;
+}
+
+.contact-block .label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #7aa2ff;
+  margin-bottom: 6px;
+}
+
+.contact-block p {
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* MAP */
+.contact-map {
+  margin-top: 40px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+  filter: grayscale(100%) contrast(1.1);
+}
+
+/* RIGHT SIDE FORM */
+.contact-form {
+  background: #111;
+  border-radius: 18px;
+  padding: 48px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #7aa2ff;
+}
+
+/* BUTTON */
+.contact-form button {
+  width: 100%;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
 
 </style>
 </head>
@@ -2083,43 +2196,41 @@ html, body {
   </div>
 </section>
 
-<section id="contact" class="contact-section">
-  <div class="contact-container">
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrapper">
 
-    <!-- LEFT SIDE -->
+    <!-- LEFT: CONTACT INFO -->
     <div class="contact-info">
       <h2>Contact</h2>
 
-      <div class="info-block">
-        <span class="label">EMAIL</span>
-        <p>huangshiyan22@gmail.com</p>
+      <div class="contact-block">
+        <span class="label">Email</span>
+        <p>contact@queenieclarke.com</p>
       </div>
 
-      <div class="info-block">
-        <span class="label">PHONE</span>
-        <p>+1 213 773 3971</p>
+      <div class="contact-block">
+        <span class="label">Professional Inquiries</span>
+        <p>Strategic advisory, collaboration, and institutional dialogue</p>
       </div>
 
-      <div class="info-block">
-        <span class="label">OFFICE ADDRESS</span>
-        <p>
-          Corporate Park<br>
-          2132 Michelson Dr<br>
-          Irvine, CA 92612
-        </p>
+      <div class="contact-block">
+        <span class="label">Availability</span>
+        <p>International engagements & scheduled consultations</p>
       </div>
 
-      <!-- WHITE MAP -->
-      <div class="map-wrapper">
+      <!-- MAP -->
+      <div class="contact-map">
         <iframe
-          src="https://www.google.com/maps?q=2132+Michelson+Dr+Irvine+CA+92612&output=embed"
+          src="https://www.google.com/maps?q=Irvine,CA&output=embed"
           loading="lazy"
-        ></iframe>
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="contact-form-card">
+    <!-- RIGHT: CONTACT FORM -->
+    <div class="contact-form">
       <form>
         <label>Name</label>
         <input type="text" placeholder="Your Name" />
@@ -2137,10 +2248,6 @@ html, body {
   </div>
 </section>
 
-
-    
-  </div>
-</section>
 
   
 <footer class="minimal-footer">
