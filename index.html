@@ -1697,6 +1697,12 @@ small,
 <header>
   <nav>
     <div class="brand">Queenie Clarke</div>
+
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-icon" id="menu-icon">
+      &#9776; <!-- This is the hamburger icon -->
+    </div>
+
     <div class="menu">
       <a href="#profile">Profile</a>
       <a href="#family">Family</a>
@@ -1705,6 +1711,63 @@ small,
     </div>
   </nav>
 </header>
+
+<!-- Add CSS for the hamburger menu -->
+<style>
+  /* Default state - hide the menu on small screens */
+  .menu {
+    display: flex;
+  }
+
+  .menu a {
+    margin-left: 32px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+  }
+
+  /* Make the menu hidden by default on mobile */
+  @media (max-width: 900px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: rgba(247, 246, 243, 0.85);
+    }
+
+    .menu a {
+      margin: 20px;
+      font-size: 18px;
+    }
+
+    .menu-icon {
+      display: block;
+      font-size: 30px;
+    }
+  }
+</style>
+
+<!-- JavaScript to Toggle the Hamburger Menu -->
+<script>
+  // Get the menu icon and menu
+  const menuIcon = document.getElementById("menu-icon");
+  const menu = document.querySelector(".menu");
+
+  // Add a click event listener to the menu icon
+  menuIcon.addEventListener("click", () => {
+    // Toggle the display of the menu
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  });
+</script>
+
 
 <!-- HERO -->
 <!-- HERO -->
