@@ -1245,6 +1245,36 @@ body {
 .map-wrapper iframe {
   background: #ffffff;
 }
+/* ===== Professional Focus – Light Image Background ===== */
+
+.section.reveal.show {
+  position: relative;
+  padding: 160px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background image */
+  background-image: url("image/professional.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Light overlay (keeps image visible) */
+.section.reveal.show::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55); /* ← light, airy */
+  z-index: 0;
+}
+
+/* Keep card above overlay */
+.section.reveal.show .focus-card {
+  position: relative;
+  z-index: 1;
+}
 
 </style>
 </head>
