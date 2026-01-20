@@ -1801,6 +1801,49 @@ header {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Optional - adds thin border for polish */
 }
+/* ===== HEADER / NAV FONT SIZE ===== */
+header nav a {
+  font-size: 0.85rem;   /* smaller, like the example */
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Hover state (optional, subtle) */
+header nav a:hover {
+  color: #ffffff;
+}
+
+/* ===== BRAND (Queenie Clarke) ===== */
+.brand {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 1;           /* ensure visible */
+  letter-spacing: 0.04em;
+}
+
+/* ===== HEADER BACKGROUND (LIGHTER) ===== */
+header {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Optional: soften the bottom edge */
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
 
 </style>
 </head>
