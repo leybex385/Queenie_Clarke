@@ -1031,111 +1031,37 @@ footer{
     padding: 64px 32px 48px;
   }
 }
-/* CONTACT SECTION */
+/* ===============================
+   CONTACT — HUANGSHIYAN STYLE
+   =============================== */
+
+#contact {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: #0f1013;
+}
+
 .contact-section {
-  padding: 80px 0%;
-  background: #0f1115;
-}
-
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-}
-
-.contact-info h2 {
-  font-size: 2.4rem;
-  margin-bottom: 30px;
-  color: #8ab4ff;
-}
-
-.contact-item {
-  margin-bottom: 30px;
-}
-
-.contact-item .label {
-  display: block;
-  font-size: 0.85rem;
-  letter-spacing: 1.5px;
-  color: #8ab4ff;
-  margin-bottom: 8px;
-}
-
-.contact-item p {
-  color: #d1d5db;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-/* FORM */
-.contact-form {
-  background: #1a1d23;
-  padding: 40px;
-  border-radius: 14px;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 6px;
-  color: #aeb4c0;
-  font-size: 0.9rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 20px;
-  background: #2a2e36;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 0.95rem;
-}
-
-.contact-form button {
-  width: 100%;
-  padding: 14px;
-  background: #2563eb;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #1d4ed8;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-/* ===== CONTACT SECTION ===== */
-
-/* ===== CONTACT SECTION ===== */
-.contact-section {
-  background: #111111; /* Change to black background */
-  padding: 120px 0px;
+  padding: 140px 0;
 }
 
 .contact-container {
   max-width: 1300px;
   margin: 0 auto;
+  padding: 0 60px;
+
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
+  gap: 100px;
 }
 
 /* LEFT */
 .contact-info h2 {
   font-family: "Playfair Display", serif;
   font-size: 48px;
-  color: #6ea2ff;
-  margin-bottom: 40px;
+  font-weight: 500;
+  color: #7aa2ff;
+  margin-bottom: 48px;
 }
 
 .info-block {
@@ -1144,10 +1070,9 @@ footer{
 
 .info-block .label {
   display: block;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #6ea2ff;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #7aa2ff;
   margin-bottom: 6px;
 }
 
@@ -1158,24 +1083,26 @@ footer{
   line-height: 1.6;
 }
 
-/* MAP */
+/* MAP (WHITE) */
 .map-wrapper {
-  margin-top: 32px;
+  margin-top: 36px;
   border-radius: 14px;
   overflow: hidden;
+  background: #ffffff;
 }
 
 .map-wrapper iframe {
   width: 100%;
-  height: 240px;
+  height: 260px;
   border: 0;
+  filter: saturate(0) brightness(1.1);
 }
 
 /* RIGHT CARD */
 .contact-form-card {
-  background: #2a2b2f;
-  border-radius: 20px;
-  padding: 48px;
+  background: #26272b;
+  border-radius: 22px;
+  padding: 56px;
 }
 
 .contact-form-card label {
@@ -1188,12 +1115,12 @@ footer{
 .contact-form-card input,
 .contact-form-card textarea {
   width: 100%;
-  background: #3a3b40;
+  background: #33343a;
   border: none;
   border-radius: 10px;
   padding: 14px 16px;
   margin-bottom: 22px;
-  color: #fff;
+  color: #ffffff;
   font-size: 15px;
 }
 
@@ -1210,7 +1137,7 @@ footer{
   padding: 14px;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -1218,36 +1145,15 @@ footer{
 @media (max-width: 900px) {
   .contact-container {
     grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 0 28px;
   }
 
   .contact-section {
-    padding: 80px 0px;
+    padding: 100px 0;
   }
 }
-/* ===== FORCE FULL-BLEED BLACK CONTACT ===== */
 
-body {
-  background: #0f1013;
-}
-
-#contact {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  background: #0f1013;
-}
-
-/* Ensure nothing inside leaks light background */
-.contact-section,
-.contact-container {
-  background: #0f1013;
-}
-
-/* Keep map light */
-.map-wrapper,
-.map-wrapper iframe {
-  background: #ffffff;
-}
 /* ===== Professional Focus – Light Image Background ===== */
 
 .section.reveal.show {
@@ -2203,11 +2109,11 @@ html, body {
         </p>
       </div>
 
+      <!-- WHITE MAP -->
       <div class="map-wrapper">
         <iframe
           src="https://www.google.com/maps?q=2132+Michelson+Dr+Irvine+CA+92612&output=embed"
           loading="lazy"
-          allowfullscreen
         ></iframe>
       </div>
     </div>
@@ -2230,6 +2136,7 @@ html, body {
 
   </div>
 </section>
+
 
     
   </div>
