@@ -1042,15 +1042,17 @@ footer {
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+
+  padding: 100px 80px; /* CHANGED */
 
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 80px;
 
-  background: transparent;
+  background: linear-gradient(180deg, #1b1e23, #14161a); /* CHANGED */
+  border-radius: 24px;                                  /* NEW */
+  box-shadow: 0 40px 120px rgba(0,0,0,0.25);             /* NEW */
 }
-
 /* LEFT */
 .contact-info h2 {
   font-family: "Playfair Display", serif;
@@ -1586,8 +1588,9 @@ small,
 /* FIX CONTACT WHITE BACKGROUND ISSUE */
 html,
 html,
+html,
 body {
-  background-color: var(--bg);
+  background-color: #ffffff;
   overflow-x: hidden;
 }
 
