@@ -2064,6 +2064,43 @@ header {
   display: block;
 }
 
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  min-width: 220px;
+  padding: 10px 0;
+  border-radius: 8px;
+  z-index: 10000;
+}
+
+/* When the dropdown is shown */
+.dropdown-menu.show {
+  display: block;
+}
+
+/* General Styling for Links */
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px;
+  margin-left: 32px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure nav links are clickable */
+nav, .menu, .dropdown-menu {
+  position: relative;
+  z-index: 1000;
+}
 
 </style>
 </head>
@@ -2071,21 +2108,21 @@ header {
 <body>
 
 <header class="main-header">
- <nav class="nav">
+ <nav>
   <div class="brand">QUEENIE CLARKE</div>
 
   <ul class="menu">
+    <!-- Dropdown for "About" -->
     <li class="dropdown">
-  <a href="#" class="dropdown-toggle">About ▾</a>
-  <ul class="dropdown-menu">
-    <li><a href="#clinical">Clinical Projects</a></li>
-    <li><a href="#publications">Publications & Research</a></li>
-    <li><a href="#leadership">Leadership</a></li>
-    <li><a href="#insight">Professional Highlights</a></li>
-  </ul>
-</li>
-
-
+      <a href="#" class="dropdown-toggle">About ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="#clinical">Clinical Projects</a></li>
+        <li><a href="#publications">Publications & Research</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#insight">Professional Highlights</a></li>
+      </ul>
+    </li>
+    <!-- Other navigation links -->
     <li><a href="#focus">Professional Focus</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
@@ -2093,6 +2130,7 @@ header {
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+
 </header>
 
 
@@ -2503,6 +2541,25 @@ const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
 },{threshold:.15});
 document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    // Open the dropdown when clicked
+    dropdownToggle.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default behavior of link
+      dropdownMenu.classList.toggle('show');
+    });
+
+    // Close the dropdown if clicked outside
+    window.addEventListener('click', function (e) {
+      if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+  });
 </script>
 
 </body>
