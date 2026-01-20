@@ -130,11 +130,13 @@ section{padding:var(--gap) 0}
 }
 .reveal{opacity:0;transform:translateY(20px);transition:.8s ease}
 .reveal.show{opacity:1;transform:none}
-footer{
-  padding:80px 32px 0px;
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
+footer {
+  background: #0f1115;
+  padding: 80px 32px 40px;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
 }
 @media(max-width:900px){
   .hero h1{font-size:40px}
@@ -1033,8 +1035,9 @@ footer{
 }
 /* CONTACT SECTION */
 .contact-section {
-  padding: 80px 0%;
   background: #0f1115;
+  padding: 120px 0;
+  margin: 0;
 }
 
 .contact-wrapper {
@@ -1115,12 +1118,6 @@ footer{
   }
 }
 /* ===== CONTACT SECTION ===== */
-
-/* ===== CONTACT SECTION ===== */
-.contact-section {
-  background: #111111; /* Change to black background */
-  padding: 120px 0px;
-}
 
 .contact-container {
   max-width: 1300px;
@@ -1220,22 +1217,12 @@ footer{
     grid-template-columns: 1fr;
   }
 
-  .contact-section {
-    padding: 80px 0px;
-  }
-}
 /* ===== FORCE FULL-BLEED BLACK CONTACT ===== */
 
 body {
   background: #0f1013;
 }
 
-#contact {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  background: #0f1013;
-}
 
 /* Ensure nothing inside leaks light background */
 .contact-section,
