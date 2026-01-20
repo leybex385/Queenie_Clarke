@@ -1307,6 +1307,46 @@ body {
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
 }
+/* ===== Education – Soft Black Editorial Overlay ===== */
+
+.education {
+  position: relative;
+  padding: 160px 24px;
+
+  background-image: url("image/education.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Soft black veil (key difference) */
+.education::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* 👇 THIS is the exact look */
+  background: rgba(15, 17, 21, 0.55);
+
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.education > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card refinement (matches reference softness) */
+.education-card {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+}
+
+/* Title readability */
+.education-title {
+  color: #ffffff;
+}
 
 </style>
 </head>
