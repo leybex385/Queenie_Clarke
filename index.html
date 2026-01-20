@@ -1767,15 +1767,7 @@ small,
   color: #fff;
 }
 
-/* SHOW DROPDOWN */
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-html {
-  scroll-behavior: smooth;
-}
+
 /* Header navigation font size adjustment */
 header nav a {
   font-size: 0.9rem; /* slightly smaller font size */
@@ -2038,10 +2030,40 @@ header {
   color: #fff;
 }
 
-/* SHOW ON HOVER */
+/* SHOW DROPDOWN */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+.dropdown-menu {
+  position: absolute;
+  top: 160%;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+  padding: 12px 0;
+  border-radius: 8px;
+  min-width: 220px;
+  display: none;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+}
+
+.dropdown-menu a:hover {
+  color: #fff;
+}
+
+/* SHOW ON HOVER (if you want hover functionality) */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 
 </style>
 </head>
@@ -2054,14 +2076,15 @@ header {
 
   <ul class="menu">
     <li class="dropdown">
-      <a href="#">About ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="#clinical">Clinical Projects</a></li>
-        <li><a href="#publications">Publications & Research</a></li>
-        <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#insight">Professional Highlights</a></li>
-      </ul>
-    </li>
+  <a href="#" class="dropdown-toggle">About ▾</a>
+  <ul class="dropdown-menu">
+    <li><a href="#clinical">Clinical Projects</a></li>
+    <li><a href="#publications">Publications & Research</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#insight">Professional Highlights</a></li>
+  </ul>
+</li>
+
 
     <li><a href="#focus">Professional Focus</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -2455,23 +2478,24 @@ header {
 </footer>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.querySelector('.dropdown');
-    const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+  const dropdown = document.querySelector('.dropdown');
+  const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
 
-    // Toggle dropdown on click
-    dropdownToggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      const menu = dropdown.querySelector('.dropdown-menu');
-      menu.classList.toggle('show');  // Toggle visibility of the dropdown
-    });
-
-    // Optional: Close dropdown if clicked outside
-    window.addEventListener('click', function (e) {
-      if (!dropdown.contains(e.target)) {
-        dropdown.querySelector('.dropdown-menu').classList.remove('show');
-      }
-    });
+  // Toggle dropdown on click
+  dropdownToggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    const menu = dropdown.querySelector('.dropdown-menu');
+    menu.classList.toggle('show');  // Toggle visibility of the dropdown
   });
+
+  // Optional: Close dropdown if clicked outside
+  window.addEventListener('click', function (e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.querySelector('.dropdown-menu').classList.remove('show');
+    }
+  });
+});
+
 </script>
 
 <script>
