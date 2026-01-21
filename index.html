@@ -1226,24 +1226,14 @@ section{padding:var(--gap) 0}
     padding: 80px 0px;
   }
 }
-/* ===== FORCE FULL-BLEED BLACK CONTACT ===== */
 
-body {
-  background: #0f1013;
-}
 
-#contact {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  background: #0f1013;
-}
 
 /* Ensure nothing inside leaks light background */
-.contact-section,
-.contact-container {
+.contact-section {
   background: #0f1013;
 }
+
 
 /* Keep map light */
 .map-wrapper,
@@ -1735,21 +1725,17 @@ small,
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
-  background-color: #0b0e13;
 }
-.site-main {
-  flex: 1;
-}
+
 .site-footer {
-  margin: 0;
-  padding: 40px 0;
-  width: 100%;
-  background: #ffffff;
-  color: #555;
+  background: #0b0f14;
+  color: #9ca3af;
   text-align: center;
+  padding: 48px 16px;
   font-size: 14px;
 }
+
+
 
 
 </style>
@@ -2238,9 +2224,10 @@ html, body {
     <!-- all page content -->
   </main>
 
-  <footer class="site-footer">
-    © 2026 Queenie Clarke. All rights reserved.
-  </footer>
+ <footer class="site-footer">
+  <p>© 2026 Queenie Clarke. All rights reserved.</p>
+</footer>
+
 
 <script>
 const obs=new IntersectionObserver(e=>{
