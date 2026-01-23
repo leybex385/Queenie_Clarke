@@ -2797,9 +2797,19 @@ function openProduct(id) {
   document.getElementById("product-detail").scrollIntoView({ behavior: "smooth" });
 }
 
-function closeProduct() {
-  document.getElementById("product-detail").classList.add("hidden");
-}
+<script>
+  function closeProduct() {
+    const detail = document.getElementById('product-detail');
+    const products = document.getElementById('products');
+
+    detail.classList.add('hidden');
+
+    // Smooth scroll back to products
+    products.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
 </script>
 
   </body>
