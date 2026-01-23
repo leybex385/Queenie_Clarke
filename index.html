@@ -2135,6 +2135,93 @@
     grid-template-columns: 1fr;
   }
 }
+/* PRODUCTS SECTION */
+.products-section {
+  padding: 80px 8%;
+}
+
+/* GRID */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+/* IMAGE CONTAINER */
+.product-image {
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE */
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* show whole image */
+}
+
+/* PRODUCT NAME */
+.product-card h4 {
+  font-family: inherit;     /* same font as site */
+  font-size: 15px;          /* balanced size */
+  font-weight: 500;
+  line-height: 1.35;        /* prevents overlap */
+  margin-top: 12px;
+  padding: 0 6px;           /* space for long names */
+  word-break: break-word;   /* wraps long titles */
+}
+
+/* DETAILS VIEW */
+.product-details {
+  padding: 80px 12%;
+}
+
+.product-details-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin: 30px 0;
+}
+
+.product-details-images img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* HIDE HELPER */
+.hidden {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card h4 {
+    font-size: 14px;
+  }
+}
 
   </style>
 
@@ -2236,85 +2323,81 @@
   </div>
 </section>
 
-<section id="products" class="products-section reveal">
-  <div class="products-container">
+<section id="products" class="products-section">
+  <h2 class="section-title">Our Products</h2>
 
-    <h2 class="products-title">Our Products</h2>
+  <div class="products-grid">
 
-    <div class="products-grid">
-
-      <div class="product-card" onclick="openProduct(0)">
-        <div class="product-image">
-          <img src="image/product1.jpg" alt="ECLIPSE Ji Digital Microscope">
-        </div>
-        <h4>ECLIPSE Ji Digital Microscope</h4>
+    <div class="product-card" onclick="openProduct(0)">
+      <div class="product-image">
+        <img src="image/product1.jpg" alt="ECLIPSE Ji Digital Microscope">
       </div>
-
-      <div class="product-card" onclick="openProduct(1)">
-        <div class="product-image">
-          <img src="image/product2.jpg" alt="Neuralink R1 Robot">
-        </div>
-        <h4>Neuralink R1 Robot</h4>
-      </div>
-
-      <div class="product-card" onclick="openProduct(2)">
-        <div class="product-image">
-          <img src="image/product3.jpg" alt="Philips Digital X-ray">
-        </div>
-        <h4>Philips Digital X-ray 7000 M</h4>
-      </div>
-
-      <div class="product-card" onclick="openProduct(3)">
-        <div class="product-image">
-          <img src="image/product4.jpg" alt="EEG Device">
-        </div>
-        <h4>iSyncWave EEG Device</h4>
-      </div>
-
-      <div class="product-card" onclick="openProduct(4)">
-        <div class="product-image">
-          <img src="image/product5.jpg" alt="Cranial Navigation">
-        </div>
-        <h4>Zeta Cranial Navigation</h4>
-      </div>
-
-      <div class="product-card" onclick="openProduct(5)">
-        <div class="product-image">
-          <img src="image/product6.jpg" alt="VELYS System">
-        </div>
-        <h4>VELYS Robot-Assisted System</h4>
-      </div>
-
-      <div class="product-card" onclick="openProduct(6)">
-        <div class="product-image">
-          <img src="image/product7.jpg" alt="Brain PET Scanner">
-        </div>
-        <h4>NeuroLF Brain PET Scanner</h4>
-      </div>
-
-      <div class="product-card" onclick="openProduct(7)">
-        <div class="product-image">
-          <img src="image/product8.jpg" alt="Head CT">
-        </div>
-        <h4>Micro-X Head CT</h4>
-      </div>
-
+      <h4>ECLIPSE Ji Digital Microscope</h4>
     </div>
+
+    <div class="product-card" onclick="openProduct(1)">
+      <div class="product-image">
+        <img src="image/product2.jpg" alt="Neuralink R1 Robot">
+      </div>
+      <h4>Neuralink R1 Robot</h4>
+    </div>
+
+    <div class="product-card" onclick="openProduct(2)">
+      <div class="product-image">
+        <img src="image/product3.jpg" alt="Philips Digital X-ray 7000 M">
+      </div>
+      <h4>Philips Digital X-ray 7000 M</h4>
+    </div>
+
+    <div class="product-card" onclick="openProduct(3)">
+      <div class="product-image">
+        <img src="image/product4.jpg" alt="iSyncWave EEG Device">
+      </div>
+      <h4>iSyncWave EEG Device</h4>
+    </div>
+
+    <div class="product-card" onclick="openProduct(4)">
+      <div class="product-image">
+        <img src="image/product5.jpg" alt="Zeta Cranial Navigation">
+      </div>
+      <h4>Zeta Cranial Navigation</h4>
+    </div>
+
+    <div class="product-card" onclick="openProduct(5)">
+      <div class="product-image">
+        <img src="image/product6.jpg" alt="VELYS Robot-Assisted System">
+      </div>
+      <h4>VELYS Robot-Assisted System</h4>
+    </div>
+
+    <div class="product-card" onclick="openProduct(6)">
+      <div class="product-image">
+        <img src="image/product7.jpg" alt="NeuroLF Brain PET Scanner">
+      </div>
+      <h4>NeuroLF Brain PET Scanner</h4>
+    </div>
+
+    <div class="product-card" onclick="openProduct(7)">
+      <div class="product-image">
+        <img src="image/product8.jpg" alt="Micro-X Head CT">
+      </div>
+      <h4>Micro-X Head CT</h4>
+    </div>
+
   </div>
 </section>
 
-<section id="product-detail" class="product-detail hidden">
-  <div class="product-detail-inner">
 
-    <button class="back-btn" onclick="closeProduct()">← Back to Our Products</button>
+<section id="product-details" class="product-details hidden">
+  <button class="back-btn" onclick="closeProduct()">← Back to Our Products</button>
 
-    <h2 id="detail-title"></h2>
-    <p id="detail-description"></p>
+  <h2 id="productTitle"></h2>
 
-    <div class="detail-gallery" id="detail-gallery"></div>
+  <div class="product-details-images" id="productImages"></div>
 
-  </div>
+  <p id="productDescription"></p>
 </section>
+
 
   <!-- INDUSTRY PERSPECTIVE -->
   <section class="hero-industry reveal">
@@ -2760,87 +2843,89 @@
 const products = [
   {
     title: "ECLIPSE Ji Digital Microscope",
-    description: "Product Name:  ECLIPSE Ji Digital Microscope
+    description: `ECLIPSE Ji (Ji Series) is Nikon's first fully digital research-grade inverted microscope. Leveraging AI, it automates operations from image acquisition to analysis, accelerating the elucidation of disease mechanisms—such as cancer, neurological disorders, and infectious diseases—as well as new drug development.
 
-Product Description: ECLIPSE Ji (Ji Series) is Nikon's first fully digital research-grade inverted microscope. Leveraging AI, it automates operations from image acquisition to analysis, accelerating the elucidation of disease mechanisms—such as cancer, neurological disorders, and infectious diseases—as well as new drug development. This innovative intelligent imaging system enables anyone to conduct such research with ease, making it ideal for those involved in R&D related to identifying drug discovery seeds. ECLIPSE Ji also offers hardware scalability, supporting tasks ranging from routine analysis to applied research, thereby contributing to efficient and rapid drug development. The integrated housing of the Ji Series microscopes enables users to utilize embedded scientific-grade CMOS detectors, facilitating sample observation in bright outdoor environments or during remote operation.",
-    images: ["image/product1.jpg"]
+This innovative intelligent imaging system enables anyone to conduct such research with ease, making it ideal for those involved in R&D related to identifying drug discovery seeds.
+
+The integrated housing of the Ji Series microscopes enables embedded scientific-grade CMOS detectors, facilitating observation even in bright environments.`,
+    images: [
+      "image/product1.jpg"
+    ]
   },
+
   {
     title: "Neuralink R1 Robot",
-    description: "Product Name: Neuralink R1 Robot
-
-Product Description: The Neuralink R1 robot can rapidly insert numerous flexible probes into the brain, avoiding tissue damage and longevity issues associated with larger, more rigid probes. Its surgical robotic insertion head features a 25-micrometer-diameter tungsten-rhenium needle used to connect to the insertion ring, deploy individual probes, and penetrate the meninges and brain tissue; it can insert up to six wires (192 electrodes) per minute. Linear motors power the needle, enabling rapid retraction acceleration and variable insertion speeds. A 50-micron tungsten wire bent at the tip, driven axially and rotationally, forms the forceps. The inserter head also incorporates an imaging stack for needle guidance, real-time insertion visualization, and verification.",
+    description: "Description coming soon.",
     images: ["image/product2.jpg"]
   },
+
   {
     title: "Philips Digital X-ray 7000 M",
-    description: "Product Name: Philips Digital X-ray 7000 M
-
-Product Description: Radiography 7000 M is an advanced mobile radiography solution designed to deliver enhanced patient care and greater operational efficiency. Its sophisticated design offers exceptional system availability, effortless navigation, and easy positioning for swift and effective patient care. This advanced solution automates numerous routine tasks. The Radiography 7000 M's lithium-ion battery enables rapid charging and extended runtime, keeping your system ready throughout the entire shift and allowing you to see more patients per charge.",
+    description: "Description coming soon.",
     images: ["image/product3.jpg"]
   },
+
   {
     title: "iSyncWave EEG Device",
-    description: "Product Name: iSyncWave Dry-Electrode EEG Measurement Device
-
-Product Description: iSyncWave is the first device integrating EEG and neurotherapy, delivering remote mental health care through an AI-powered digital brain health platform. It also incorporates QEEG-guided PBM phototherapy to activate mitochondrial and microglial activity in the brain. The device utilizes high-quality dry EEG sensors that automatically adapt to various sizes and shapes, retaining 10 to 20 system positions, and is equipped with a natural radioactive material (NORM) database matched to gender/age. It features AI-powered automatic analysis cloud technology and biomarkers capable of preemptively detecting any signs of aMCI at an early stage.
-
-Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic brain injury are currently under development. Concurrently, research by the U.S. Navy and Harvard Medical School has validated the safety and efficacy of PBM.",
+    description: "Description coming soon.",
     images: ["image/product4.jpg"]
   },
+
   {
     title: "Zeta Cranial Navigation",
-    description: "Product Name:  Zeta Cranial Navigation System
-
-Product Description: Zeta is an innovative surgical navigation system designed specifically for neurosurgical procedures. By leveraging computer vision, artificial intelligence, and real-time tracking, the system empowers neurosurgeons to operate with precision in any surgical environment, thereby enhancing safety and efficacy. This rapidly deployable, single-cart system meets the demands of healthcare professionals in high-pressure environments. The Zeta Cranial Navigation System enables precise catheter placement within the brains of patients facing life-threatening conditions caused by cerebrospinal fluid accumulation and elevated intracranial pressure.",
+    description: "Description coming soon.",
     images: ["image/product5.jpg"]
   },
+
   {
     title: "VELYS Robot-Assisted System",
-    description: "Product Name：VELYS™ Robot-Assisted
-
-Product Description：The VELYS™ robotic-assisted solution comprises a surgical platform and an easy-to-operate robotic arm designed to enhance surgical precision by optimizing implant placement through integrated non-CT technology. This system provides surgeons with the information needed to preserve soft tissue capsules, predict joint stability, and restore knee function. When combined with the ATTUNE™ Knee System and SIGMA™ HP Partial Knee System, the VELYS™ Robotic-Assisted Solution has the potential to improve accuracy and repeatability in TKA and UKA procedures. Key integrated features include: ADAPTIVE™ Tracking Technology, NATURAL CONTROL™ Technology, ACCUBALANCE™ Charting, and PROADJUST™ Planning.",
+    description: "Description coming soon.",
     images: ["image/product6.jpg"]
   },
+
   {
     title: "NeuroLF Brain PET Scanner",
-    description: "Product Name：NeuroLF Dedicated Brain PET Scanner
-
-Product Description：The NeuroLF dedicated brain PET scanner supports a paradigm shift in medical imaging, where specialized equipment can image specific body parts or organs. Mature technologies from cardiac imaging are now being applied to brain imaging. Comprising a patient positioning system and a scanning unit, it positions the scanner head around the patient's head. This system will make functional brain imaging for conditions like dementia, epilepsy, encephalitis, brain cancer, and Parkinson's disease more affordable. Priced at one-tenth the cost of traditional scanners (reducing expenses for equipment, personnel, and radioactive tracers), it occupies only one-fifth the volume of conventional scanners.",
+    description: "Description coming soon.",
     images: ["image/product7.jpg"]
   },
+
   {
     title: "Micro-X Head CT",
-    description: "Product Name：Micro-X Head CT
-
-Product Description：The Micro-X Brain CT Scanner is a lightweight, ambulance-based device enabling rapid on-site diagnosis and treatment during stroke emergencies. It allows medical personnel to scan a patient's brain in just eight seconds at any location, then immediately forward the images to stroke specialists for evaluation. Weighing just 154 pounds (70 kg) compared to 500 kg for traditional CT units, the Micro-X Head CT device generates images using one-third the radiation dose of conventional CT. Unlike traditional CT, it employs an arc-shaped array of 21 micro X-ray emitters and curved detectors to deliver diagnostic-grade 3D imaging.",
+    description: "Description coming soon.",
     images: ["image/product8.jpg"]
   }
 ];
 
 function openProduct(index) {
-  const product = products[index];
+  document.getElementById("products").classList.add("hidden");
+  document.getElementById("product-details").classList.remove("hidden");
 
-  document.getElementById("detail-title").innerText = product.title;
-  document.getElementById("detail-description").innerText = product.description;
+  document.getElementById("productTitle").innerText = products[index].title;
+  document.getElementById("productDescription").innerText = products[index].description;
 
-  const gallery = document.getElementById("detail-gallery");
-  gallery.innerHTML = "";
+  const imagesContainer = document.getElementById("productImages");
+  imagesContainer.innerHTML = "";
 
-  product.images.forEach(img => {
-    gallery.innerHTML += `<img src="${img}" alt="">`;
+  products[index].images.forEach(img => {
+    const image = document.createElement("img");
+    image.src = img;
+    imagesContainer.appendChild(image);
   });
 
-  const detail = document.getElementById("product-detail");
-  detail.classList.remove("hidden");
-  detail.scrollIntoView({ behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function closeProduct() {
-  document.getElementById("product-detail").classList.add("hidden");
-  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("product-details").classList.add("hidden");
+  document.getElementById("products").classList.remove("hidden");
+
+  window.scrollTo({
+    top: document.getElementById("products").offsetTop - 80,
+    behavior: "smooth"
+  });
 }
 </script>
+
 
   </body>
 
