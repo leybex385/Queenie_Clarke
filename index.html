@@ -1984,20 +1984,20 @@
 
 /* Grid */
 .key-figures-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 90px;
-  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Card */
 .key-figure-card img {
   width: 100%;
-  height: 460px;
-  object-fit: cover;
+  height: 460px;          /* portrait height */
+  object-fit: contain;   /* FULL portrait */
+  background-color: #e9ecef;
   border-radius: 18px;
-  margin-bottom: 18px;
 }
 
 .key-figure-card h3 {
@@ -2253,41 +2253,11 @@ section:not(.products-section) img {
   border-radius: 18px;
   display: block;
 }
-.key-figure-card {
+.key-figures-section .key-figure-card {
   display: flex;
-  flex-direction: column;   /* FORCE vertical layout */
+  flex-direction: column;
   align-items: center;
-  text-align: center;
 }
-    .key-figure-card {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-/* Alternate layout: flip image and text for even rows */
-.key-figure-card:nth-child(even) {
-  flex-direction: row-reverse;
-}
-    .key-figure-card img {
-  width: 420px;
-  height: 520px;
-  object-fit: cover;
-  border-radius: 18px;
-}
-.key-figure-text {
-  max-width: 520px;
-}
-
-/* Text alignment based on layout */
-.key-figure-card:nth-child(odd) .key-figure-text {
-  text-align: left;
-}
-
-.key-figure-card:nth-child(even) .key-figure-text {
-  text-align: right;
-}
-
-
 /* ===============================
    KEY FIGURES – DESCRIPTION TEXT
 ================================ */
