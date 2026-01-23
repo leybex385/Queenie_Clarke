@@ -2201,6 +2201,13 @@
     font-size: 14.5px;
   }
 }
+.detail-gallery {
+  justify-items: center;
+}
+
+.detail-gallery img {
+  max-width: 700px;
+}
 
   </style>
 
@@ -2302,75 +2309,66 @@
   </div>
 </section>
 
-<section id="products" class="products-section reveal">
-  <div class="products-container">
-    <h2 class="products-title">Our Products</h2>
+<div class="products-grid">
 
-    <div class="products-grid">
-
-      <div class="product-card" onclick="openProduct(0)">
-        <div class="product-image">
-          <img src="image/products/product1.jpg" alt="ECLIPSE Ji Digital Microscope">
-        </div>
-        <h4>ECLIPSE Ji Digital Microscope</h4>
-      </div>
-
-
-      <div class="product-card" onclick="openProduct(1)">
-        <div class="product-image">
-          <img src="image/products/neuralink.jpg" alt="Neuralink R1 Robot">
-        </div>
-        <h4>Neuralink R1 Robot</h4>
-      </div>
-
- 
-      <div class="product-card" onclick="openProduct(2)">
-        <div class="product-image">
-          <img src="image/products/xray.jpg" alt="Philips Digital X-ray 7000 M">
-        </div>
-        <h4>Philips Digital X-ray 7000 M</h4>
-      </div>
-
-      <div class="product-card" onclick="openProduct(3)">
-        <div class="product-image">
-          <img src="image/products/eeg.jpg" alt="iSyncWave EEG">
-        </div>
-        <h4>iSyncWave EEG Device</h4>
-      </div>
-
-
-      <div class="product-card" onclick="openProduct(4)">
-        <div class="product-image">
-          <img src="image/products/zeta.jpg" alt="Zeta Cranial Navigation">
-        </div>
-        <h4>Zeta Cranial Navigation</h4>
-      </div>
-
-
-      <div class="product-card" onclick="openProduct(5)">
-        <div class="product-image">
-          <img src="image/products/velys.jpg" alt="VELYS Robot">
-        </div>
-        <h4>VELYS Robot-Assisted System</h4>
-      </div>
-
-
-      <div class="product-card" onclick="openProduct(6)">
-        <div class="product-image">
-          <img src="image/products/pet.jpg" alt="NeuroLF PET Scanner">
-        </div>
-        <h4>NeuroLF Brain PET Scanner</h4>
-      </div>
-
-      <div class="product-card" onclick="openProduct(7)">
-        <div class="product-image">
-          <img src="image/products/ct.jpg" alt="Micro-X Head CT">
-        </div>
-        <h4>Micro-X Head CT</h4>
-      </div>
-
+  <div class="product-card" onclick="openProduct(0)">
+    <div class="product-image">
+      <img src="image/product1.jpg" alt="Product 1">
     </div>
+    <h4>ECLIPSE Ji Digital Microscope</h4>
   </div>
+
+  <div class="product-card" onclick="openProduct(1)">
+    <div class="product-image">
+      <img src="image/product2.jpg" alt="Product 2">
+    </div>
+    <h4>Neuralink R1 Robot</h4>
+  </div>
+
+  <div class="product-card" onclick="openProduct(2)">
+    <div class="product-image">
+      <img src="image/product3.jpg" alt="Product 3">
+    </div>
+    <h4>Philips Digital X-ray 7000 M</h4>
+  </div>
+
+  <div class="product-card" onclick="openProduct(3)">
+    <div class="product-image">
+      <img src="image/product4.jpg" alt="Product 4">
+    </div>
+    <h4>iSyncWave EEG Device</h4>
+  </div>
+
+  <div class="product-card" onclick="openProduct(4)">
+    <div class="product-image">
+      <img src="image/product5.jpg" alt="Product 5">
+    </div>
+    <h4>Zeta Cranial Navigation</h4>
+  </div>
+
+  <div class="product-card" onclick="openProduct(5)">
+    <div class="product-image">
+      <img src="image/product6.jpg" alt="Product 6">
+    </div>
+    <h4>VELYS Robot-Assisted System</h4>
+  </div>
+
+  <div class="product-card" onclick="openProduct(6)">
+    <div class="product-image">
+      <img src="image/product7.jpg" alt="Product 7">
+    </div>
+    <h4>NeuroLF Brain PET Scanner</h4>
+  </div>
+
+  <div class="product-card" onclick="openProduct(7)">
+    <div class="product-image">
+      <img src="image/product8.jpg" alt="Product 8">
+    </div>
+    <h4>Micro-X Head CT</h4>
+  </div>
+
+</div>
+
 </section>
  
     <section id="product-detail" class="product-detail hidden">
@@ -2378,7 +2376,7 @@
     <button class="back-btn" onclick="closeProduct()">← Back to Products</button>
 
     <h2 id="detail-title"></h2>
-    <p id="detail-description"></p>
+    
 
     <div class="detail-gallery" id="detail-gallery"></div>
   </div>
@@ -2901,26 +2899,25 @@ function smoothScrollTo(el) {
   }
 }
 
-/* Override scroll calls */
+<script>
 function openProduct(index) {
   const product = products[index];
-  document.getElementById("detail-title").innerText = product.title;
-  document.getElementById("detail-description").innerText = product.description;
 
   const gallery = document.getElementById("detail-gallery");
   gallery.innerHTML = "";
+
   product.images.forEach(img => {
     gallery.innerHTML += `<img src="${img}" alt="">`;
   });
 
   const detail = document.getElementById("product-detail");
   detail.classList.remove("hidden");
-  smoothScrollTo(detail);
+  detail.scrollIntoView({ behavior: "smooth" });
 }
 
 function closeProduct() {
   document.getElementById("product-detail").classList.add("hidden");
-  smoothScrollTo(document.getElementById("products"));
+  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
 }
 </script>
 
