@@ -1960,6 +1960,67 @@
       padding: 40px 0;
       text-align: center;
     }
+    /* ===== Key Figures Section ===== */
+.key-figures-section {
+  padding: 100px 6%;
+  background-color: #f1f3f5;
+  text-align: center;
+}
+
+.key-figures-header .section-eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #0a4cff;
+  font-weight: 600;
+}
+
+.key-figures-header h2 {
+  font-size: 42px;
+  margin: 12px 0 60px;
+  color: #0b2545;
+}
+
+/* Grid */
+.key-figures-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.key-figure-card img {
+  width: 100%;
+  height: 460px;          /* portrait height */
+  object-fit: contain;   /* FULL portrait */
+  background-color: #e9ecef;
+  border-radius: 18px;
+}
+
+.key-figure-card h3 {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.key-figure-card p {
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .key-figures-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .key-figure-card img {
+    height: 420px;
+  }
+}
+
   </style>
 
   <!-- JavaScript to Toggle the Hamburger Menu -->
@@ -2030,6 +2091,36 @@
 
     </div>
   </section>
+
+    <section class="key-figures-section">
+  <div class="key-figures-header">
+    <span class="section-eyebrow">KEY FIGURES</span>
+    <h2>Key Figures</h2>
+  </div>
+
+  <div class="key-figures-grid">
+    <!-- Figure 1 -->
+    <div class="key-figure-card">
+      <img src="image/heroprofile.jpg" alt="Alexandra Chen">
+      <h3>Alexandra Chen</h3>
+      <p>Founder & Chief Executive Officer</p>
+    </div>
+
+    <!-- Figure 2 -->
+    <div class="key-figure-card">
+      <img src="image/executive1.jpg" alt="Jonathan Miller">
+      <h3>Jonathan Miller</h3>
+      <p>Chief Operating Officer</p>
+    </div>
+
+    <!-- Figure 3 -->
+    <div class="key-figure-card">
+      <img src="image/execute2.jpg" alt="David Ross">
+      <h3>David Ross</h3>
+      <p>Chief Financial Officer</p>
+    </div>
+  </div>
+</section>
 
 
   <!-- INDUSTRY PERSPECTIVE -->
