@@ -2006,13 +2006,23 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-  .key-figures-grid {
-    grid-template-columns: 1fr;
+  .key-figure-vertical {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .key-figure-card img {
-    height: 420px;
+  .figure-image img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
+
+  .founder-highlight {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
 }
 .products-section {
   padding: 160px 24px;
