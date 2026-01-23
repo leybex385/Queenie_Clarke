@@ -2020,6 +2020,94 @@
     height: 420px;
   }
 }
+/* PRODUCTS */
+.products-section {
+  padding: 100px 24px;
+  background: #f9fafb;
+}
+
+.products-grid {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.08);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+/* PRODUCT DETAIL */
+.product-detail {
+  padding: 120px 24px;
+  background: #ffffff;
+}
+
+.product-detail-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+}
+
+.product-gallery img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.thumbs img {
+  width: 80px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.close-btn {
+  margin-bottom: 40px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-detail-container {
+    grid-template-columns: 1fr;
+  }
+}
 
   </style>
 
@@ -2117,6 +2205,68 @@
       <img src="image/execute2.jpg" alt="David Ross">
       <h3>David Ross</h3>
       <p>Chief Financial Officer</p>
+    </div>
+  </div>
+</section>
+
+    <!-- PRODUCTS SECTION -->
+<section id="products" class="products-section reveal">
+  <h2 class="section-title">Products</h2>
+
+  <div class="products-grid">
+    <div class="product-card" onclick="openProduct('p1')">
+      <img src="image/p1-thumb.jpg">
+      <h3>ECLIPSE Ji Digital Microscope</h3>
+    </div>
+
+    <div class="product-card" onclick="openProduct('p2')">
+      <img src="image/p2-thumb.jpg">
+      <h3>Neuralink R1 Robot</h3>
+    </div>
+
+    <div class="product-card" onclick="openProduct('p3')">
+      <img src="image/p3-thumb.jpg">
+      <h3>Philips Digital X-ray 7000 M</h3>
+    </div>
+
+    <div class="product-card" onclick="openProduct('p4')">
+      <img src="image/p4-thumb.jpg">
+      <h3>iSyncWave EEG System</h3>
+    </div>
+
+    <div class="product-card" onclick="openProduct('p5')">
+      <img src="image/p5-thumb.jpg">
+      <h3>Zeta Cranial Navigation</h3>
+    </div>
+
+    <div class="product-card" onclick="openProduct('p6')">
+      <img src="image/p6-thumb.jpg">
+      <h3>VELYS™ Robot-Assisted System</h3>
+    </div>
+
+    <div class="product-card" onclick="openProduct('p7')">
+      <img src="image/p7-thumb.jpg">
+      <h3>NeuroLF Brain PET Scanner</h3>
+    </div>
+
+    <div class="product-card" onclick="openProduct('p8')">
+      <img src="image/p8-thumb.jpg">
+      <h3>Micro-X Head CT</h3>
+    </div>
+  </div>
+</section>
+<section id="product-detail" class="product-detail hidden">
+  <button class="close-btn" onclick="closeProduct()">← Back to Products</button>
+
+  <div class="product-detail-container">
+    <div class="product-gallery">
+      <img id="mainProductImage" src="">
+      <div class="thumbs" id="productThumbs"></div>
+    </div>
+
+    <div class="product-info">
+      <h2 id="productTitle"></h2>
+      <p id="productDescription"></p>
     </div>
   </div>
 </section>
@@ -2562,6 +2712,48 @@
       observer.observe(section);
     });
   </script>
+<script>
+const products = {
+  p1: {
+    title: "ECLIPSE Ji Digital Microscope",
+    desc: "Nikon’s fully digital research-grade inverted microscope leveraging AI-driven automation.",
+    images: ["image/eclipse1.jpg", "image/eclipse2.jpg", "image/eclipse3.jpg"]
+  },
+  p2: {
+    title: "Neuralink R1 Robot",
+    desc: "Robotic surgical system enabling precision neural interface implantation.",
+    images: ["image/n1.jpg", "image/n2.jpg"]
+  },
+  p3: {
+    title: "Philips Digital X-ray 7000 M",
+    desc: "Advanced mobile digital X-ray system for high-quality imaging.",
+    images: ["image/x1.jpg"]
+  }
+};
+
+function openProduct(id) {
+  const p = products[id];
+  document.getElementById("productTitle").innerText = p.title;
+  document.getElementById("productDescription").innerText = p.desc;
+  document.getElementById("mainProductImage").src = p.images[0];
+
+  const thumbs = document.getElementById("productThumbs");
+  thumbs.innerHTML = "";
+  p.images.forEach(img => {
+    const i = document.createElement("img");
+    i.src = img;
+    i.onclick = () => document.getElementById("mainProductImage").src = img;
+    thumbs.appendChild(i);
+  });
+
+  document.getElementById("product-detail").classList.remove("hidden");
+  document.getElementById("product-detail").scrollIntoView({ behavior: "smooth" });
+}
+
+function closeProduct() {
+  document.getElementById("product-detail").classList.add("hidden");
+}
+</script>
 
   </body>
 
