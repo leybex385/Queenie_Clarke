@@ -2020,6 +2020,187 @@
     height: 420px;
   }
 }
+/* ================= PRODUCTS ================= */
+
+.products-section {
+  padding: 100px 24px;
+  background: #fff;
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.product-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-image {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* SHOW FULL IMAGE */
+}
+
+.product-card h4 {
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ================= DETAIL VIEW ================= */
+
+.product-detail {
+  padding: 100px 24px;
+  background: #f9fafb;
+}
+
+.product-detail.hidden {
+  display: none;
+}
+
+.product-detail-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.detail-gallery img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid,
+  .detail-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+/* ================= MOBILE OPTIMIZATION ================= */
+
+@media (max-width: 768px) {
+
+  /* Section spacing */
+  .products-section,
+  .product-detail {
+    padding: 70px 16px;
+  }
+
+  .products-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  /* Product grid */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  /* Product card */
+  .product-card {
+    padding: 6px;
+  }
+
+  .product-image {
+    height: 180px;
+    margin-bottom: 12px;
+  }
+
+  .product-card h4 {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  /* Detail view */
+  .product-detail-inner {
+    padding: 0;
+  }
+
+  .back-btn {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  #detail-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  #detail-description {
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  /* Gallery */
+  .detail-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .detail-gallery img {
+    max-height: 320px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+
+  .product-card h4 {
+    font-size: 14.5px;
+  }
+}
 
   </style>
 
@@ -2121,8 +2302,92 @@
   </div>
 </section>
 
+<section id="products" class="products-section reveal">
+  <div class="products-container">
+    <h2 class="products-title">Our Products</h2>
 
-  <!-- INDUSTRY PERSPECTIVE -->
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card" onclick="openProduct(0)">
+        <div class="product-image">
+          <img src="image/products/eclipse.jpg" alt="ECLIPSE Ji Digital Microscope">
+        </div>
+        <h4>ECLIPSE Ji Digital Microscope</h4>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" onclick="openProduct(1)">
+        <div class="product-image">
+          <img src="image/products/neuralink.jpg" alt="Neuralink R1 Robot">
+        </div>
+        <h4>Neuralink R1 Robot</h4>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" onclick="openProduct(2)">
+        <div class="product-image">
+          <img src="image/products/xray.jpg" alt="Philips Digital X-ray 7000 M">
+        </div>
+        <h4>Philips Digital X-ray 7000 M</h4>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card" onclick="openProduct(3)">
+        <div class="product-image">
+          <img src="image/products/eeg.jpg" alt="iSyncWave EEG">
+        </div>
+        <h4>iSyncWave EEG Device</h4>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card" onclick="openProduct(4)">
+        <div class="product-image">
+          <img src="image/products/zeta.jpg" alt="Zeta Cranial Navigation">
+        </div>
+        <h4>Zeta Cranial Navigation</h4>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card" onclick="openProduct(5)">
+        <div class="product-image">
+          <img src="image/products/velys.jpg" alt="VELYS Robot">
+        </div>
+        <h4>VELYS Robot-Assisted System</h4>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card" onclick="openProduct(6)">
+        <div class="product-image">
+          <img src="image/products/pet.jpg" alt="NeuroLF PET Scanner">
+        </div>
+        <h4>NeuroLF Brain PET Scanner</h4>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card" onclick="openProduct(7)">
+        <div class="product-image">
+          <img src="image/products/ct.jpg" alt="Micro-X Head CT">
+        </div>
+        <h4>Micro-X Head CT</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+    <section id="product-detail" class="product-detail hidden">
+  <div class="product-detail-inner">
+    <button class="back-btn" onclick="closeProduct()">← Back to Products</button>
+
+    <h2 id="detail-title"></h2>
+    <p id="detail-description"></p>
+
+    <div class="detail-gallery" id="detail-gallery"></div>
+  </div>
+</section>
+
+    <!-- INDUSTRY PERSPECTIVE -->
   <section class="hero-industry reveal">
     <div class="container">
       <div class="hero-industry-card">
@@ -2562,6 +2827,105 @@
       observer.observe(section);
     });
   </script>
+<script>
+const products = [
+  {
+    title: "ECLIPSE Ji Digital Microscope",
+    description: "High-resolution digital microscopy platform for advanced diagnostics.",
+    images: ["image/products/eclipse.jpg"]
+  },
+  {
+    title: "Neuralink R1 Robot",
+    description: "Robotic system designed for high-precision neural interface implantation.",
+    images: ["image/products/neuralink.jpg"]
+  },
+  {
+    title: "Philips Digital X-ray 7000 M",
+    description: "Advanced digital radiography system with AI-enhanced imaging.",
+    images: ["image/products/xray.jpg"]
+  },
+  {
+    title: "iSyncWave EEG Device",
+    description: "Dry-electrode EEG platform for real-time brain signal monitoring.",
+    images: ["image/products/eeg.jpg"]
+  },
+  {
+    title: "Zeta Cranial Navigation",
+    description: "Cranial navigation system for neurosurgical accuracy.",
+    images: ["image/products/zeta.jpg"]
+  },
+  {
+    title: "VELYS Robot-Assisted System",
+    description: "Orthopedic robotic surgical assistance platform.",
+    images: ["image/products/velys.jpg"]
+  },
+  {
+    title: "NeuroLF Brain PET Scanner",
+    description: "Dedicated PET imaging system for neurological diagnostics.",
+    images: ["image/products/pet.jpg"]
+  },
+  {
+    title: "Micro-X Head CT",
+    description: "Compact CT scanner optimized for neuro-imaging.",
+    images: ["image/products/ct.jpg"]
+  }
+];
+
+function openProduct(index) {
+  const product = products[index];
+  document.getElementById("detail-title").innerText = product.title;
+  document.getElementById("detail-description").innerText = product.description;
+
+  const gallery = document.getElementById("detail-gallery");
+  gallery.innerHTML = "";
+  product.images.forEach(img => {
+    gallery.innerHTML += `<img src="${img}" alt="">`;
+  });
+
+  document.getElementById("product-detail").classList.remove("hidden");
+  document.getElementById("product-detail").scrollIntoView({ behavior: "smooth" });
+}
+
+function closeProduct() {
+  document.getElementById("product-detail").classList.add("hidden");
+  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+<script>
+/* Prevent double-tap zoom issues on iOS */
+document.addEventListener("touchstart", () => {}, { passive: true });
+
+/* Smooth scroll fallback for older mobile browsers */
+function smoothScrollTo(el) {
+  if ("scrollBehavior" in document.documentElement.style) {
+    el.scrollIntoView({ behavior: "smooth" });
+  } else {
+    el.scrollIntoView();
+  }
+}
+
+/* Override scroll calls */
+function openProduct(index) {
+  const product = products[index];
+  document.getElementById("detail-title").innerText = product.title;
+  document.getElementById("detail-description").innerText = product.description;
+
+  const gallery = document.getElementById("detail-gallery");
+  gallery.innerHTML = "";
+  product.images.forEach(img => {
+    gallery.innerHTML += `<img src="${img}" alt="">`;
+  });
+
+  const detail = document.getElementById("product-detail");
+  detail.classList.remove("hidden");
+  smoothScrollTo(detail);
+}
+
+function closeProduct() {
+  document.getElementById("product-detail").classList.add("hidden");
+  smoothScrollTo(document.getElementById("products"));
+}
+</script>
 
   </body>
 
