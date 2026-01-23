@@ -2256,6 +2256,18 @@ section:not(.products-section) img {
   flex-direction: column;
   align-items: center;
 }
+/* ===============================
+   KEY FIGURES – DESCRIPTION TEXT
+================================ */
+
+.key-figures-section .figure-desc {
+  margin-top: 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #6b7280; /* soft gray */
+  text-align: center;
+  max-width: 260px;   /* keeps it tidy */
+}
 
   </style>
 
@@ -2357,34 +2369,59 @@ section:not(.products-section) img {
     </div>
   </section>
 
-    <section class="key-figures-section">
-  <div class="key-figures-header">
-    <h2>OUR TEAM</h2>
-  </div>
+   <section id="key-figures" class="key-figures-section">
+  <div class="key-figures-container">
 
-  <div class="key-figures-grid">
-    <!-- Figure 1 -->
-    <div class="key-figure-card">
-      <img src="image/heroprofile.jpg" alt="Alexandra Chen">
-      <h3>Queenie J. Clark</h3>
-      <p>Founder & Chief Executive Officer</p>
-    </div>
+    <h2 class="key-figures-title">Key Figures</h2>
 
-    <!-- Figure 2 -->
-    <div class="key-figure-card">
-      <img src="image/executive1.jpg" alt="Jonathan Miller">
-      <h3>Jonathan Miller</h3>
-      <p>Chief Operating Officer</p>
-    </div>
+    <div class="key-figures-grid">
 
-    <!-- Figure 3 -->
-    <div class="key-figure-card">
-      <img src="image/execute2.jpg" alt="David Ross">
-      <h3>David Ross</h3>
-      <p>Chief Financial Officer</p>
+      <!-- Queenie -->
+      <div class="key-figure-card">
+        <img src="image/queen.jpg" alt="Queenie J. Clark">
+
+        <h3>Queenie J. Clark</h3>
+        <p class="figure-title">Founder & Chief Executive Officer</p>
+
+        <p class="figure-desc">
+          Provides strategic leadership across healthcare innovation, cross-border
+          clinical integration, and long-term organizational development, with a
+          focus on scalable medical systems and global impact.
+        </p>
+      </div>
+
+      <!-- Jonathan -->
+      <div class="key-figure-card">
+        <img src="image/jonathan.jpg" alt="Jonathan Miller">
+
+        <h3>Jonathan Miller</h3>
+        <p class="figure-title">Chief Operating Officer</p>
+
+        <p class="figure-desc">
+          Oversees operational strategy, execution, and organizational alignment,
+          ensuring efficient delivery of healthcare initiatives across international
+          markets and clinical platforms.
+        </p>
+      </div>
+
+      <!-- David -->
+      <div class="key-figure-card">
+        <img src="image/david.jpg" alt="David Ross">
+
+        <h3>David Ross</h3>
+        <p class="figure-title">Chief Financial Officer</p>
+
+        <p class="figure-desc">
+          Leads financial planning, capital strategy, and governance, supporting
+          sustainable growth and long-term value creation across healthcare and
+          life sciences ventures.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
+
 
     <!-- OUR PRODUCTS -->
 <section id="products" class="products-section reveal">
