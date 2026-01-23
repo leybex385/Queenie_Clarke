@@ -2020,6 +2020,121 @@
     height: 420px;
   }
 }
+/* ================= OUR PRODUCTS ================= */
+
+.products-section {
+  padding: 100px 24px;
+  background: #ffffff;
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-title {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.product-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-image {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* SHOW FULL IMAGE */
+}
+
+.product-card h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ================= PRODUCT DETAIL ================= */
+
+.product-detail {
+  padding: 100px 24px;
+  background: #f9fafb;
+}
+
+.product-detail.hidden {
+  display: none;
+}
+
+.product-detail-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+#detail-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+#detail-description {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.detail-gallery {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.detail-gallery img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid,
+  .detail-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 
   </style>
 
@@ -2121,6 +2236,85 @@
   </div>
 </section>
 
+<section id="products" class="products-section reveal">
+  <div class="products-container">
+
+    <h2 class="products-title">Our Products</h2>
+
+    <div class="products-grid">
+
+      <div class="product-card" onclick="openProduct(0)">
+        <div class="product-image">
+          <img src="image/product1.jpg" alt="ECLIPSE Ji Digital Microscope">
+        </div>
+        <h4>ECLIPSE Ji Digital Microscope</h4>
+      </div>
+
+      <div class="product-card" onclick="openProduct(1)">
+        <div class="product-image">
+          <img src="image/product2.jpg" alt="Neuralink R1 Robot">
+        </div>
+        <h4>Neuralink R1 Robot</h4>
+      </div>
+
+      <div class="product-card" onclick="openProduct(2)">
+        <div class="product-image">
+          <img src="image/product3.jpg" alt="Philips Digital X-ray">
+        </div>
+        <h4>Philips Digital X-ray 7000 M</h4>
+      </div>
+
+      <div class="product-card" onclick="openProduct(3)">
+        <div class="product-image">
+          <img src="image/product4.jpg" alt="EEG Device">
+        </div>
+        <h4>iSyncWave EEG Device</h4>
+      </div>
+
+      <div class="product-card" onclick="openProduct(4)">
+        <div class="product-image">
+          <img src="image/product5.jpg" alt="Cranial Navigation">
+        </div>
+        <h4>Zeta Cranial Navigation</h4>
+      </div>
+
+      <div class="product-card" onclick="openProduct(5)">
+        <div class="product-image">
+          <img src="image/product6.jpg" alt="VELYS System">
+        </div>
+        <h4>VELYS Robot-Assisted System</h4>
+      </div>
+
+      <div class="product-card" onclick="openProduct(6)">
+        <div class="product-image">
+          <img src="image/product7.jpg" alt="Brain PET Scanner">
+        </div>
+        <h4>NeuroLF Brain PET Scanner</h4>
+      </div>
+
+      <div class="product-card" onclick="openProduct(7)">
+        <div class="product-image">
+          <img src="image/product8.jpg" alt="Head CT">
+        </div>
+        <h4>Micro-X Head CT</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="product-detail" class="product-detail hidden">
+  <div class="product-detail-inner">
+
+    <button class="back-btn" onclick="closeProduct()">← Back to Our Products</button>
+
+    <h2 id="detail-title"></h2>
+    <p id="detail-description"></p>
+
+    <div class="detail-gallery" id="detail-gallery"></div>
+
+  </div>
+</section>
 
   <!-- INDUSTRY PERSPECTIVE -->
   <section class="hero-industry reveal">
@@ -2562,6 +2756,73 @@
       observer.observe(section);
     });
   </script>
+<script>
+const products = [
+  {
+    title: "ECLIPSE Ji Digital Microscope",
+    description: "High-resolution digital microscopy platform for advanced diagnostics and precision research.",
+    images: ["image/product1.jpg"]
+  },
+  {
+    title: "Neuralink R1 Robot",
+    description: "Robotic system designed for high-precision neural interface implantation.",
+    images: ["image/product2.jpg"]
+  },
+  {
+    title: "Philips Digital X-ray 7000 M",
+    description: "Advanced digital radiography system with AI-enhanced imaging performance.",
+    images: ["image/product3.jpg"]
+  },
+  {
+    title: "iSyncWave EEG Device",
+    description: "Dry-electrode EEG platform for real-time neural signal monitoring.",
+    images: ["image/product4.jpg"]
+  },
+  {
+    title: "Zeta Cranial Navigation",
+    description: "Cranial navigation system supporting neurosurgical precision and accuracy.",
+    images: ["image/product5.jpg"]
+  },
+  {
+    title: "VELYS Robot-Assisted System",
+    description: "Orthopedic robotic assistance system for procedural optimization.",
+    images: ["image/product6.jpg"]
+  },
+  {
+    title: "NeuroLF Brain PET Scanner",
+    description: "Dedicated PET imaging system optimized for neurological diagnostics.",
+    images: ["image/product7.jpg"]
+  },
+  {
+    title: "Micro-X Head CT",
+    description: "Compact CT scanner specifically designed for neuro-imaging.",
+    images: ["image/product8.jpg"]
+  }
+];
+
+function openProduct(index) {
+  const product = products[index];
+
+  document.getElementById("detail-title").innerText = product.title;
+  document.getElementById("detail-description").innerText = product.description;
+
+  const gallery = document.getElementById("detail-gallery");
+  gallery.innerHTML = "";
+
+  product.images.forEach(img => {
+    gallery.innerHTML += `<img src="${img}" alt="">`;
+  });
+
+  const detail = document.getElementById("product-detail");
+  detail.classList.remove("hidden");
+  detail.scrollIntoView({ behavior: "smooth" });
+}
+
+function closeProduct() {
+  document.getElementById("product-detail").classList.add("hidden");
+  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+}
+</script>
 
   </body>
 
