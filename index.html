@@ -2218,6 +2218,10 @@
     font-size: 14px;
   }
 }
+.product-details h2,
+.product-details p {
+  color: #1a1a1a;
+}
 
   </style>
 
@@ -2832,7 +2836,7 @@
 const products = [
   {
     title: "ECLIPSE Ji Digital Microscope",
-    description: `ECLIPSE Ji (Ji Series) is Nikon's first fully digital research-grade inverted microscope. Leveraging AI, it automates operations from image acquisition to analysis, accelerating disease research and drug discovery.`,
+    description: `ECLIPSE Ji (Ji Series) is Nikon's first fully digital research-grade inverted microscope. Leveraging AI, it automates operations from image acquisition to analysis.`,
     images: ["image/product1.jpg"]
   },
   {
@@ -2880,33 +2884,53 @@ function openProduct(index, event) {
 
   const product = products[index];
 
-  document.getElementById("products").classList.add("hidden");
+  // Elements
+  const productsSection = document.getElementById("products");
+  const detailsSection = document.getElementById("product-details");
+  const titleEl = document.getElementById("productTitle");
+  const descEl = document.getElementById("productDescription");
+  const imagesEl = document.getElementById("productImages");
 
-  const details = document.getElementById("product-details");
-  details.classList.remove("hidden");
+  // Safety check
+  if (!titleEl || !descEl || !imagesEl) {
+    console.error("Product detail elements not found");
+    return;
+  }
 
-  document.getElementById("productTitle").textContent = product.title;
-  document.getElementById("productDescription").textContent = product.description;
+  // Toggle visibility
+  productsSection.classList.add("hidden");
+  detailsSection.classList.remove("hidden");
 
-  const images = document.getElementById("productImages");
-  images.innerHTML = "";
+  // Fill content
+  titleEl.textContent = product.title;
+  descEl.textContent = product.description;
+
+  imagesEl.innerHTML = "";
   product.images.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
-    images.appendChild(img);
+    img.alt = product.title;
+    imagesEl.appendChild(img);
   });
 
-  details.scrollIntoView({ behavior: "smooth", block: "start" });
+  // Scroll correctly
+  detailsSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 function closeProduct() {
   document.getElementById("product-details").classList.add("hidden");
-  const products = document.getElementById("products");
-  products.classList.remove("hidden");
-  products.scrollIntoView({ behavior: "smooth", block: "start" });
+  const productsSection = document.getElementById("products");
+  productsSection.classList.remove("hidden");
+
+  productsSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 </script>
 
-  </body>
 
   </html>
