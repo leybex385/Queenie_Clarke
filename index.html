@@ -2135,12 +2135,11 @@
     grid-template-columns: 1fr;
   }
 }
-/* PRODUCTS SECTION */
+/* PRODUCTS */
 .products-section {
   padding: 80px 8%;
 }
 
-/* GRID */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2148,13 +2147,11 @@
   margin-top: 40px;
 }
 
-/* PRODUCT CARD */
 .product-card {
   text-align: center;
   cursor: pointer;
 }
 
-/* IMAGE CONTAINER */
 .product-image {
   height: 230px;
   display: flex;
@@ -2162,27 +2159,27 @@
   justify-content: center;
 }
 
-/* IMAGE */
 .product-image img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* show whole image */
+  object-fit: contain;
 }
 
 /* PRODUCT NAME */
 .product-card h4 {
-  font-family: inherit;     /* same font as site */
-  font-size: 15px;          /* balanced size */
+  font-family: inherit;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 1.35;        /* prevents overlap */
+  line-height: 1.35;
   margin-top: 12px;
-  padding: 0 6px;           /* space for long names */
-  word-break: break-word;   /* wraps long titles */
+  padding: 0 6px;
+  word-break: break-word;
 }
 
 /* DETAILS VIEW */
 .product-details {
   padding: 80px 12%;
+  scroll-margin-top: 80px;
 }
 
 .product-details-images {
@@ -2198,7 +2195,6 @@
   object-fit: contain;
 }
 
-/* BACK BUTTON */
 .back-btn {
   background: none;
   border: none;
@@ -2207,7 +2203,7 @@
   margin-bottom: 20px;
 }
 
-/* HIDE HELPER */
+/* HELPERS */
 .hidden {
   display: none;
 }
@@ -2323,81 +2319,74 @@
   </div>
 </section>
 
+<!-- OUR PRODUCTS -->
 <section id="products" class="products-section">
   <h2 class="section-title">Our Products</h2>
 
   <div class="products-grid">
-
-    <div class="product-card" onclick="openProduct(0)">
+    <div class="product-card" onclick="openProduct(0, event)">
       <div class="product-image">
         <img src="image/product1.jpg" alt="ECLIPSE Ji Digital Microscope">
       </div>
       <h4>ECLIPSE Ji Digital Microscope</h4>
     </div>
 
-    <div class="product-card" onclick="openProduct(1)">
+    <div class="product-card" onclick="openProduct(1, event)">
       <div class="product-image">
         <img src="image/product2.jpg" alt="Neuralink R1 Robot">
       </div>
       <h4>Neuralink R1 Robot</h4>
     </div>
 
-    <div class="product-card" onclick="openProduct(2)">
+    <div class="product-card" onclick="openProduct(2, event)">
       <div class="product-image">
         <img src="image/product3.jpg" alt="Philips Digital X-ray 7000 M">
       </div>
       <h4>Philips Digital X-ray 7000 M</h4>
     </div>
 
-    <div class="product-card" onclick="openProduct(3)">
+    <div class="product-card" onclick="openProduct(3, event)">
       <div class="product-image">
         <img src="image/product4.jpg" alt="iSyncWave EEG Device">
       </div>
       <h4>iSyncWave EEG Device</h4>
     </div>
 
-    <div class="product-card" onclick="openProduct(4)">
+    <div class="product-card" onclick="openProduct(4, event)">
       <div class="product-image">
         <img src="image/product5.jpg" alt="Zeta Cranial Navigation">
       </div>
       <h4>Zeta Cranial Navigation</h4>
     </div>
 
-    <div class="product-card" onclick="openProduct(5)">
+    <div class="product-card" onclick="openProduct(5, event)">
       <div class="product-image">
         <img src="image/product6.jpg" alt="VELYS Robot-Assisted System">
       </div>
       <h4>VELYS Robot-Assisted System</h4>
     </div>
 
-    <div class="product-card" onclick="openProduct(6)">
+    <div class="product-card" onclick="openProduct(6, event)">
       <div class="product-image">
         <img src="image/product7.jpg" alt="NeuroLF Brain PET Scanner">
       </div>
       <h4>NeuroLF Brain PET Scanner</h4>
     </div>
 
-    <div class="product-card" onclick="openProduct(7)">
+    <div class="product-card" onclick="openProduct(7, event)">
       <div class="product-image">
         <img src="image/product8.jpg" alt="Micro-X Head CT">
       </div>
       <h4>Micro-X Head CT</h4>
     </div>
-
   </div>
 </section>
 
-
+<!-- PRODUCT DETAILS -->
 <section id="product-details" class="product-details hidden">
   <button class="back-btn" onclick="closeProduct()">← Back to Our Products</button>
-
   <h2 id="productTitle"></h2>
-
-  <div class="product-details-images" id="productImages"></div>
-
-  <p id="productDescription"></p>
-</section>
-
+  <div class="product-d
 
   <!-- INDUSTRY PERSPECTIVE -->
   <section class="hero-industry reveal">
@@ -2843,89 +2832,80 @@
 const products = [
   {
     title: "ECLIPSE Ji Digital Microscope",
-    description: `ECLIPSE Ji (Ji Series) is Nikon's first fully digital research-grade inverted microscope. Leveraging AI, it automates operations from image acquisition to analysis, accelerating the elucidation of disease mechanisms—such as cancer, neurological disorders, and infectious diseases—as well as new drug development.
-
-This innovative intelligent imaging system enables anyone to conduct such research with ease, making it ideal for those involved in R&D related to identifying drug discovery seeds.
-
-The integrated housing of the Ji Series microscopes enables embedded scientific-grade CMOS detectors, facilitating observation even in bright environments.`,
-    images: [
-      "image/product1.jpg"
-    ]
+    description: `ECLIPSE Ji (Ji Series) is Nikon's first fully digital research-grade inverted microscope. Leveraging AI, it automates operations from image acquisition to analysis, accelerating disease research and drug discovery.`,
+    images: ["image/product1.jpg"]
   },
-
   {
     title: "Neuralink R1 Robot",
-    description: "Description coming soon.",
+    description: "Advanced neural interface robotic system.",
     images: ["image/product2.jpg"]
   },
-
   {
     title: "Philips Digital X-ray 7000 M",
-    description: "Description coming soon.",
+    description: "High-performance digital X-ray imaging system.",
     images: ["image/product3.jpg"]
   },
-
   {
     title: "iSyncWave EEG Device",
-    description: "Description coming soon.",
+    description: "Precision EEG monitoring and diagnostics.",
     images: ["image/product4.jpg"]
   },
-
   {
     title: "Zeta Cranial Navigation",
-    description: "Description coming soon.",
+    description: "Image-guided cranial navigation system.",
     images: ["image/product5.jpg"]
   },
-
   {
     title: "VELYS Robot-Assisted System",
-    description: "Description coming soon.",
+    description: "Robotic-assisted surgical platform.",
     images: ["image/product6.jpg"]
   },
-
   {
     title: "NeuroLF Brain PET Scanner",
-    description: "Description coming soon.",
+    description: "Advanced PET neuroimaging scanner.",
     images: ["image/product7.jpg"]
   },
-
   {
     title: "Micro-X Head CT",
-    description: "Description coming soon.",
+    description: "Compact CT imaging system.",
     images: ["image/product8.jpg"]
   }
 ];
 
-function openProduct(index) {
+function openProduct(index, event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  const product = products[index];
+
   document.getElementById("products").classList.add("hidden");
-  document.getElementById("product-details").classList.remove("hidden");
 
-  document.getElementById("productTitle").innerText = products[index].title;
-  document.getElementById("productDescription").innerText = products[index].description;
+  const details = document.getElementById("product-details");
+  details.classList.remove("hidden");
 
-  const imagesContainer = document.getElementById("productImages");
-  imagesContainer.innerHTML = "";
+  document.getElementById("productTitle").textContent = product.title;
+  document.getElementById("productDescription").textContent = product.description;
 
-  products[index].images.forEach(img => {
-    const image = document.createElement("img");
-    image.src = img;
-    imagesContainer.appendChild(image);
+  const images = document.getElementById("productImages");
+  images.innerHTML = "";
+  product.images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    images.appendChild(img);
   });
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  details.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function closeProduct() {
   document.getElementById("product-details").classList.add("hidden");
-  document.getElementById("products").classList.remove("hidden");
-
-  window.scrollTo({
-    top: document.getElementById("products").offsetTop - 80,
-    behavior: "smooth"
-  });
+  const products = document.getElementById("products");
+  products.classList.remove("hidden");
+  products.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 </script>
-
 
   </body>
 
