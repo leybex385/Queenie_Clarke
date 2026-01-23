@@ -1852,17 +1852,30 @@
       }
       /* ===== Founder Description Columns ===== */
 
-.founder-columns {
-  column-count: 2;
-  column-gap: 40px;
-}
-
 .founder-columns .figure-desc {
   break-inside: avoid;
 }
 @media (max-width: 992px) {
   .founder-columns {
     column-count: 1;
+  }
+}
+/* ===== Founder Vertical Text Layout ===== */
+
+.founder-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.founder-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@media (max-width: 992px) {
+  .founder-columns {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2488,36 +2501,29 @@ section:not(.products-section) img {
     <h2 class="key-figures-title">Key Figures</h2>
 
     <!-- Founder -->
-    <div class="founder-columns">
-      <div class="figure-image">
-        <img src="image/heroprofile.jpg" alt="Queenie J. Clark">
-      </div>
+   <div class="founder-columns">
+  <div class="founder-column">
+    <p class="figure-desc">
+      Queenie J. Clark is the Founder and Chief Executive Officer of Valence Medical Group,
+      providing visionary leadership across healthcare innovation, international clinical
+      integration, and long-term organizational strategy.
+    </p>
 
-      <div class="figure-content">
-        <h3>Queenie J. Clark</h3>
-        <p class="figure-title">Founder & Chief Executive Officer</p>
+    <p class="figure-desc">
+      She leads the development of scalable medical systems designed to bridge clinical
+      excellence with operational sustainability.
+    </p>
+  </div>
 
-        <p class="figure-desc">
-          Queenie J. Clark is the Founder and Chief Executive Officer of Valence Medical Group,
-          providing visionary leadership across healthcare innovation, international clinical
-          integration, and long-term organizational strategy.
-        </p>
-
-        <p class="figure-desc">
-          She leads the development of scalable medical systems designed to bridge clinical
-          excellence with operational sustainability, positioning Valence Medical Group as a
-          forward-thinking healthcare organization with global impact.
-        </p>
-
-        <p class="figure-desc">
-          <strong>Educational Background:</strong><br>
-          Queenie holds advanced academic training in healthcare administration and medical
-          systems leadership, with a strong foundation in clinical operations, strategic
-          management, and cross-border healthcare frameworks. Her education emphasizes
-          evidence-based medicine, ethical governance, and innovation-driven healthcare models.
-        </p>
-      </div>
-    </div>
+  <div class="founder-column">
+    <p class="figure-desc">
+      <strong>Educational Background:</strong><br>
+      Queenie holds advanced academic training in healthcare administration and medical
+      systems leadership, with a strong foundation in clinical operations, strategic
+      management, and cross-border healthcare frameworks.
+    </p>
+  </div>
+</div>
 
     <!-- Jonathan -->
     <div class="key-figure-vertical">
