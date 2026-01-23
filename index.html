@@ -2238,6 +2238,24 @@ section:not(.products-section) img {
     max-width: 100%;
   }
 }
+/* ===============================
+   KEY FIGURES – PORTRAIT FIX
+   (ISOLATED – SAFE)
+================================ */
+
+.key-figures-section .key-figure-card img {
+  width: 100%;
+  height: 420px;                 /* uniform height */
+  object-fit: cover;             /* fills frame */
+  object-position: center top;   /* keeps faces visible */
+  border-radius: 18px;
+  display: block;
+}
+.key-figures-section .key-figure-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
   </style>
 
