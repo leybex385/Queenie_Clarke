@@ -1994,10 +1994,10 @@
 /* Card */
 .key-figure-card img {
   width: 100%;
-  height: 460px;          /* portrait height */
-  object-fit: contain;   /* FULL portrait */
-  background-color: #e9ecef;
+  height: 460px;
+  object-fit: cover;
   border-radius: 18px;
+  margin-bottom: 18px;
 }
 
 .key-figure-card h3 {
@@ -2253,11 +2253,13 @@ section:not(.products-section) img {
   border-radius: 18px;
   display: block;
 }
-.key-figures-section .key-figure-card {
+.key-figure-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;   /* FORCE vertical layout */
   align-items: center;
+  text-align: center;
 }
+
 /* ===============================
    KEY FIGURES – DESCRIPTION TEXT
 ================================ */
