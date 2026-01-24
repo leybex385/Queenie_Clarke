@@ -2,176 +2,162 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Valence Medical Group | Blog</title>
+  <title>Blog | Valence Medical Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f6f9fc;
+      margin: 0;
+      background: #f8fafc;
     }
 
-    .blog-page {
+    .blog-container {
       max-width: 1200px;
       margin: 80px auto;
-      padding: 0 20px;
       display: grid;
-      grid-template-columns: 2.5fr 1fr;
+      grid-template-columns: 3fr 1fr;
       gap: 40px;
+      padding: 0 20px;
     }
 
-    /* MAIN CONTENT */
-    .blog-content {
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-    }
-
-    .blog-content img {
+    .blog-main img {
       width: 100%;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 12px;
+      border-radius: 16px;
       margin-bottom: 30px;
     }
 
-    .blog-content h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+    .blog-main h1 {
+      font-size: 34px;
+      margin-bottom: 15px;
     }
 
     .blog-date {
       color: #1e6bff;
       font-weight: 600;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .blog-content p {
-      font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.8;
       margin-bottom: 20px;
+      color: #333;
     }
 
-    /* SIDEBAR */
-    .blog-sidebar {
-      background: #fff;
+    .sidebar {
+      background: #f1f5f9;
       padding: 30px;
       border-radius: 16px;
-      height: fit-content;
     }
 
-    .sidebar-section {
-      margin-bottom: 30px;
+    .sidebar h3 {
+      margin-bottom: 20px;
+      font-size: 20px;
     }
 
-    .sidebar-section h3 {
-      margin-bottom: 15px;
-      font-size: 18px;
+    .category-list,
+    .latest-posts {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .sidebar-section a {
-      display: block;
-      margin-bottom: 10px;
-      color: #1e6bff;
+    .category-list li,
+    .latest-posts li {
+      margin-bottom: 14px;
+    }
+
+    .category-list a,
+    .latest-posts a {
       text-decoration: none;
-      font-weight: 600;
+      color: #1e6bff;
+      font-weight: 500;
     }
 
-    .sidebar-section a:hover {
-      text-decoration: underline;
+    .latest-posts img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 12px;
     }
 
-    @media (max-width: 900px) {
-      .blog-page {
-        grid-template-columns: 1fr;
-      }
+    .latest-posts a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="blog-page">
+  <div class="blog-container">
 
-    <!-- MAIN ARTICLE -->
-    <article class="blog-content">
-      <img id="blogImage" src="" alt="">
-      <h1 id="blogTitle"></h1>
-      <div class="blog-date" id="blogDate"></div>
-      <div id="blogText"></div>
-    </article>
+    <!-- MAIN CONTENT -->
+    <div class="blog-main">
+      <img src="image/blog1.jpg" alt="">
+      <div class="blog-date">2025-09-23</div>
+
+      <h1>Improving Patient Monitoring And Diagnostics</h1>
+
+      <div class="blog-content">
+        <p>
+          The integration of smart technology into medical equipment has
+          revolutionized patient care. Devices equipped with IoT and AI are
+          enabling real-time data collection and advanced diagnostics.
+        </p>
+
+        <p>
+          Smart monitoring systems allow healthcare professionals to detect
+          changes in patient conditions early, reducing response time and
+          improving outcomes.
+        </p>
+
+        <p>
+          As medical technology continues to evolve, patient monitoring and
+          diagnostics will become more precise, connected, and efficient.
+        </p>
+      </div>
+    </div>
 
     <!-- SIDEBAR -->
-    <aside class="blog-sidebar">
+    <aside class="sidebar">
 
-      <div class="sidebar-section">
-        <h3>Categories</h3>
-        <a href="#">Diagnostics</a>
-        <a href="#">Medical Technology</a>
-        <a href="#">Surgical Innovation</a>
-      </div>
+      <h3>Categories</h3>
+      <ul class="category-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
 
-      <div class="sidebar-section">
-        <h3>Latest Posts</h3>
-        <a href="blog.html?id=monitoring">Patient Monitoring</a>
-        <a href="blog.html?id=eco">Eco Medical Supplies</a>
-        <a href="blog.html?id=robotic">Robotic Surgery</a>
-      </div>
+      <h3 style="margin-top:40px;">Latest Posts</h3>
+      <ul class="latest-posts">
+        <li>
+          <a href="blog.html?id=monitoring">
+            <img src="image/blog1.jpg" alt="">
+            Improving Patient Monitoring And Diagnostics
+          </a>
+        </li>
+        <li>
+          <a href="blog.html?id=safety">
+            <img src="image/blog2.jpg" alt="">
+            Ensuring Patient Safety And Reducing Cross-Contamination
+          </a>
+        </li>
+        <li>
+          <a href="blog.html?id=robotic">
+            <img src="image/blog3.jpg" alt="">
+            Minimally Invasive Surgery With Robotic Assistance
+          </a>
+        </li>
+      </ul>
 
     </aside>
 
   </div>
-
-  <!-- BLOG DATA SCRIPT -->
-  <script>
-    const posts = {
-      monitoring: {
-        title: "Improving Patient Monitoring And Diagnostics",
-        date: "September 23, 2025",
-        image: "images/blog1.jpg",
-        content: `
-          <p>Advances in patient monitoring technologies are transforming modern healthcare delivery.</p>
-          <p>From real-time diagnostics to AI-assisted alerts, hospitals can now detect risks earlier and respond faster.</p>
-          <p>These innovations improve patient outcomes while reducing operational inefficiencies.</p>
-        `
-      },
-
-      eco: {
-        title: "Eco-Friendly Innovations In Medical Supplies",
-        date: "September 23, 2025",
-        image: "images/blog2.jpg",
-        content: `
-          <p>Sustainability is becoming a core focus across the medical supply chain.</p>
-          <p>Biodegradable materials and energy-efficient manufacturing are reshaping the industry.</p>
-          <p>Healthcare providers can reduce environmental impact without compromising quality.</p>
-        `
-      },
-
-      robotic: {
-        title: "Minimally Invasive Surgery With Robotic Assistance",
-        date: "September 23, 2025",
-        image: "images/blog3.jpg",
-        content: `
-          <p>Robotic-assisted surgery enables unprecedented precision and control.</p>
-          <p>Minimally invasive techniques reduce recovery times and surgical risks.</p>
-          <p>This technology represents the future of advanced surgical care.</p>
-        `
-      }
-    };
-
-    const params = new URLSearchParams(window.location.search);
-    const postId = params.get('id');
-
-    const post = posts[postId];
-
-    if (post) {
-      document.getElementById('blogTitle').textContent = post.title;
-      document.getElementById('blogDate').textContent = post.date;
-      document.getElementById('blogImage').src = post.image;
-      document.getElementById('blogText').innerHTML = post.content;
-    }
-  </script>
 
 </body>
 </html>
