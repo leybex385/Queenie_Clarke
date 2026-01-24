@@ -2274,7 +2274,7 @@ section:not(.products-section) img {
 }
 .key-figures-section {
   padding: 80px 20px;
-  background: #f9fafb;
+  background-color: #f9fafb;
 }
 
 .key-figures-container {
@@ -2294,7 +2294,7 @@ section:not(.products-section) img {
   gap: 40px;
 }
 
-/* Card layout */
+/* Card */
 .key-figure-card {
   display: flex;
   align-items: flex-start;
@@ -2305,7 +2305,7 @@ section:not(.products-section) img {
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-/* Image stays SAME size */
+/* IMAGE SIZE — SAME FOR ALL */
 .key-figure-card img {
   width: 160px;
   height: 160px;
@@ -2314,7 +2314,8 @@ section:not(.products-section) img {
   flex-shrink: 0;
 }
 
-.figure-content h3 {
+/* TEXT */
+.figure-text h3 {
   font-size: 1.4rem;
   margin-bottom: 6px;
 }
@@ -2326,12 +2327,12 @@ section:not(.products-section) img {
 }
 
 .figure-desc {
-  line-height: 1.7;
   color: #444;
+  line-height: 1.7;
   margin-bottom: 12px;
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
   .key-figure-card {
     flex-direction: column;
@@ -2339,7 +2340,7 @@ section:not(.products-section) img {
   }
 
   .key-figure-card img {
-    margin: 0 auto;
+    margin: 0 auto 20px;
   }
 }
 
@@ -2442,8 +2443,7 @@ section:not(.products-section) img {
 
     </div>
   </section>
-
- <section id="key-figures" class="key-figures-section">
+<section id="key-figures" class="key-figures-section">
   <div class="key-figures-container">
 
     <h2 class="key-figures-title">Key Figures</h2>
@@ -2454,7 +2454,7 @@ section:not(.products-section) img {
       <div class="key-figure-card">
         <img src="image/heroprofile.jpg" alt="Queenie J. Clark">
 
-        <div class="figure-content">
+        <div class="figure-text">
           <h3>Queenie J. Clark</h3>
           <p class="figure-title">Founder & Chief Executive Officer</p>
 
@@ -2465,11 +2465,11 @@ section:not(.products-section) img {
           </p>
 
           <p class="figure-desc">
-            Queenie J. Clark has built and led multinational healthcare platforms,
-            driving partnerships between clinical institutions, investors, and
-            regulatory bodies. Her leadership emphasizes sustainable growth,
-            operational excellence, and patient-centered innovation across global
-            markets.
+            Queenie J. Clark brings extensive experience in building and scaling
+            multinational healthcare platforms. Her leadership integrates clinical
+            excellence, regulatory alignment, and long-term investment strategy,
+            enabling sustainable growth across international markets and healthcare
+            ecosystems.
           </p>
         </div>
       </div>
@@ -2478,7 +2478,7 @@ section:not(.products-section) img {
       <div class="key-figure-card">
         <img src="image/executive1.jpg" alt="Jonathan Miller">
 
-        <div class="figure-content">
+        <div class="figure-text">
           <h3>Jonathan Miller</h3>
           <p class="figure-title">Chief Operating Officer</p>
 
@@ -2494,7 +2494,7 @@ section:not(.products-section) img {
       <div class="key-figure-card">
         <img src="image/execute2.jpg" alt="David Ross">
 
-        <div class="figure-content">
+        <div class="figure-text">
           <h3>David Ross</h3>
           <p class="figure-title">Chief Financial Officer</p>
 
@@ -2509,7 +2509,6 @@ section:not(.products-section) img {
     </div>
   </div>
 </section>
-
 
     <!-- OUR PRODUCTS -->
 <section id="products" class="products-section reveal">
