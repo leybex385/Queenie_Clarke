@@ -2355,16 +2355,14 @@ section:not(.products-section) img {
 }
 .latest-wrapper {
   overflow: hidden;
+  width: 100%;
 }
 
 .latest-track {
   display: flex;
   gap: 30px;
-  transition: transform 0.5s ease;
-}
-.latest-wrapper {
-  overflow: hidden;
-  width: 100%;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
 
 .latest-track {
@@ -2831,18 +2829,6 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
 
   </div>
 </div>
-<section class="latest-posts">
-  <h2>Latest Posts</h2>
-
-  <!-- 👇 THIS GOES HERE -->
-  <div class="latest-wrapper">
-    <div class="latest-track">
-      post cards here
-    </div>
-  </div>
-
-</section>
-
 
 
  <!-- RECOGNITION -->
@@ -3154,40 +3140,46 @@ modal.onclick = e => {
 };
 </script>
 
-  <script>
-const blogScroll = document.getElementById('latestBlogScroll');
-const cardWidth = 360 + 24;
-
-document.querySelector('.blog-arrow.right').onclick = () => {
-  blogScroll.scrollBy({ left: cardWidth, behavior: 'smooth' });
-};
-
-document.querySelector('.blog-arrow.left').onclick = () => {
-  blogScroll.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-};
-</script>
 <script>
+document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".latest-track");
-  const slides = document.querySelectorAll(".post-card");
+  const cards = document.querySelectorAll(".post-card");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+
+  const gap = 30; // must match CSS gap
+  const visibleCards = 4;
   let index = 0;
 
-  function nextSlide() {
-    index++;
-    track.style.transform = `translateX(-${index * (slides[0].offsetWidth + 30)}px)`;
-
-    if (index >= slides.length / 2) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        index = 0;
-        track.style.transform = "translateX(0)";
-        requestAnimationFrame(() => {
-          track.style.transition = "transform 0.5s ease";
-        });
-      }, 500);
-    }
+  function cardWidth() {
+    return cards[0].offsetWidth + gap;
   }
 
-  setInterval(nextSlide, 4000);
+  function updateSlider() {
+    track.style.transform = `translateX(-${index * cardWidth()}px)`;
+
+    // stop at edges (NO infinite sliding)
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index >= cards.length - visibleCards;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (index < cards.length - visibleCards) {
+      index++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener("resize", updateSlider);
+  updateSlider();
+});
 </script>
 
   </body>
