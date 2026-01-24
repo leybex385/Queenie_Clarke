@@ -2432,14 +2432,14 @@ section:not(.products-section) img {
 .post-card {
   flex: 0 0 calc(25% - 18px);
 }
-.blog-modal {
+..blog-modal,
+.modal,
+.overlay {
   display: none !important;
-}
-.blog-modal {
-  display: none !important;
-  pointer-events: none !important;
   visibility: hidden !important;
+  pointer-events: none !important;
 }
+
 
   </style>
 
@@ -3217,10 +3217,11 @@ modal.onclick = e => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".latest-track");
+  const cards = document.querySelectorAll(".latest-track .post-card");
   const nextBtn = document.getElementById("next");
   const prevBtn = document.getElementById("prev");
 
-  const gap = 30; // must match CSS gap
+  const gap = 30;
   const visibleCards = 4;
   let index = 0;
 
@@ -3230,8 +3231,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateSlider() {
     track.style.transform = `translateX(-${index * cardWidth()}px)`;
-
-    // stop at edges (NO infinite sliding)
     prevBtn.disabled = index === 0;
     nextBtn.disabled = index >= cards.length - visibleCards;
   }
@@ -3254,23 +3253,23 @@ document.addEventListener("DOMContentLoaded", () => {
   updateSlider();
 });
 </script>
-
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* 1. REMOVE THE MODAL FROM THE DOM COMPLETELY */
-  const modal = document.querySelector(".blog-modal");
-  if (modal) {
-    modal.remove();
-  }
+  /* REMOVE ANY BLOG MODAL OR OVERLAY */
+  document.querySelectorAll(
+    ".blog-modal, .modal, .overlay"
+  ).forEach(el => el.remove());
 
-  /* 2. FORCE LATEST POSTS TO BE NORMAL LINKS */
+  /* ENSURE LATEST POSTS ARE PURE LINKS */
   document.querySelectorAll(".latest-track .post-card").forEach(card => {
-    card.replaceWith(card.cloneNode(true));
+    const clean = card.cloneNode(true);
+    card.replaceWith(clean);
   });
 
 });
 </script>
+
 
   </body>
 
