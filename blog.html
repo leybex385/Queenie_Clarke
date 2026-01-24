@@ -150,6 +150,25 @@ Object.entries(blogs).forEach(([id, blog]) => {
     `;
   }
 });
+  
+  const latestContainer = document.getElementById("latestPosts");
+
+Object.keys(blogs).forEach(key => {
+  if (key !== id) {
+    latestContainer.innerHTML += `
+      <div class="latest-post">
+        <img src="${blogs[key].img}">
+        <div>
+          <a href="blog.html?id=${key}">
+            ${blogs[key].title}
+          </a>
+          <span>${blogs[key].date}</span>
+        </div>
+      </div>
+    `;
+  }
+});
+
 </script>
 
 </body>
