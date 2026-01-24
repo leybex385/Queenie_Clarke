@@ -2477,6 +2477,27 @@ section:not(.products-section) img {
   line-height: 1.6;
   color: #555;
 }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+.blog-card {
+  grid-column: span 1;
+}
+
+.blog-card .blog-image {
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+}
+
+.blog-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
 
   </style>
@@ -2933,12 +2954,18 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
 
     </div>
 
-  <article class="blog-card">
+ <article class="blog-card">
   <a href="blog-post-4.html">
-    <div class="blog-image" style="background-image:url('image/blog4.jpg')"></div>
+    <div
+      class="blog-image"
+      style="background-image:url('image/blog4.jpg')"
+    ></div>
+
     <div class="blog-content">
       <span class="blog-date">February 3, 2026</span>
+
       <h3>Building Trust in Medical Partnerships</h3>
+
       <p>
         Strong partnerships, transparency, and ethics are the foundation of
         sustainable healthcare growth and long-term collaboration.
