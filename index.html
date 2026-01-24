@@ -2435,6 +2435,122 @@ section:not(.products-section) img {
 .blog-card:hover img {
   transform: scale(1.08);
 }
+/* ===== BLOG SECTION ===== */
+
+.blog-section {
+  background: #f5f6f8;
+  padding: 140px 24px;
+}
+
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 80px;
+  color: #1a1a1a;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* Clickable wrapper */
+.blog-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+/* Card */
+.blog-card {
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 36px 80px rgba(0,0,0,0.12);
+}
+
+/* Image */
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.blog-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Content */
+.blog-content {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-meta {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* Title — safe for long text */
+.blog-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  color: #1a1a1a;
+  min-height: 3.2em; /* keeps alignment */
+}
+
+/* Description — flexible length */
+.blog-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #5f6673;
+  flex-grow: 1;
+}
+
+/* Remove underline everywhere */
+.blog-section a {
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
   </style>
 
@@ -2837,56 +2953,70 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
     </div>
   </section>
 
+<!-- BLOG SECTION -->
 <section class="blog-section">
   <div class="blog-container">
+
     <h2 class="blog-title">Insights & Updates</h2>
 
     <div class="blog-grid">
 
-      <!-- Blog Card 1 -->
+      <!-- BLOG 1 -->
       <a href="blog.html" class="blog-link">
         <div class="blog-card">
           <img src="image/blog1.jpg" alt="Global medical supply chain">
           <div class="blog-content">
-            <span class="blog-meta">Medical Trading</span>
+            <span class="blog-meta">MEDICAL TRADING</span>
             <h3>Advancing Global Medical Supply Chains</h3>
-            <p>How Valence Medical Group strengthens cross-border medical distribution.</p>
+            <p>
+              How Valence Medical Group strengthens cross-border medical
+              distribution across international healthcare systems.
+            </p>
           </div>
         </div>
       </a>
 
-      <!-- Blog Card 2 -->
+      <!-- BLOG 2 -->
       <a href="blog.html" class="blog-link">
         <div class="blog-card">
           <img src="image/blog2.jpg" alt="Healthcare innovation">
           <div class="blog-content">
-            <span class="blog-meta">Healthcare Innovation</span>
+            <span class="blog-meta">HEALTHCARE INNOVATION</span>
             <h3>Innovation Driving Modern Healthcare</h3>
-            <p>Emerging technologies shaping patient care and clinical outcomes.</p>
+            <p>
+              Emerging technologies shaping patient care, clinical outcomes,
+              and operational efficiency in healthcare.
+            </p>
           </div>
         </div>
       </a>
 
-      <!-- Blog Card 3 -->
+      <!-- BLOG 3 -->
       <a href="blog.html" class="blog-link">
         <div class="blog-card">
-          <img src="image/blog3.jpg" alt="Medical equipment logistics">
+          <img src="image/blog3.jpg" alt="Medical logistics">
           <div class="blog-content">
-            <span class="blog-meta">Logistics</span>
+            <span class="blog-meta">LOGISTICS</span>
             <h3>Ensuring Reliability in Medical Logistics</h3>
-            <p>Delivering critical medical equipment with speed, safety, and precision.</p>
+            <p>
+              Delivering critical medical equipment with speed, safety,
+              compliance, and precision across regions.
+            </p>
           </div>
         </div>
       </a>
 
-      <!-- Blog Card 4 -->
+      <!-- BLOG 4 -->
       <a href="blog.html" class="blog-link">
         <div class="blog-card">
-          <img src="image/blog4.jpg" alt="Global healthcare partnership">
+          <img src="image/blog4.jpg" alt="Global healthcare partnerships">
           <div class="blog-content">
-            <span class="blog-meta">Global Partnerships</span>
+            <span class="blog-meta">GLOBAL PARTNERSHIPS</span>
             <h3>Building Sustainable Healthcare Partnerships</h3>
-            <p>Collaborating with international partners to improve healthcare access.</p>
+            <p>
+              Collaborating with international partners to improve healthcare
+              access and long-term system resilience.
+            </p>
           </div>
         </div>
       </a>
@@ -2894,6 +3024,8 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
     </div>
   </div>
 </section>
+<!-- END BLOG SECTION -->
+
 
  <!-- RECOGNITION -->
   <section id="recognition" class="recognition-section reveal">
