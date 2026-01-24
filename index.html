@@ -1966,9 +1966,9 @@
       padding: 40px 0;
       text-align: center;
     }
- /* ===== TEAM SECTION ===== */
+/* ===== TEAM SECTION ===== */
 .key-figures-section {
-  padding: 80px 10%;
+  padding: 80px 8%;
   background: #d3d3d3;
 }
 
@@ -1978,54 +1978,52 @@
   margin-bottom: 80px;
 }
 
-/* One row per person */
+/* One consistent layout for ALL members */
 .key-figure {
-  display: flex;
-  align-items: flex-start;
-  gap: 50px;
-  margin-bottom: 90px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 100px;
 }
 
-/* Portrait images */
+/* Portrait image — SAME SIZE */
 .key-figure img {
-  width: 280px;
-  height: 380px;
+  width: 320px;
+  height: 440px;
   object-fit: cover;
-  border-radius: 20px;
-  flex-shrink: 0;
+  border-radius: 22px;
 }
 
-/* Text content */
+/* Text container */
 .figure-content {
   max-width: 720px;
 }
 
+/* Name */
 .figure-content h3 {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 8px;
 }
 
+/* Role */
 .figure-content .role {
   font-size: 15px;
   color: #666;
   margin-bottom: 22px;
 }
 
+/* Bio text */
 .figure-content .bio {
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.85;
   margin-bottom: 18px;
 }
 
-/* Primary (CEO) emphasis */
-.key-figure.primary h3 {
-  font-size: 32px;
-}
-
-/* ===== MOBILE FIX ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 900px) {
   .key-figure {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
@@ -2038,7 +2036,6 @@
     max-width: 100%;
   }
 }
-
 .products-section {
   padding: 160px 24px;
   background: #ffffff;
