@@ -2353,6 +2353,15 @@ section:not(.products-section) img {
   font-size: 18px;
   line-height: 1.4;
 }
+.latest-wrapper {
+  overflow: hidden;
+}
+
+.latest-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
 
   </style>
 
@@ -2754,44 +2763,54 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
     </div>
   </section>
 
-<section class="latest-blog-section">
-  <div class="latest-blog-header">
+<section class="latest-posts">
+  <div class="latest-header">
     <h2>Latest Posts</h2>
 
-    <div class="latest-blog-arrows">
-      <button class="blog-arrow left">&#10094;</button>
-      <button class="blog-arrow right">&#10095;</button>
+    <div class="slider-buttons">
+      <button id="prev">‹</button>
+      <button id="next">›</button>
     </div>
   </div>
 
-  <div class="latest-blog-scroll" id="latestBlogScroll">
+  <!-- 👇 WRAPPER GOES HERE -->
+  <div class="latest-wrapper">
+    <div class="latest-track">
 
-    <div class="blog-card">
-      <img src="images/blog1.jpg" alt="">
-      <div class="blog-card-info">
-        <span>2025-09-23</span>
-        <h3>Improving Patient Monitoring And Diagnostics</h3>
-      </div>
+      <!-- POST CARD 1 -->
+      <a href="blog.html?id=monitoring" class="post-card">
+        <img src="image/blog1.jpg" alt="">
+        <div class="post-info">
+          <span>2025-09-23</span>
+          <h3>Improving Patient Monitoring And Diagnostics</h3>
+        </div>
+      </a>
+
+      <!-- POST CARD 2 -->
+      <a href="blog.html?id=safety" class="post-card">
+        <img src="image/blog2.jpg" alt="">
+        <div class="post-info">
+          <span>2025-09-23</span>
+          <h3>Ensuring Patient Safety And Reducing Cross-Contamination</h3>
+        </div>
+      </a>
+
+      <!-- POST CARD 3 -->
+      <a href="blog.html?id=robotic" class="post-card">
+        <img src="image/blog3.jpg" alt="">
+        <div class="post-info">
+          <span>2025-09-23</span>
+          <h3>Minimally Invasive Surgery With Robotic Assistance</h3>
+        </div>
+      </a>
+
+      <!-- 🔁 DUPLICATE THEM ONCE FOR INFINITE LOOP -->
+      <!-- same 3 cards pasted again -->
+
     </div>
-
-    <div class="blog-card">
-      <img src="images/blog2.jpg" alt="">
-      <div class="blog-card-info">
-        <span>2025-09-23</span>
-        <h3>Eco-Friendly Innovations In Medical Supplies</h3>
-      </div>
-    </div>
-
-    <div class="blog-card">
-      <img src="images/blog3.jpg" alt="">
-      <div class="blog-card-info">
-        <span>2025-09-23</span>
-        <h3>Minimally Invasive Surgery With Robotic Assistance</h3>
-      </div>
-    </div>
-
   </div>
 </section>
+
 
  <!-- RECOGNITION -->
   <section id="recognition" class="recognition-section reveal">
@@ -3113,6 +3132,29 @@ document.querySelector('.blog-arrow.right').onclick = () => {
 document.querySelector('.blog-arrow.left').onclick = () => {
   blogScroll.scrollBy({ left: -cardWidth, behavior: 'smooth' });
 };
+</script>
+<script>
+  const track = document.querySelector(".latest-track");
+  const slides = document.querySelectorAll(".post-card");
+  let index = 0;
+
+  function nextSlide() {
+    index++;
+    track.style.transform = `translateX(-${index * (slides[0].offsetWidth + 30)}px)`;
+
+    if (index >= slides.length / 2) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        index = 0;
+        track.style.transform = "translateX(0)";
+        requestAnimationFrame(() => {
+          track.style.transition = "transform 0.5s ease";
+        });
+      }, 500);
+    }
+  }
+
+  setInterval(nextSlide, 4000);
 </script>
 
   </body>
