@@ -1,65 +1,162 @@
-<!-- BLOG SECTION -->
-<section id="blog" class="blog-section reveal">
-  <div class="blog-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insights & Updates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h2 class="blog-title">Insights & Publications</h2>
+<style>
+body{
+  margin:0;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background:#ffffff;
+  color:#1a1a1a;
+}
 
-    <div class="blog-grid">
+/* PAGE WRAPPER */
+.post-wrapper{
+  max-width:900px;
+  margin:80px auto;
+  padding:0 20px;
+}
 
-      <!-- Post 1 -->
-      <article class="blog-card">
-        <img src="image/blog1.jpg" alt="">
-        <div class="blog-content">
-          <span class="blog-meta">Healthcare Strategy</span>
-          <h3>Scaling Healthcare Platforms Across Markets</h3>
-          <p>
-            How cross-border healthcare platforms are structured to balance
-            regulatory complexity with long-term growth.
-          </p>
-        </div>
-      </article>
+/* FEATURED IMAGE */
+.post-image{
+  width:100%;
+  height:480px;
+  object-fit:cover;
+  border-radius:14px;
+  margin-bottom:30px;
+}
 
-      <!-- Post 2 -->
-      <article class="blog-card">
-        <img src="image/blog2.jpg" alt="">
-        <div class="blog-content">
-          <span class="blog-meta">Medical Technology</span>
-          <h3>Intelligent Systems in Clinical Decision-Making</h3>
-          <p>
-            Examining how AI-assisted diagnostics are reshaping
-            modern clinical workflows.
-          </p>
-        </div>
-      </article>
+/* DATE */
+.post-date{
+  font-size:14px;
+  color:#3b6cff;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
 
-      <!-- Post 3 -->
-      <article class="blog-card">
-        <img src="image/blog3.jpg" alt="">
-        <div class="blog-content">
-          <span class="blog-meta">Global Operations</span>
-          <h3>Operating in Regulated Medical Markets</h3>
-          <p>
-            Why execution discipline and governance matter more than
-            capital alone in healthcare.
-          </p>
-        </div>
-      </article>
+.post-date::before{
+  content:"—";
+  color:#3b6cff;
+}
 
-      <!-- Post 4 -->
-      <article class="blog-card">
-        <img src="image/blog4.jpg" alt="">
-        <div class="blog-content">
-          <span class="blog-meta">Research & Policy</span>
-          <h3>Bridging Clinical Research and Commercialization</h3>
-          <p>
-            Translating clinical insight into scalable,
-            commercially viable healthcare solutions.
-          </p>
-        </div>
-      </article>
+/* TITLE */
+.post-title{
+  font-size:34px;
+  font-weight:600;
+  margin-bottom:22px;
+  line-height:1.3;
+}
 
-    </div>
+/* CONTENT */
+.post-content{
+  font-size:17px;
+  line-height:1.9;
+  color:#444;
+}
 
-  </div>
-</section>
+.post-content p{
+  margin-bottom:22px;
+}
 
+/* RESPONSIVE */
+@media(max-width:768px){
+  .post-image{
+    height:300px;
+  }
+
+  .post-title{
+    font-size:26px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="post-wrapper">
+  <img id="postImage" class="post-image" src="">
+  <div id="postDate" class="post-date"></div>
+  <h1 id="postTitle" class="post-title"></h1>
+  <div id="postContent" class="post-content"></div>
+</div>
+
+<script>
+const posts = {
+  1: {
+    title: "Eco-Friendly Innovations In Medical Supplies",
+    date: "2025-09-23",
+    image: "images/post4.jpg",
+    content: `
+      <p>
+        Sustainability is becoming an essential factor in healthcare, as hospitals
+        and healthcare providers seek to reduce their environmental footprint.
+      </p>
+
+      <p>
+        This shift has led to the development of eco-friendly hospital consumables
+        made from biodegradable or recyclable materials.
+      </p>
+
+      <p>
+        We are proud to be part of this movement, offering sustainable solutions
+        that do not compromise on quality or safety. From biodegradable gloves
+        to reusable surgical instruments, our eco-friendly products help hospitals
+        meet their sustainability goals while maintaining patient care standards.
+      </p>
+    `
+  },
+
+  2: {
+    title: "Improving Patient Monitoring and Diagnostics",
+    date: "2025-09-10",
+    image: "images/post1.jpg",
+    content: `
+      <p>
+        Patient monitoring technologies continue to evolve, enabling early detection
+        of medical conditions and more accurate diagnostics.
+      </p>
+
+      <p>
+        Advanced sensors and AI-driven systems provide clinicians with real-time
+        insights, improving decision-making and patient outcomes.
+      </p>
+    `
+  },
+
+  3: {
+    title: "Minimally Invasive Surgery with Robotic Assistance",
+    date: "2025-08-28",
+    image: "images/post2.jpg",
+    content: `
+      <p>
+        Robotic-assisted surgery offers greater precision, reduced recovery times,
+        and improved surgical outcomes.
+      </p>
+
+      <p>
+        These advancements are transforming modern surgical practices worldwide.
+      </p>
+    `
+  }
+};
+
+/* GET ID FROM URL */
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+/* LOAD POST */
+if(posts[id]){
+  document.getElementById("postImage").src = posts[id].image;
+  document.getElementById("postTitle").innerText = posts[id].title;
+  document.getElementById("postDate").innerText = posts[id].date;
+  document.getElementById("postContent").innerHTML = posts[id].content;
+}
+</script>
+
+</body>
+</html>
