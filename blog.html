@@ -158,6 +158,65 @@
     </aside>
 
   </div>
+<script>
+  const posts = {
+    monitoring: {
+      title: "Improving Patient Monitoring And Diagnostics",
+      date: "2025-09-23",
+      image: "image/blog1.jpg",
+      content: `
+        <p>The integration of smart technology into medical equipment has
+        revolutionized patient care. Devices equipped with IoT and AI enable
+        real-time diagnostics.</p>
+
+        <p>Smart monitoring systems allow healthcare professionals to respond
+        faster and make better clinical decisions.</p>
+
+        <p>As innovation advances, diagnostics will become more accurate,
+        connected, and patient-centered.</p>
+      `
+    },
+
+    safety: {
+      title: "Ensuring Patient Safety And Reducing Cross-Contamination",
+      date: "2025-09-23",
+      image: "image/blog2.jpg",
+      content: `
+        <p>Patient safety is a core priority in modern healthcare environments.</p>
+
+        <p>Advanced sterilization protocols and single-use medical devices help
+        reduce cross-contamination risks.</p>
+
+        <p>Technology-driven solutions continue to improve infection control.</p>
+      `
+    },
+
+    robotic: {
+      title: "Minimally Invasive Surgery With Robotic Assistance",
+      date: "2025-09-23",
+      image: "image/blog3.jpg",
+      content: `
+        <p>Robotic-assisted surgery enables greater precision and smaller
+        incisions.</p>
+
+        <p>This leads to faster recovery times and improved surgical outcomes.</p>
+
+        <p>Robotics is reshaping the future of minimally invasive procedures.</p>
+      `
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const postId = params.get("id") || "monitoring";
+  const post = posts[postId];
+
+  if (post) {
+    document.querySelector(".blog-main img").src = post.image;
+    document.querySelector(".blog-date").innerText = post.date;
+    document.querySelector(".blog-main h1").innerText = post.title;
+    document.querySelector(".blog-content").innerHTML = post.content;
+  }
+</script>
 
 </body>
 </html>
