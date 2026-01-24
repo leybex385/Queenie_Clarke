@@ -1867,7 +1867,7 @@
   <a href="#professional">Professional Focus</a>
   <a href="#education">Education</a>
   <a href="#recognition">Recognition</a>
- <a href="blog.html">Blog</a>
+  <a href="#blog">Blog</a>
   <a href="#contact">Contact</a>
 </div>
 
@@ -2331,117 +2331,114 @@ section:not(.products-section) img {
   font-weight: 600;
   color: #1f3a5f; /* professional dark blue */
 }
-/* BLOG SECTION */
-.homepage-blog {
-  padding: 100px 20px;
-  background: #f7f9fc;
+.latest-blog-section {
+  padding: 80px 20px;
 }
 
-.blog-container {
+.latest-blog-header {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.latest-blog-header h2 {
+  font-size: 32px;
+}
+
+.latest-blog-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.blog-arrow {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: #1e6bff;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.latest-blog-scroll {
   max-width: 1200px;
   margin: auto;
-  text-align: center;
-}
-
-.blog-section-title {
-  font-size: 2.6rem;
-  margin-bottom: 12px;
-  color: #003366;
-}
-
-.blog-section-subtitle {
-  max-width: 700px;
-  margin: 0 auto 60px;
-  color: #555;
-  font-size: 1.1rem;
-}
-
-/* GRID */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
-  align-items: stretch;
-}
-
-/* CARD */
-.blog-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.latest-blog-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.blog-card {
+  min-width: 360px;
+  background: #f6f9fc;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .blog-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-/* IMAGE */
-.blog-image {
-  height: 190px;
-  background-size: cover;
-  background-position: center;
-  flex-shrink: 0;
+.blog-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
-/* CONTENT */
-.blog-content {
-  padding: 22px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+.blog-card-info {
+  padding: 20px;
 }
 
-.blog-date {
+.blog-card-info span {
   font-size: 13px;
-  color: #777;
-}
-
-.blog-content h3 {
-  font-size: 18px;
+  color: #1e6bff;
   font-weight: 600;
+}
+
+.blog-card-info h3 {
+  margin-top: 10px;
+  font-size: 18px;
   line-height: 1.4;
-  margin: 6px 0 8px;
-  color: #003366;
+}
+.latest-wrapper {
+  overflow: hidden;
+  width: 100%;
 }
 
-.blog-content p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
+.latest-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
 
-/* LINK */
-.blog-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  height: 100%;
+.latest-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease;
 }
 
-.blog-card a:hover h3 {
-  text-decoration: underline;
+/* EACH CARD = 25% (4 per view) */
+.post-card {
+  flex: 0 0 calc(25% - 18px);
 }
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+..blog-modal,
+.modal,
+.overlay {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
-
-@media (max-width: 600px) {
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 
   </style>
@@ -2699,6 +2696,15 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
   </div>
 </div>
 
+<div class="product-card"
+  data-title="Advanced Multi-Modal Precision Diagnostic System for Clinical & Research Environments"
+  data-desc="This platform integrates multi-layer diagnostic workflows designed to support
+  high-complexity clinical environments. It enables scalable deployment across hospital systems,
+  supports longitudinal patient data integration, and is optimized for cross-border regulatory
+  compliance and operational efficiency across global healthcare ecosystems."
+  data-images="image/prod1-1.jpg,image/prod1-2.jpg,image/prod1-3.jpg">
+
+
   <!-- INDUSTRY PERSPECTIVE -->
   <section class="hero-industry reveal">
     <div class="container">
@@ -2844,85 +2850,59 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
     </div>
   </section>
 
-  <section id="homepage-blog" class="homepage-blog">
-  <div class="blog-container">
-    <h2 class="blog-section-title">Latest Insights</h2>
-    <p class="blog-section-subtitle">
-      Perspectives, updates, and thought leadership from Valence Medical Group
-      across healthcare, innovation, and global medical solutions.
-    </p>
+<section id="blog" class="latest-posts">
+  <div class="latest-header">
+    <h2>Latest Posts</h2>
 
-    <div class="blog-grid">
-
-      <article class="blog-card">
-        <a href="blog-post-1.html">
-          <div class="blog-image" style="background-image:url('image/blog1.jpg')"></div>
-          <div class="blog-content">
-            <span class="blog-date">March 18, 2026</span>
-            <h3>Advancing Global Medical Supply Chains</h3>
-            <p>
-              How modern healthcare distribution is evolving to meet global
-              demand with speed, reliability, and compliance.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <article class="blog-card">
-        <a href="blog-post-2.html">
-          <div class="blog-image" style="background-image:url('image/blog2.jpg')"></div>
-          <div class="blog-content">
-            <span class="blog-date">March 5, 2026</span>
-            <h3>Medical Innovation & Patient Outcomes</h3>
-            <p>
-              Exploring how medical technology and innovation directly impact
-              patient safety, efficiency, and outcomes.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <article class="blog-card">
-        <a href="blog-post-3.html">
-          <div class="blog-image" style="background-image:url('image/blog3.jpg')"></div>
-          <div class="blog-content">
-            <span class="blog-date">February 21, 2026</span>
-            <h3>Regulatory Excellence in Healthcare</h3>
-            <p>
-              Why regulatory alignment and compliance remain essential pillars
-              of global healthcare operations.
-            </p>
-          </div>
-        </a>
-      </article>
-
-    </div>
-
- <article class="blog-card">
-  <a href="blog-post-4.html">
-    <div
-      class="blog-image"
-      style="background-image:url('image/blog4.jpg')"
-    ></div>
-
-    <div class="blog-content">
-      <span class="blog-date">February 3, 2026</span>
-
-      <h3>Building Trust in Medical Partnerships</h3>
-
-      <p>
-        Strong partnerships, transparency, and ethics are the foundation of
-        sustainable healthcare growth and long-term collaboration.
-      </p>
-    </div>
-  </a>
-</article>
-
-    <div class="blog-view-all">
-      <a href="blog.html">View all articles →</a>
+    <div class="slider-buttons">
+      <button id="prev">‹</button>
+      <button id="next">›</button>
     </div>
   </div>
-</section>
+
+  <div class="latest-wrapper">
+  <div class="latest-track">
+
+    <!-- POST 1 -->
+    <a href="blog.html?id=monitoring" class="post-card">
+      <img src="image/blog1.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Improving Patient Monitoring And Diagnostics</h3>
+      </div>
+    </a>
+
+    <!-- POST 2 -->
+    <a href="blog.html?id=safety" class="post-card">
+      <img src="image/blog2.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Ensuring Patient Safety And Reducing Cross-Contamination</h3>
+      </div>
+    </a>
+
+    <!-- POST 3 -->
+    <a href="blog.html?id=robotic" class="post-card">
+      <img src="image/blog3.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Minimally Invasive Surgery With Robotic Assistance</h3>
+      </div>
+    </a>
+
+    <!-- POST 4 -->
+    <a href="blog.html?id=eco" class="post-card">
+      <img src="image/blog4.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Eco-Friendly Innovations In Medical Supplies</h3>
+      </div>
+    </a>
+
+    <!-- 🔁 DUPLICATE ALL 4 POSTS AGAIN HERE -->
+
+  </div>
+</div>
 
 
  <!-- RECOGNITION -->
@@ -3234,7 +3214,64 @@ modal.onclick = e => {
 };
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".latest-track");
+  const cards = document.querySelectorAll(".latest-track .post-card");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+
+  const gap = 30;
+  const visibleCards = 4;
+  let index = 0;
+
+  function cardWidth() {
+    return cards[0].offsetWidth + gap;
+  }
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${index * cardWidth()}px)`;
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index >= cards.length - visibleCards;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (index < cards.length - visibleCards) {
+      index++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener("resize", updateSlider);
+  updateSlider();
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* REMOVE ANY BLOG MODAL OR OVERLAY */
+  document.querySelectorAll(
+    ".blog-modal, .modal, .overlay"
+  ).forEach(el => el.remove());
+
+  /* ENSURE LATEST POSTS ARE PURE LINKS */
+  document.querySelectorAll(".latest-track .post-card").forEach(card => {
+    const clean = card.cloneNode(true);
+    card.replaceWith(clean);
+  });
+
+});
+</script>
+
 
   </body>
 
   </html>
+
