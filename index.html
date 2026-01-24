@@ -1862,13 +1862,15 @@
         &#9776; <!-- This is the hamburger icon -->
       </div>
 
-      <div class="menu">
-        <a href="#about">About</a>
-        <a href="#professional">Professional Focus</a>
-        <a href="#education">Education</a>
-        <a href="#recognition">Recognition</a>
-        <a href="#contact">Contact</a>
-      </div>
+     <div class="menu">
+  <a href="#about">About</a>
+  <a href="#professional">Professional Focus</a>
+  <a href="#education">Education</a>
+  <a href="#recognition">Recognition</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+</div>
+
 
 
     </nav>
@@ -1980,14 +1982,71 @@
   color: #0b2545;
 }
 
-/* Grid */
-.key-figures-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  max-width: 1200px;
+.key-figures-section {
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 80px 20px;
 }
+
+.key-figure {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 80px;
+  align-items: flex-start;
+}
+
+/* PRIMARY (QUEENIE) */
+.key-figure.primary img {
+  width: 340px;
+  border-radius: 24px;
+}
+
+.key-figure.primary h3 {
+  font-size: 2rem;
+}
+
+.key-figure.primary .bio {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* SECONDARY */
+.key-figure.secondary {
+  align-items: center;
+}
+
+.key-figure.secondary img {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.key-figure.secondary h3 {
+  font-size: 1.4rem;
+}
+
+.figure-content {
+  max-width: 640px;
+}
+
+.role {
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .key-figure {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .key-figure.primary img,
+  .key-figure.secondary img {
+    width: 100%;
+  }
+}
+
 
 /* Card */
 .key-figure-card img {
@@ -2272,77 +2331,115 @@ section:not(.products-section) img {
   font-weight: 600;
   color: #1f3a5f; /* professional dark blue */
 }
-.key-figures-section {
+.latest-blog-section {
   padding: 80px 20px;
-  background-color: #f9fafb;
 }
 
-.key-figures-container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.key-figures-title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
-}
-
-.key-figures-vertical {
+.latest-blog-header {
+  max-width: 1200px;
+  margin: 0 auto 30px;
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Card */
-.key-figure-card {
+.latest-blog-header h2 {
+  font-size: 32px;
+}
+
+.latest-blog-arrows {
   display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  gap: 12px;
 }
 
-/* IMAGE SIZE — SAME FOR ALL */
-.key-figure-card img {
-  width: 160px;
-  height: 160px;
+.blog-arrow {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: #1e6bff;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.latest-blog-scroll {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.latest-blog-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.blog-card {
+  min-width: 360px;
+  background: #f6f9fc;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 220px;
   object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
 }
 
-/* TEXT */
-.figure-text h3 {
-  font-size: 1.4rem;
-  margin-bottom: 6px;
+.blog-card-info {
+  padding: 20px;
 }
 
-.figure-title {
+.blog-card-info span {
+  font-size: 13px;
+  color: #1e6bff;
   font-weight: 600;
-  color: #555;
-  margin-bottom: 14px;
 }
 
-.figure-desc {
-  color: #444;
-  line-height: 1.7;
-  margin-bottom: 12px;
+.blog-card-info h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.latest-wrapper {
+  overflow: hidden;
+  width: 100%;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .key-figure-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .key-figure-card img {
-    margin: 0 auto 20px;
-  }
+.latest-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
+
+.latest-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease;
+}
+
+/* EACH CARD = 25% (4 per view) */
+.post-card {
+  flex: 0 0 calc(25% - 18px);
+}
+..blog-modal,
+.modal,
+.overlay {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 
   </style>
 
@@ -2443,72 +2540,70 @@ section:not(.products-section) img {
 
     </div>
   </section>
-<section id="key-figures" class="key-figures-section">
-  <div class="key-figures-container">
 
-    <h2 class="key-figures-title">Key Figures</h2>
+ <section class="key-figures-section">
 
-    <div class="key-figures-vertical">
+  <h2 class="key-figures-title">Key Figures</h2>
 
-      <!-- Queenie -->
-      <div class="key-figure-card">
-        <img src="image/heroprofile.jpg" alt="Queenie J. Clark">
+  <!-- QUEENIE (PRIMARY) -->
+  <div class="key-figure primary">
 
-        <div class="figure-text">
-          <h3>Queenie J. Clark</h3>
-          <p class="figure-title">Founder & Chief Executive Officer</p>
+    <img src="image/heroprofile.jpg" alt="Queenie J. Clark">
 
-          <p class="figure-desc">
-            Provides strategic leadership across healthcare innovation, cross-border
-            clinical integration, and long-term organizational development, with a
-            focus on scalable medical systems and global impact.
-          </p>
+    <div class="figure-content">
+      <h3>Queenie J. Clark</h3>
+      <p class="role">Founder & Chief Executive Officer</p>
 
-          <p class="figure-desc">
-            Queenie J. Clark brings extensive experience in building and scaling
-            multinational healthcare platforms. Her leadership integrates clinical
-            excellence, regulatory alignment, and long-term investment strategy,
-            enabling sustainable growth across international markets and healthcare
-            ecosystems.
-          </p>
-        </div>
-      </div>
+      <p class="bio">
+        Queenie J. Clark is the Founder and Chief Executive Officer of Valence Medical Group,
+        providing strategic leadership across healthcare innovation, cross-border clinical
+        integration, and long-term institutional growth.
+      </p>
 
-      <!-- Jonathan -->
-      <div class="key-figure-card">
-        <img src="image/executive1.jpg" alt="Jonathan Miller">
+      <p class="bio">
+        She received her education at the National University of Singapore, where she built
+        a strong academic foundation in marketing and business management. Through advanced
+        commercial training at NUS Business School, Queenie developed the strategic expertise
+        and global market acumen that continue to guide her leadership today.
+      </p>
 
-        <div class="figure-text">
-          <h3>Jonathan Miller</h3>
-          <p class="figure-title">Chief Operating Officer</p>
+      <p class="bio">
+        Under her direction, Valence Medical Group has expanded its international presence,
+        strengthened governance frameworks, and positioned itself at the intersection of
+        clinical excellence and sustainable healthcare investment.
+      </p>
+    </div>
 
-          <p class="figure-desc">
-            Oversees operational strategy, execution, and organizational alignment,
-            ensuring efficient delivery of healthcare initiatives across international
-            markets and clinical platforms.
-          </p>
-        </div>
-      </div>
+  </div>
 
-      <!-- David -->
-      <div class="key-figure-card">
-        <img src="image/execute2.jpg" alt="David Ross">
-
-        <div class="figure-text">
-          <h3>David Ross</h3>
-          <p class="figure-title">Chief Financial Officer</p>
-
-          <p class="figure-desc">
-            Leads financial planning, capital strategy, and governance, supporting
-            sustainable growth and long-term value creation across healthcare and
-            life sciences ventures.
-          </p>
-        </div>
-      </div>
-
+  <!-- SECONDARY FIGURES -->
+  <div class="key-figure secondary">
+    <img src="image/jonathan.jpg" alt="Jonathan Miller">
+    <div class="figure-content">
+      <h3>Jonathan Miller</h3>
+      <p class="role">Chief Operating Officer</p>
+      <p class="bio">
+        Oversees operational strategy, execution, and organizational alignment, ensuring
+        efficient delivery across clinical and administrative functions.
+      </p>
     </div>
   </div>
+
+  <div class="key-figure secondary">
+    <img src="image/david.jpg" alt="David Ross">
+    <div class="figure-content">
+      <h3>David Ross</h3>
+      <p class="role">Chief Financial Officer</p>
+      <p class="bio">
+        Leads financial planning, capital strategy, and governance, supporting long-term
+        stability and sustainable growth.
+      </p>
+    </div>
+  </div>
+
 </section>
+
+
 
     <!-- OUR PRODUCTS -->
 <section id="products" class="products-section reveal">
@@ -2687,11 +2782,11 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
     <h2 class="education-title">Education</h2>
 
     <div class="education-card">
-      <p>
-       Queenie J. Clark received her education at the National University of Singapore, where she established a strong foundation in
-        marketing and business management. Through advanced commercial training at the NUS Business School, she developed
-        the strategic expertise and market acumen that continue to guide her work in scaling global platforms.
-      </p>
+     <p>
+  Queenie J. Clark received her education at the National University of Singapore, where she established a strong
+  foundation in marketing and business management. Through advanced commercial training at the NUS Business School,
+  she developed the strategic expertise and market acumen that continue to guide her work in scaling global platforms.
+</p>
     </div>
   </section>
 
@@ -2755,6 +2850,60 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
     </div>
   </section>
 
+<section id="blog" class="latest-posts">
+  <div class="latest-header">
+    <h2>Latest Posts</h2>
+
+    <div class="slider-buttons">
+      <button id="prev">‹</button>
+      <button id="next">›</button>
+    </div>
+  </div>
+
+  <div class="latest-wrapper">
+  <div class="latest-track">
+
+    <!-- POST 1 -->
+    <a href="blog.html?id=monitoring" class="post-card">
+      <img src="image/blog1.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Improving Patient Monitoring And Diagnostics</h3>
+      </div>
+    </a>
+
+    <!-- POST 2 -->
+    <a href="blog.html?id=safety" class="post-card">
+      <img src="image/blog2.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Ensuring Patient Safety And Reducing Cross-Contamination</h3>
+      </div>
+    </a>
+
+    <!-- POST 3 -->
+    <a href="blog.html?id=robotic" class="post-card">
+      <img src="image/blog3.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Minimally Invasive Surgery With Robotic Assistance</h3>
+      </div>
+    </a>
+
+    <!-- POST 4 -->
+    <a href="blog.html?id=eco" class="post-card">
+      <img src="image/blog4.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Eco-Friendly Innovations In Medical Supplies</h3>
+      </div>
+    </a>
+
+    <!-- 🔁 DUPLICATE ALL 4 POSTS AGAIN HERE -->
+
+  </div>
+</div>
+
 
  <!-- RECOGNITION -->
   <section id="recognition" class="recognition-section reveal">
@@ -2808,7 +2957,7 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
         </div>
       </div>
 
-    </div>
+
   </section>
 
   <section class="insights-section">
@@ -3064,6 +3213,63 @@ modal.onclick = e => {
   if (e.target === modal) modal.classList.remove("show");
 };
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".latest-track");
+  const cards = document.querySelectorAll(".latest-track .post-card");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+
+  const gap = 30;
+  const visibleCards = 4;
+  let index = 0;
+
+  function cardWidth() {
+    return cards[0].offsetWidth + gap;
+  }
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${index * cardWidth()}px)`;
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index >= cards.length - visibleCards;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (index < cards.length - visibleCards) {
+      index++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener("resize", updateSlider);
+  updateSlider();
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* REMOVE ANY BLOG MODAL OR OVERLAY */
+  document.querySelectorAll(
+    ".blog-modal, .modal, .overlay"
+  ).forEach(el => el.remove());
+
+  /* ENSURE LATEST POSTS ARE PURE LINKS */
+  document.querySelectorAll(".latest-track .post-card").forEach(card => {
+    const clean = card.cloneNode(true);
+    card.replaceWith(clean);
+  });
+
+});
+</script>
+
 
   </body>
 
