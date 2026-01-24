@@ -2362,6 +2362,21 @@ section:not(.products-section) img {
   gap: 30px;
   transition: transform 0.5s ease;
 }
+.latest-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.latest-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease;
+}
+
+/* EACH CARD = 25% (4 per view) */
+.post-card {
+  flex: 0 0 calc(25% - 18px);
+}
 
   </style>
 
@@ -2773,43 +2788,70 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
     </div>
   </div>
 
-  <!-- 👇 WRAPPER GOES HERE -->
+  <div class="latest-wrapper">
+  <div class="latest-track">
+
+    <!-- POST 1 -->
+    <a href="blog.html?id=monitoring" class="post-card">
+      <img src="image/blog1.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Improving Patient Monitoring And Diagnostics</h3>
+      </div>
+    </a>
+
+    <!-- POST 2 -->
+    <a href="blog.html?id=safety" class="post-card">
+      <img src="image/blog2.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Ensuring Patient Safety And Reducing Cross-Contamination</h3>
+      </div>
+    </a>
+
+    <!-- POST 3 -->
+    <a href="blog.html?id=robotic" class="post-card">
+      <img src="image/blog3.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Minimally Invasive Surgery With Robotic Assistance</h3>
+      </div>
+    </a>
+
+    <!-- POST 4 -->
+    <a href="blog.html?id=eco" class="post-card">
+      <img src="image/blog4.jpg">
+      <div class="post-info">
+        <span>2025-09-23</span>
+        <h3>Eco-Friendly Innovations In Medical Supplies</h3>
+      </div>
+    </a>
+    
+<!-- POST 5 -->
+<a href="blog.html?id=ai" class="post-card">
+  <img src="image/blog5.jpg">
+  <div class="post-info">
+    <span>2025-09-23</span>
+    <h3>AI-Driven Clinical Decision Support Systems</h3>
+  </div>
+</a>
+
+    <!-- 🔁 DUPLICATE ALL 4 POSTS AGAIN HERE -->
+
+  </div>
+</div>
+<section class="latest-posts">
+  <h2>Latest Posts</h2>
+
+  <!-- 👇 THIS GOES HERE -->
   <div class="latest-wrapper">
     <div class="latest-track">
-
-      <!-- POST CARD 1 -->
-      <a href="blog.html?id=monitoring" class="post-card">
-        <img src="image/blog1.jpg" alt="">
-        <div class="post-info">
-          <span>2025-09-23</span>
-          <h3>Improving Patient Monitoring And Diagnostics</h3>
-        </div>
-      </a>
-
-      <!-- POST CARD 2 -->
-      <a href="blog.html?id=safety" class="post-card">
-        <img src="image/blog2.jpg" alt="">
-        <div class="post-info">
-          <span>2025-09-23</span>
-          <h3>Ensuring Patient Safety And Reducing Cross-Contamination</h3>
-        </div>
-      </a>
-
-      <!-- POST CARD 3 -->
-      <a href="blog.html?id=robotic" class="post-card">
-        <img src="image/blog3.jpg" alt="">
-        <div class="post-info">
-          <span>2025-09-23</span>
-          <h3>Minimally Invasive Surgery With Robotic Assistance</h3>
-        </div>
-      </a>
-
-      <!-- 🔁 DUPLICATE THEM ONCE FOR INFINITE LOOP -->
-      <!-- same 3 cards pasted again -->
-
+      post cards here
     </div>
   </div>
+
 </section>
+
 
 
  <!-- RECOGNITION -->
