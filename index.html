@@ -2272,6 +2272,76 @@ section:not(.products-section) img {
   font-weight: 600;
   color: #1f3a5f; /* professional dark blue */
 }
+.key-figures-section {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
+
+.key-figures-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.key-figures-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+}
+
+.key-figures-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Card layout */
+.key-figure-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Image stays SAME size */
+.key-figure-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.figure-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.figure-title {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.figure-desc {
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .key-figure-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .key-figure-card img {
+    margin: 0 auto;
+  }
+}
 
   </style>
 
@@ -2378,54 +2448,67 @@ section:not(.products-section) img {
 
     <h2 class="key-figures-title">Key Figures</h2>
 
-    <div class="key-figures-grid">
+    <div class="key-figures-vertical">
 
       <!-- Queenie -->
       <div class="key-figure-card">
         <img src="image/heroprofile.jpg" alt="Queenie J. Clark">
 
-        <h3>Queenie J. Clark</h3>
-        <p class="figure-title">Founder & Chief Executive Officer</p>
+        <div class="figure-content">
+          <h3>Queenie J. Clark</h3>
+          <p class="figure-title">Founder & Chief Executive Officer</p>
 
-        <p class="figure-desc">
-          Provides strategic leadership across healthcare innovation, cross-border
-          clinical integration, and long-term organizational development, with a
-          focus on scalable medical systems and global impact.
-        </p>
+          <p class="figure-desc">
+            Provides strategic leadership across healthcare innovation, cross-border
+            clinical integration, and long-term organizational development, with a
+            focus on scalable medical systems and global impact.
+          </p>
+
+          <p class="figure-desc">
+            Queenie J. Clark has built and led multinational healthcare platforms,
+            driving partnerships between clinical institutions, investors, and
+            regulatory bodies. Her leadership emphasizes sustainable growth,
+            operational excellence, and patient-centered innovation across global
+            markets.
+          </p>
+        </div>
       </div>
 
       <!-- Jonathan -->
       <div class="key-figure-card">
         <img src="image/executive1.jpg" alt="Jonathan Miller">
 
-        <h3>Jonathan Miller</h3>
-        <p class="figure-title">Chief Operating Officer</p>
+        <div class="figure-content">
+          <h3>Jonathan Miller</h3>
+          <p class="figure-title">Chief Operating Officer</p>
 
-        <p class="figure-desc">
-          Oversees operational strategy, execution, and organizational alignment,
-          ensuring efficient delivery of healthcare initiatives across international
-          markets and clinical platforms.
-        </p>
+          <p class="figure-desc">
+            Oversees operational strategy, execution, and organizational alignment,
+            ensuring efficient delivery of healthcare initiatives across international
+            markets and clinical platforms.
+          </p>
+        </div>
       </div>
 
       <!-- David -->
       <div class="key-figure-card">
         <img src="image/execute2.jpg" alt="David Ross">
 
-        <h3>David Ross</h3>
-        <p class="figure-title">Chief Financial Officer</p>
+        <div class="figure-content">
+          <h3>David Ross</h3>
+          <p class="figure-title">Chief Financial Officer</p>
 
-        <p class="figure-desc">
-          Leads financial planning, capital strategy, and governance, supporting
-          sustainable growth and long-term value creation across healthcare and
-          life sciences ventures.
-        </p>
+          <p class="figure-desc">
+            Leads financial planning, capital strategy, and governance, supporting
+            sustainable growth and long-term value creation across healthcare and
+            life sciences ventures.
+          </p>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
-
 
 
     <!-- OUR PRODUCTS -->
