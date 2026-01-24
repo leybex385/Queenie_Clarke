@@ -75,11 +75,16 @@
         justify-content: space-between;
       }
 
-      .brand {
-        font-size: 12px;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-      }
+      .brand-name {
+  display: flex;
+  align-items: center;
+}
+
+.brand-name img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
 
       .menu a {
         margin-left: 32px;
@@ -1855,7 +1860,10 @@
 
   <header>
     <nav>
-      <div class="brand">Valence Medical Group</div>
+      <div class="brand-name">
+  <img src="image/logo.jpeg" alt="Valence Medical Group Logo">
+</div>
+
 
       <!-- Hamburger Menu Icon -->
       <div class="menu-icon" id="menu-icon">
