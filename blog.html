@@ -120,6 +120,37 @@ We are proud to be part of this movement, offering sustainable solutions that do
   `;
 }
 </script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const currentId = params.get("id");
+
+/* Render current blog */
+if (blogs[currentId]) {
+  document.getElementById("blogContent").innerHTML = `
+    <img src="${blogs[currentId].img}">
+    <div class="blog-date">— ${blogs[currentId].date}</div>
+    <h1>${blogs[currentId].title}</h1>
+    <p>${blogs[currentId].content}</p>
+  `;
+}
+
+/* Render latest posts (exclude current) */
+const latestContainer = document.getElementById("latestPosts");
+
+Object.entries(blogs).forEach(([id, blog]) => {
+  if (id !== currentId) {
+    latestContainer.innerHTML += `
+      <a href="blog.html?id=${id}" class="latest-post">
+        <img src="${blog.img}" alt="">
+        <div>
+          <h5>${blog.title}</h5>
+          <span>${blog.date}</span>
+        </div>
+      </a>
+    `;
+  }
+});
+</script>
 
 </body>
 </html>
