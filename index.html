@@ -1982,14 +1982,71 @@
   color: #0b2545;
 }
 
-/* Grid */
-.key-figures-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  max-width: 1200px;
+.key-figures-section {
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 80px 20px;
 }
+
+.key-figure {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 80px;
+  align-items: flex-start;
+}
+
+/* PRIMARY (QUEENIE) */
+.key-figure.primary img {
+  width: 340px;
+  border-radius: 24px;
+}
+
+.key-figure.primary h3 {
+  font-size: 2rem;
+}
+
+.key-figure.primary .bio {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* SECONDARY */
+.key-figure.secondary {
+  align-items: center;
+}
+
+.key-figure.secondary img {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.key-figure.secondary h3 {
+  font-size: 1.4rem;
+}
+
+.figure-content {
+  max-width: 640px;
+}
+
+.role {
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .key-figure {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .key-figure.primary img,
+  .key-figure.secondary img {
+    width: 100%;
+  }
+}
+
 
 /* Card */
 .key-figure-card img {
@@ -2484,57 +2541,66 @@ section:not(.products-section) img {
     </div>
   </section>
 
- <section id="key-figures" class="key-figures-section">
-  <div class="key-figures-container">
+ <section class="key-figures-section">
 
-    <h2 class="key-figures-title">Key Figures</h2>
+  <h2 class="key-figures-title">Key Figures</h2>
 
-    <div class="key-figures-grid">
+  <!-- QUEENIE (PRIMARY) -->
+  <div class="key-figure primary">
 
-      <!-- Queenie -->
-      <div class="key-figure-card">
-        <img src="image/heroprofile.jpg" alt="Queenie J. Clark">
+    <img src="image/heroprofile.jpg" alt="Queenie J. Clark">
 
-        <h3>Queenie J. Clark</h3>
-        <p class="figure-title">Founder & Chief Executive Officer</p>
+    <div class="figure-content">
+      <h3>Queenie J. Clark</h3>
+      <p class="role">Founder & Chief Executive Officer</p>
 
-        <p class="figure-desc">
-          Provides strategic leadership across healthcare innovation, cross-border
-          clinical integration, and long-term organizational development, with a
-          focus on scalable medical systems and global impact.
-        </p>
-      </div>
+      <p class="bio">
+        Queenie J. Clark is the Founder and Chief Executive Officer of Valence Medical Group,
+        providing strategic leadership across healthcare innovation, cross-border clinical
+        integration, and long-term institutional growth.
+      </p>
 
-      <!-- Jonathan -->
-      <div class="key-figure-card">
-        <img src="image/executive1.jpg" alt="Jonathan Miller">
+      <p class="bio">
+        She received her education at the National University of Singapore, where she built
+        a strong academic foundation in marketing and business management. Through advanced
+        commercial training at NUS Business School, Queenie developed the strategic expertise
+        and global market acumen that continue to guide her leadership today.
+      </p>
 
-        <h3>Jonathan Miller</h3>
-        <p class="figure-title">Chief Operating Officer</p>
+      <p class="bio">
+        Under her direction, Valence Medical Group has expanded its international presence,
+        strengthened governance frameworks, and positioned itself at the intersection of
+        clinical excellence and sustainable healthcare investment.
+      </p>
+    </div>
 
-        <p class="figure-desc">
-          Oversees operational strategy, execution, and organizational alignment,
-          ensuring efficient delivery of healthcare initiatives across international
-          markets and clinical platforms.
-        </p>
-      </div>
+  </div>
 
-      <!-- David -->
-      <div class="key-figure-card">
-        <img src="image/execute2.jpg" alt="David Ross">
-
-        <h3>David Ross</h3>
-        <p class="figure-title">Chief Financial Officer</p>
-
-        <p class="figure-desc">
-          Leads financial planning, capital strategy, and governance, supporting
-          sustainable growth and long-term value creation across healthcare and
-          life sciences ventures.
-        </p>
-      </div>
-
+  <!-- SECONDARY FIGURES -->
+  <div class="key-figure secondary">
+    <img src="image/jonathan.jpg" alt="Jonathan Miller">
+    <div class="figure-content">
+      <h3>Jonathan Miller</h3>
+      <p class="role">Chief Operating Officer</p>
+      <p class="bio">
+        Oversees operational strategy, execution, and organizational alignment, ensuring
+        efficient delivery across clinical and administrative functions.
+      </p>
     </div>
   </div>
+
+  <div class="key-figure secondary">
+    <img src="image/david.jpg" alt="David Ross">
+    <div class="figure-content">
+      <h3>David Ross</h3>
+      <p class="role">Chief Financial Officer</p>
+      <p class="bio">
+        Leads financial planning, capital strategy, and governance, supporting long-term
+        stability and sustainable growth.
+      </p>
+    </div>
+  </div>
+
 </section>
 
 
