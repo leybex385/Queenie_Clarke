@@ -1855,7 +1855,11 @@
 
   <header>
     <nav>
-      <div class="brand">Valence Medical Group</div>
+      <div class="brand">
+  <a href="/">
+    <img src="image/valence.png" alt="Valence Medical Group">
+  </a>
+</div>
 
       <!-- Hamburger Menu Icon -->
       <div class="menu-icon" id="menu-icon">
@@ -2663,6 +2667,35 @@ section:not(.products-section) img {
   display: block;
   font-size: 12px;
   color: #777;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  flex-shrink: 0; /* logo will never collapse */
+}
+
+.brand img {
+  height: 42px;          /* ideal header height */
+  width: auto;
+  max-width: 180px;      /* prevents pushing menu */
+  display: block;
+}
+@media (max-width: 768px) {
+  .brand img {
+    height: 32px;
+    max-width: 140px;
+  }
+}
+.menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.brand img {
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
 }
 
   </style>
