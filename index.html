@@ -2378,6 +2378,11 @@ section:not(.products-section) img {
 .blog-modal {
   display: none !important;
 }
+.blog-modal {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
 
   </style>
 
@@ -3181,6 +3186,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", updateSlider);
   updateSlider();
+});
+</script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* 1. REMOVE THE MODAL FROM THE DOM COMPLETELY */
+  const modal = document.querySelector(".blog-modal");
+  if (modal) {
+    modal.remove();
+  }
+
+  /* 2. FORCE LATEST POSTS TO BE NORMAL LINKS */
+  document.querySelectorAll(".latest-track .post-card").forEach(card => {
+    card.replaceWith(card.cloneNode(true));
+  });
+
 });
 </script>
 
