@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
@@ -20,6 +20,7 @@
       margin: auto;
     }
 
+    /* MAIN BLOG */
     .blog-container {
       flex: 3;
     }
@@ -45,10 +46,15 @@
       font-size: 16px;
       line-height: 1.7;
       color: #333;
+      white-space: pre-line;
     }
 
+    /* SIDEBAR */
     .blog-sidebar {
       flex: 1;
+      position: sticky;
+      top: 120px;
+      height: fit-content;
     }
 
     .sidebar-box {
@@ -78,12 +84,25 @@
       font-size: 14px;
     }
 
+    .category-list a.active {
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+
+    .category-list a.active::before {
+      content: "— ";
+    }
+
+    /* LATEST POSTS */
     .latest-post {
       display: flex;
       gap: 10px;
       text-decoration: none;
       color: #000;
       margin-bottom: 15px;
+      padding: 8px;
+      border-radius: 8px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .latest-post img {
@@ -96,6 +115,7 @@
     .latest-post h5 {
       font-size: 14px;
       margin: 0;
+      transition: color 0.2s ease;
     }
 
     .latest-post span {
@@ -103,51 +123,27 @@
       color: #666;
     }
 
-  .blog-sidebar {
-  position: sticky;
-  top: 120px;
-  height: fit-content;
-}
+    .latest-post:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      background: #fff;
+    }
 
-  @media (max-width: 900px) {
-  .page-layout {
-    flex-direction: column;
-  }
+    .latest-post:hover h5 {
+      color: #2563eb;
+    }
 
-  .blog-sidebar {
-    position: static;
-    margin-top: 40px;
-  }
-}
-.category-list a.active {
-  font-weight: bold;
-  color: #1d4ed8;
-}
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .page-layout {
+        flex-direction: column;
+      }
 
-.category-list a.active::before {
-  content: "— ";
-  color: #2563eb;
-}
-.latest-post {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  padding: 8px;
-  border-radius: 8px;
-}
-
-.latest-post:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  background: #ffffff;
-}
-
-.latest-post h5 {
-  transition: color 0.2s ease;
-}
-
-.latest-post:hover h5 {
-  color: #2563eb;
-}
-
+      .blog-sidebar {
+        position: static;
+        margin-top: 40px;
+      }
+    }
   </style>
 </head>
 
@@ -185,18 +181,18 @@
 const blogs = {
   1: {
     img: "image/blog1.jpg",
-    title: "Improving Patient Monitoring And Diagnostics",
+    title: "Improving Patient Monitoring and Diagnostics",
     date: "2021-06-22",
     content: `
 The integration of smart technology into medical equipment has revolutionized patient care. Devices equipped with IoT (Internet of Things) and AI (Artificial Intelligence) are enabling real-time data collection and analysis, improving diagnostics and patient monitoring.
 
-For instance, smart monitors can track vital signs continuously and alert medical staff in real-time if a patient’s condition deteriorates. This helps in reducing response times and enhancing the accuracy of diagnosis. our advanced monitoring systems provide reliable, accurate data that empowers healthcare professionals to make informed decisions swiftly.
-
+For instance, smart monitors can track vital signs continuously and alert medical staff in real-time if a patient’s condition deteriorates. This helps in reducing response times and enhancing the accuracy of diagnosis. Our advanced monitoring systems provide reliable, accurate data that empowers healthcare professionals to make informed decisions swiftly.
 `
   },
+
   2: {
     img: "image/blog2.jpg",
-    title: "Minimally Invasive Surgery With Robotic Assistance",
+    title: "Minimally Invasive Surgery with Robotic Assistance",
     date: "2022-08-11",
     content: `
 Surgical procedures have become more precise and less invasive, thanks to innovations in medical devices like robotic surgery tools. These tools allow surgeons to perform complex operations with greater accuracy, resulting in faster recovery times and reduced complications for patients.
@@ -204,19 +200,21 @@ Surgical procedures have become more precise and less invasive, thanks to innova
 Our range of surgical equipment is designed with cutting-edge technology that aids in precision, reducing human error, and enhancing patient outcomes. With robotic assistance and enhanced visualization, surgeons can now achieve better results, even in high-risk procedures.
 `
   },
+
   3: {
     img: "image/blog3.jpg",
-    title: "Ensuring Patient Safety And Reducing Cross-Contamination",
+    title: "Ensuring Patient Safety and Reducing Cross-Contamination",
     date: "2024-08-09",
     content: `
 In the fast-paced environment of hospitals, having access to high-quality consumables is crucial. Disposable items like syringes, surgical gloves, and drapes play a significant role in maintaining hygiene and preventing infections.
 
-we manufacture a wide range of consumables that meet the highest standards of quality and safety. Our products are designed to minimize the risk of cross-contamination and ensure that hospitals can provide the best possible care for their patients.
+We manufacture a wide range of consumables that meet the highest standards of quality and safety. Our products are designed to minimize the risk of cross-contamination and ensure that hospitals can provide the best possible care for their patients.
 `
   },
+
   4: {
     img: "image/blog4.jpg",
-    title: "Eco-Friendly Innovations In Medical Supplies",
+    title: "Eco-Friendly Innovations in Medical Supplies",
     date: "2025-09-05",
     content: `
 Sustainability is becoming an essential factor in healthcare, as hospitals and healthcare providers seek to reduce their environmental footprint. This shift has led to the development of eco-friendly hospital consumables made from biodegradable or recyclable materials.
@@ -225,11 +223,10 @@ We are proud to be part of this movement, offering sustainable solutions that do
 `
   }
 };
-</script>
 
-
+// Load current blog
 const params = new URLSearchParams(window.location.search);
-const currentId = params.get("id");
+const currentId = params.get("id") || "1";
 
 if (blogs[currentId]) {
   document.getElementById("blogContent").innerHTML = `
@@ -240,6 +237,7 @@ if (blogs[currentId]) {
   `;
 }
 
+// Latest posts
 const latestContainer = document.getElementById("latestPosts");
 
 Object.entries(blogs).forEach(([id, blog]) => {
@@ -253,16 +251,6 @@ Object.entries(blogs).forEach(([id, blog]) => {
         </div>
       </a>
     `;
-  }
-});
-</script>
-
- <script>
-const currentHash = window.location.hash;
-
-document.querySelectorAll(".category-list a").forEach(link => {
-  if (link.getAttribute("href").includes(currentHash) && currentHash !== "") {
-    link.classList.add("active");
   }
 });
 </script>
