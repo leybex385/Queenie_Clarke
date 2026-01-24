@@ -2678,25 +2678,31 @@ header nav {
 }
 
 .brand img {
-  height: 42px;          /* ideal header height */
+  height: 52px;          /* bigger & readable */
   width: auto;
-  max-width: 180px;      /* prevents pushing menu */
+  max-width: 220px;      /* still safe for nav */
   display: block;
 }
+.brand img {
+  filter: brightness(0.25) contrast(1.2);
+}
+
 @media (max-width: 768px) {
   .brand img {
-    height: 32px;
-    max-width: 140px;
+    height: 40px;
+    max-width: 180px;
   }
 }
+
 .menu {
   display: flex;
   gap: 20px;
   align-items: center;
 }
 .brand img {
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
 }
+
 
   </style>
 
