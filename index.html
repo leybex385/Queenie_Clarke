@@ -1871,7 +1871,7 @@
   <a href="#professional">Professional Focus</a>
   <a href="#education">Education</a>
   <a href="#recognition">Recognition</a>
-  <a href="#blog">Blog</a>
+  <a href="blog.html?id=1">Blog</a>
   <a href="#contact">Contact</a>
 </div>
 
@@ -2678,14 +2678,16 @@ header nav {
 }
 
 .brand img {
-  height: 52px;          /* bigger & readable */
+  height: 72px;          /* BIG, visible, premium */
   width: auto;
-  max-width: 220px;      /* still safe for nav */
+  max-width: 300px;      /* still safe */
   display: block;
 }
+
 .brand img {
-  filter: brightness(0.25) contrast(1.2);
+  filter: brightness(0.35) contrast(1.25);
 }
+
 
 @media (max-width: 768px) {
   .brand img {
@@ -2700,7 +2702,17 @@ header nav {
   align-items: center;
 }
 .brand img {
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+  filter: brightness(0.35) contrast(1.25)
+          drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+}
+
+header nav {
+  padding: 22px 32px;   /* taller header */
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
