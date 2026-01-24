@@ -97,14 +97,14 @@ We are proud to be part of this movement, offering sustainable solutions that do
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
-  if (blogs[id]) {
-    document.getElementById("blogContent").innerHTML = `
-      <img src="${blogs[id].img}">
-      <div class="blog-date">— 2025-09-23</div>
-      <h1>${blogs[id].title}</h1>
-      <p>${blogs[id].content}</p>
-    `;
-  }
+ if (blogs[id]) {
+  document.getElementById("blogContent").innerHTML = `
+    <img src="${blogs[id].img}">
+    <div class="blog-date">— ${blogs[id].date}</div>
+    <h3>${blogs[id].title}</h3>
+    <p>${blogs[id].content}</p>
+  `;
+}
 </script>
 
 </body>
