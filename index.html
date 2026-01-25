@@ -1844,6 +1844,52 @@
         padding: 48px 16px;
         font-size: 14px;
       }
+      /* =====================================================
+   HERO FINAL CLEAN FIX — DO NOT DUPLICATE ABOVE
+   ===================================================== */
+
+/* 1️⃣ 完全禁用 hero 的所有图片背景 & 伪元素 */
+.hero,
+.hero::before,
+.hero::after {
+  background: none !important;
+  background-image: none !important;
+  content: none !important;
+}
+
+/* 2️⃣ Video 永远在最底层 */
+.hero-video {
+  display: block !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  transform: translate(-50%, -50%) !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+}
+
+/* 3️⃣ 遮罩在 video 上 */
+.hero-overlay {
+  position: absolute !important;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1 !important;
+}
+
+/* 4️⃣ 文字永远在最上层（硬锁） */
+.hero-content {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10 !important;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 32px;
+}
+
     </style>
   </head>
 
@@ -2625,9 +2671,9 @@ header nav {
 }
 
 .brand img {
-  height: 64px;          /* slightly bigger than now */
+  height: 76px;          /* slightly bigger than now */
   width: auto;
-  max-width: 260px;
+  max-width: 300px;
   display: block;
 }
 
