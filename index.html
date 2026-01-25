@@ -2717,6 +2717,30 @@ html {
 }
 
 /* ===== HERO VIDEO FORCE OVERRIDE (NO DELETE) ===== */
+  /* ===== HERO TEXT HARD FIX (FINAL) ===== */
+
+.hero {
+  display: block !important;
+}
+
+.hero-content {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  z-index: 10 !important;
+
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 32px;
+}
+
+.hero-content h1,
+.hero-content p {
+  text-align: left;
+}
+
 
 /* 1. 强制关闭 hero 的图片背景层 */
 .hero::before,
@@ -2759,6 +2783,15 @@ html {
 .hero-content {
   position: relative;
   z-index: 2;
+}
+/* ===== LOGO CLARITY FIX ===== */
+
+.brand img {
+  filter: none !important;
+  opacity: 1 !important;
+
+  /* subtle professional shadow, not dark */
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15)) !important;
 }
 
 
