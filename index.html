@@ -288,9 +288,6 @@
       }
 
       /* Hide video visually but keep structure intact */
-      .hero-video {
-        display: none;
-      }
 
       /* Blurred image background */
       .hero::before {
@@ -330,9 +327,6 @@
       }
 
       /* Hide video but keep structure */
-      .hero-video {
-        display: none;
-      }
 
       /* Blurred image background */
       .hero::before {
@@ -2690,6 +2684,81 @@ html {
   color: #8a8f98;
   margin-bottom: 6px;
   font-weight: 500;
+/* ===== HERO VIDEO FIX ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== HERO VIDEO FORCE OVERRIDE (NO DELETE) ===== */
+
+/* 1. 强制关闭 hero 的图片背景层 */
+.hero::before,
+.hero::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 2. 强制显示视频 */
+.hero-video {
+  display: block !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* 3. 保证 hero 本身正确 */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: none !important;
+}
+
+/* 4. 文字和遮罩在视频上面 */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -2715,7 +2784,7 @@ html {
   <section class="hero">
     <!-- Video Background -->
     <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-      <source src="videobg.mp4" type="video/mp4">
+      <source src="herovideo.mp4" type="video/mp4">
     </video>
 
     <!-- Overlay -->
