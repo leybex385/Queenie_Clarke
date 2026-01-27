@@ -1470,6 +1470,10 @@
         background-position: center;
         background-repeat: no-repeat;
       }
+/* FIX: Professional Focus card background to white */
+.section.reveal.professional .focus-card {
+  background: #ffffff !important;
+}
 
       /* Soft black overlay */
       .section.reveal.professional::before {
@@ -3487,6 +3491,53 @@ Optimal targeted PBM protocols for Alzheimer's disease, stroke, and traumatic br
     .footer-links a:hover {
       color: #1a1a1a;
     }
+    /* ===== FIX: HIDE HAMBURGER ON DESKTOP ===== */
+.menu-icon {
+  display: none !important;
+}
+
+/* ONLY show hamburger on mobile */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: block !important;
+  }
+}
+
+    /* ===== MOBILE TYPOGRAPHY UNIFICATION ===== */
+@media (max-width: 900px) {
+
+  h1, h2, h3, h4, h5, h6,
+  p,
+  .hero-content,
+  .hero-profile-content,
+  .clinical-text,
+  .background-card,
+  .education-card,
+  .focus-card,
+  .hero-industry-card,
+  .figure-content,
+  .blog-content,
+  .insight-card,
+  .recognition-text,
+  .contact-info {
+    text-align: center !important;
+  }
+
+  /* Buttons / form elements center */
+  button,
+  input,
+  textarea {
+    text-align: center;
+  }
+
+  /* Reduce awkward wide padding */
+  .container,
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
   </style>
 
   <footer class="site-footer">
