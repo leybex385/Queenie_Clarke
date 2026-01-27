@@ -1940,22 +1940,32 @@
     }
 
     /* Make the menu hidden by default on mobile */
-    @media (max-width: 900px) {
+@media (max-width: 900px) {
   .menu {
-    display: none;
-    flex-direction: column;
     position: absolute;
     top: 72px;
     left: 0;
     width: 100%;
-    background: rgba(247, 246, 243, 0.95);
-    backdrop-filter: blur(12px);
+    flex-direction: column;
+
+    background: rgba(247, 246, 243, 0.96);
+    backdrop-filter: blur(14px);
+
+    /* 默认关闭 */
+    opacity: 0;
+    transform: translateY(-12px);
+    pointer-events: none;
+
+    transition: opacity 0.28s ease, transform 0.28s ease;
   }
 
   .menu.menu-open {
-    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 }
+
 
 
       .menu a {
@@ -2851,31 +2861,6 @@ html {
   </style>
 
   <!-- JavaScript to Toggle the Hamburger Menu -->
-  <script>
-    // Get the menu icon and menu
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const menuIcon = document.getElementById("menu-icon");
-  const menu = document.querySelector(".menu");
-
-  // 1️⃣ 页面加载时，强制关闭菜单（防止自动展开）
-  menu.classList.remove("menu-open");
-
-  // 2️⃣ 点击汉堡按钮：打开 / 关闭
-  menuIcon.addEventListener("click", () => {
-    menu.classList.toggle("menu-open");
-  });
-
-  // 3️⃣ 点击任意菜单项后，自动关闭菜单
-  menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("menu-open");
-    });
-  });
-});
-</script>
-
-  </script>
 
 
   <!-- HERO -->
@@ -3611,6 +3596,27 @@ document.querySelector(".modal-close").onclick = () =>
 modal.onclick = e => {
   if (e.target === modal) modal.classList.remove("show");
 };
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuIcon = document.getElementById("menu-icon");
+  const menu = document.querySelector(".menu");
+
+  // 页面加载时，确保菜单关闭
+  menu.classList.remove("menu-open");
+
+  // 点击 ☰ 打开 / 关闭
+  menuIcon.addEventListener("click", () => {
+    menu.classList.toggle("menu-open");
+  });
+
+  // 点击菜单项后自动关闭
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("menu-open");
+    });
+  });
+});
 </script>
 
   </body>
