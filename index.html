@@ -1971,20 +1971,17 @@
     transform: translateY(0);
     pointer-events: auto;
   }
+
+  .menu a {
+    margin: 20px;
+    font-size: 18px;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+  }
 }
-
-
-
-      .menu a {
-        margin: 20px;
-        font-size: 18px;
-      }
-
-      .menu-icon {
-        display: block;
-        font-size: 30px;
-      }
-    }
 
     /* ===== FADE IN ON SCROLL ===== */
     .fade-in {
@@ -2118,12 +2115,14 @@
 }
 
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 32px;
 }
 
 .product-card {
+  width: calc(25% - 24px);
   cursor: pointer;
   text-align: center;
 }
@@ -2150,10 +2149,10 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-card { width: calc(50% - 16px); }
 }
 @media (max-width: 600px) {
-  .products-grid { grid-template-columns: 1fr; }
+  .product-card { width: 100%; }
 }
 .product-modal {
   position: fixed;
@@ -2754,6 +2753,7 @@ html {
   color: #8a8f98;
   margin-bottom: 6px;
   font-weight: 500;
+}
 /* ===== HERO VIDEO FIX ===== */
 .hero {
   position: relative;
@@ -3038,12 +3038,13 @@ html {
       </div>
 
       <div class="product-card"
-        data-title="Neuralink R1 Robot"
-        data-desc="Product Description: The Neuralink R1 robot can rapidly insert numerous flexible probes into the brain, avoiding tissue damage and longevity issues associated with larger, more rigid probes. Its surgical robotic insertion head features a 25-micrometer-diameter tungsten-rhenium needle used to connect to the insertion ring, deploy individual probes, and penetrate the meninges and brain tissue; it can insert up to six wires (192 electrodes) per minute. Linear motors power the needle, enabling rapid retraction acceleration and variable insertion speeds. A 50-micron tungsten wire bent at the tip, driven axially and rotationally, forms the forceps. The inserter head also incorporates an imaging stack for needle guidance, real-time insertion visualization, and verification."
-        data-images="image/product2.jpg">
-        <img src="image/product2.jpg" alt="Neuralink R1 Robot">
-        <h3>Neuralink R1 Robot</h3>
+        data-title="da Vinci Xi Surgical System"
+        data-desc="Product Description: The da Vinci Xi Surgical System is an advanced robotic-assisted platform designed to enable complex, minimally invasive procedures. It features immersive 3D-HD visualization and wristed instruments that bend and rotate far greater than the human hand, providing surgeons with enhanced precision, dexterity, and control."
+        data-images="image/davinci-xi-surgical-system.jpg">
+        <img src="image/davinci-xi-surgical-system.jpg" alt="da Vinci Xi Surgical System">
+        <h3>da Vinci Xi Surgical System</h3>
       </div>
+
 
       <div class="product-card"
         data-title="Philips Digital X-ray 7000 M"
